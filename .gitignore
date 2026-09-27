@@ -6,3 +6,5 @@ build/
 dist/
 runs/
 *.so
+zenodo/*.log
+zenodo/reference.docx

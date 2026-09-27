@@ -8,8 +8,10 @@ are provenance identifiers. They authenticate original formats when the
 corresponding files are available; they are not a substitute for those files.
 
 The32GB-class original balanced bulk archive and other full native/trace
-archives are not bundled in Git. No public prime-event bulk-data deposit URL or
-data DOI is claimed. The previously supplied collaboration DOI is an attribution
+archives are not bundled in Git. The compact software/evidence release is archived under concept DOI
+https://doi.org/10.5281/zenodo.23002148 and initial version DOI
+https://doi.org/10.5281/zenodo.23002149. These identify the compact package,
+not a public deposit of the unbundled bulk traces. The previously supplied collaboration DOI is an attribution
 reference, and unrelated frustrated-spin archives are not prime-event datasets.
 The included inputs and commands regenerate all event streams. This distinction
 is deliberate: a compact evidence check reproduces aggregation; an actual run
@@ -25,8 +27,8 @@ Publication exports remove workstation addresses and operational paths from
 public notes. Scientific arrays and historical summary JSON are retained with
 source hashes. The manuscript's source-relative campaign names refer to the
 originating research record; runnable public commands are in the root README
-and `docs/reproduction.md`. No claim of an external audit or new research DOI is
-introduced by this software publication.
+and `docs/reproduction.md`. The Zenodo paper identifies the software archive separately from the original
+bulk records.
 
 The ongoing follower data is reported as a timestamped snapshot, with raw errors,
 reference-assisted repairs and model predictions separated. It is not merged

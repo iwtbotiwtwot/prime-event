@@ -1,0 +1,26 @@
+{
+  "title": "Prime-event: balanced hidden-spin feedback, learning, and checked repair",
+  "upload_type": "software",
+  "description": "Standalone reproducible hidden-spin prime-event experiments through one billion. MIT software; CC BY 4.0 research data, reports, manuscript and figures; scope in LICENSING.md. Includes a Zenodo companion paper. Sean Brady is originator and conceptual director; OpenAI ChatGPT and Codex are AI research collaborators.",
+  "creators": [
+    {
+      "name": "Brady, Sean"
+    }
+  ],
+  "license": "mit",
+  "version": "0.1.1",
+  "keywords": [
+    "hidden spins",
+    "stochastic logic",
+    "prime events",
+    "feedback",
+    "reproducibility"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/iwtbotiwtwot/prime-event",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
+}

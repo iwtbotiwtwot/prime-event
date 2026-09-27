@@ -1,7 +1,7 @@
 cff-version: 1.2.0
 message: "Please cite this software and its included manuscript when using the methods or results."
 title: "Prime-event: balanced hidden-spin feedback, learning, and checked repair"
-version: 0.1.0
+version: 0.1.1
 date-released: 2026-09-27
 type: software
 url: "https://github.com/iwtbotiwtwot/prime-event"
@@ -16,3 +16,5 @@ keywords:
   - prime events
   - reproducibility
   - feedback
+doi: "10.5281/zenodo.23002148"
+license: MIT

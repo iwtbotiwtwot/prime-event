@@ -1,51 +1,21 @@
-# Proprietary License - All Rights Reserved
+MIT License
 
-Copyright (c) 2026 Sean Brady.
+Copyright (c) 2026 Sean Brady
 
-All rights reserved.
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## Authorship
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-Originator, author, and conceptual driver:
-
-```text
-Sean Brady
-```
-
-Co-author and technical collaborator:
-
-```text
-Codex, an OpenAI AI system
-```
-
-## Restrictions
-
-No license, permission, or right is granted to any person or organization to
-copy, publish, distribute, sublicense, sell, rent, host, mirror, modify,
-translate, adapt, create derivative works from, train models on, benchmark
-models with, or otherwise use this work, in whole or in part, without prior
-written permission from Sean Brady.
-
-This restriction applies to all documents, source files, tables, scripts,
-summaries, private prediction artifacts, sealed envelopes, diagrams, analyses,
-and related materials in this repository.
-
-## No Public License Grant
-
-This repository is a publicly readable research record. Public availability,
-forking capability, or its presence in a Git repository does not grant a
-license beyond the limited technical copies GitHub necessarily makes to host
-and display the repository.
-
-Unauthorized use is prohibited.
-
-## Third-Party Materials
-
-Some files under `data/` may be local research snapshots of third-party public
-web pages, PDFs, reports, documentation, or source references. Those materials
-remain the property of their respective owners and are not licensed by Sean
-Brady or Codex.
-
-The proprietary restrictions above apply to all SAM Research Project work.
-Third-party materials are included, if present, only as private research
-references and provenance snapshots.
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.

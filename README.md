@@ -24,6 +24,10 @@ pairs produced identical event sequences. Baseline and balanced matched runs
 use seeds 1000000–1000063; fresh runs use 10000000–10000015. Balancing reduced
 aggregate errors 569→40 across the two matched profiles (92.9701%).
 
+**Zenodo:** [all versions](https://doi.org/10.5281/zenodo.23002148) ·
+[initial archived release](https://doi.org/10.5281/zenodo.23002149) ·
+[publication paper PDF](zenodo/Prime_Event_Zenodo_Paper.pdf).
+
 ## Quick start
 
 Linux, Python 3.10–3.12 and a C++17 compiler (`g++`) are required. NumPy 1.26.4
@@ -114,9 +118,12 @@ quiet background operation and the original observation snapshot.
 - [Provenance and data scope](docs/data.md), authorship and citation metadata.
 
 The original bulk per-integer traces and private native runtime are not bundled.
-No public DOI is assigned to that bulk prime dataset here. All numerical inputs
-needed to regenerate the event streams are included. The attribution DOI
-[10.5281/zenodo.22989862](https://doi.org/10.5281/zenodo.22989862) describes the
-AI research collaboration; it is **not** the prime dataset DOI.
+The Zenodo software archive contains the compact reproducibility package,
+not the unbundled approximately 32 GB original trajectory archive. All numerical
+inputs needed to regenerate the event streams are included. The separate
+[frustrated-spin DOI](https://doi.org/10.5281/zenodo.22989862) is not the prime-event
+archive.
 
-See [LICENSE](LICENSE) for current reuse terms.
+**Licenses:** MIT for software; CC BY 4.0 for research data, paper and figures.
+See [LICENSING.md](LICENSING.md) for scope and the additional grant covering the
+initial release. [Zenodo paper and deposit notes](zenodo/README.md).

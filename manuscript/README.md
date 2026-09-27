@@ -1,5 +1,8 @@
 # Manuscript draft 1.0
 
+The public deposit edition is now [Zenodo companion paper 1.1](../zenodo/README.md).
+This original draft is preserved for provenance.
+
 **Balanced Hidden-Spin Feedback for Prime-Sequence Fidelity Through One Billion**
 
 Sean Brady — originator and conceptual director.

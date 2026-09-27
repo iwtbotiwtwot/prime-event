@@ -1,3 +1,16 @@
+# Version 0.1.1 — September 27, 2026
+
+Open licensing now matches frustrated-spin: MIT software and CC BY 4.0 research
+materials. LICENSING.md extends the grant to the corresponding contents of the
+initial release and Zenodo archive. Third-party terms remain applicable.
+
+Adds a 13-page Zenodo companion paper in PDF, Word, Markdown and LaTeX, with
+software concept DOI 10.5281/zenodo.23002148 and initial version DOI
+10.5281/zenodo.23002149, updated public data availability and the verified
+standalone replay appendix. The original manuscript draft remains preserved.
+Numerical code and frozen sampling inputs are unchanged; only package version
+metadata changes. The paper build script and software Zenodo metadata are included.
+
 # Version 0.1.0 — September 27, 2026
 
 Initial public release of the prime-event reproduction package, manuscript and

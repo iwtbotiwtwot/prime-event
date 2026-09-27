@@ -1,0 +1,35 @@
+{
+  "title": "Balanced Hidden-Spin Feedback for Prime-Sequence Fidelity Through One Billion",
+  "upload_type": "publication",
+  "publication_type": "preprint",
+  "publication_date": "2026-09-27",
+  "version": "1.1",
+  "creators": [
+    {
+      "name": "Brady, Sean",
+      "affiliation": "SAM Research Project"
+    }
+  ],
+  "description": "Stochastic logic used inside a recurrence system can produce rare local errors that alter its subsequent input history. We investigate this problem using a seven-spin heat-bath model coupled to an event-created digital sieve. Each accepted integer installs a periodic return channel, and two banks aggregate those returns into the inputs of a gate with one output spin and six hidden spins. Acceptance requires three successive output readings. In an initial ensemble of 64 pseudorandom seeds under each of two matched-exposure accumulation profiles, one seed per profile reproduces every prime and rejects every composite through $10^9$. Microscopic replay locates all 120 first composite emissions in the single-return-bank sector. Integrating out the hidden spins gives the output field $H=-a(r_1+r_2)+br_1r_2$, whose two blocking margins are $b$ and $2a-b$. Equalizing these margins selects $b=a$ algebraically, before the successor trajectories are generated. With the same cadence, random streams, confirmation rule, and recurrence scheduler, the balanced source raises the number of exact trajectories from 1/64 to 47/64 per profile and reduces the aggregate error count from 569 to 40 across the paired profiles, a 92.97% reduction. A frozen-source continuation on 16 fresh seed pairs yields 13/16 exact trajectories per profile through $10^9$. The study connects microscopic error diagnosis, effective-interaction design, and long-horizon sequence fidelity in a stochastic feedback computation. Exactness denotes complete agreement of specified finite trajectories with an independent reference sieve. The recurrence arithmetic is supplied by the digital scheduler; the measured contribution is the reliability improvement obtained by balancing the hidden-spin gate.\n\nOpenAI ChatGPT and Codex: AI research collaborators. Companion to prime-event software, concept DOI 10.5281/zenodo.23002148.",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "stochastic spin logic",
+    "hidden spins",
+    "effective interactions",
+    "prime sieve",
+    "feedback",
+    "reproducible computation"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "10.5281/zenodo.23002148",
+      "relation": "isSupplementedBy",
+      "scheme": "doi"
+    },
+    {
+      "identifier": "10.5281/zenodo.23002149",
+      "relation": "isSupplementedBy",
+      "scheme": "doi"
+    }
+  ]
+}
