@@ -1,0 +1,72 @@
+{
+  "uniform": {
+    "seeds": 64,
+    "tp": 3254242163,
+    "fp": 271,
+    "fn": 13,
+    "precision": 0.99999991672409,
+    "recall": 0.9999999960052144,
+    "exact_by_horizon": {
+      "1000000": 64,
+      "10000000": 60,
+      "100000000": 42,
+      "1000000000": 1
+    },
+    "earliest_error": [
+      3510937,
+      "missed_prime"
+    ]
+  },
+  "rough": {
+    "seeds": 64,
+    "tp": 3254242163,
+    "fp": 272,
+    "fn": 13,
+    "precision": 0.9999999164167989,
+    "recall": 0.9999999960052144,
+    "exact_by_horizon": {
+      "1000000": 64,
+      "10000000": 60,
+      "100000000": 42,
+      "1000000000": 1
+    },
+    "earliest_error": [
+      3510937,
+      "missed_prime"
+    ]
+  },
+  "paired_differences": [
+    {
+      "seed": 1000027,
+      "uniform_only": [],
+      "rough_only": [
+        [
+          246424193,
+          "composite_emission"
+        ]
+      ]
+    },
+    {
+      "seed": 1000053,
+      "uniform_only": [
+        [
+          967840726,
+          "composite_emission"
+        ]
+      ],
+      "rough_only": [
+        [
+          312596611,
+          "composite_emission"
+        ]
+      ]
+    }
+  ],
+  "total_candidate_advances": 127999999872,
+  "chunks_checked": 25600,
+  "prefix_spin_samples_checked": 1572864,
+  "exact_seeds": [
+    "uniform_seed1000063",
+    "rough_seed1000063"
+  ]
+}

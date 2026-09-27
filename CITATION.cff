@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "Please cite this software and its included manuscript when using the methods or results."
+title: "Prime-event: balanced hidden-spin feedback, learning, and checked repair"
+version: 0.1.0
+date-released: 2026-09-27
+type: software
+url: "https://github.com/iwtbotiwtwot/prime-event"
+authors:
+  - family-names: Brady
+    given-names: Sean
+  - name: "OpenAI ChatGPT and Codex"
+abstract: "Portable reproduction of stochastic hidden-spin feedback experiments through one billion, with frozen sampling tables, per-seed evidence, manuscript, and a separate online calibration and checked-repair follower."
+keywords:
+  - stochastic logic
+  - hidden spins
+  - prime events
+  - reproducibility
+  - feedback

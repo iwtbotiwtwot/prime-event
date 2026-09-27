@@ -1,0 +1,51 @@
+# Proprietary License - All Rights Reserved
+
+Copyright (c) 2026 Sean Brady.
+
+All rights reserved.
+
+## Authorship
+
+Originator, author, and conceptual driver:
+
+```text
+Sean Brady
+```
+
+Co-author and technical collaborator:
+
+```text
+Codex, an OpenAI AI system
+```
+
+## Restrictions
+
+No license, permission, or right is granted to any person or organization to
+copy, publish, distribute, sublicense, sell, rent, host, mirror, modify,
+translate, adapt, create derivative works from, train models on, benchmark
+models with, or otherwise use this work, in whole or in part, without prior
+written permission from Sean Brady.
+
+This restriction applies to all documents, source files, tables, scripts,
+summaries, private prediction artifacts, sealed envelopes, diagrams, analyses,
+and related materials in this repository.
+
+## No Public License Grant
+
+This repository is a publicly readable research record. Public availability,
+forking capability, or its presence in a Git repository does not grant a
+license beyond the limited technical copies GitHub necessarily makes to host
+and display the repository.
+
+Unauthorized use is prohibited.
+
+## Third-Party Materials
+
+Some files under `data/` may be local research snapshots of third-party public
+web pages, PDFs, reports, documentation, or source references. Those materials
+remain the property of their respective owners and are not licensed by Sean
+Brady or Codex.
+
+The proprietary restrictions above apply to all SAM Research Project work.
+Third-party materials are included, if present, only as private research
+references and provenance snapshots.

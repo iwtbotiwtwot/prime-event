@@ -1,0 +1,3 @@
+# Preserve original generated manuscript exports.
+manuscript/figures/*.svg -whitespace
+manuscript/tables/*.csv whitespace=cr-at-eol

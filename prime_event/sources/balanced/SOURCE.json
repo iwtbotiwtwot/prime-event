@@ -1,0 +1,22 @@
+{
+  "source_campaign": "prime_balance1",
+  "source_library_sha256": "cfb60f4e59505e95b41eeba12a6fd57d0b06e53270e6c8bff288c05159eb4d18",
+  "pair_strength": 4,
+  "triple_strength": "2.3464897298984759",
+  "a": "3.6534264659876117",
+  "b": "3.6534264659876117",
+  "beta": 1,
+  "gamma": 512,
+  "readings": 3,
+  "profiles": [
+    "uniform",
+    "rough"
+  ],
+  "numpy_version": "1.26.4",
+  "microscopic_states": 128,
+  "data_files": {
+    "data/initial_cdf.npy": "839ac905d125a83230f1df8e6d373b9be3d236d04bd9827263c3c6da0a4f124e",
+    "data/cdf_uniform.npy": "cb764e4476d8dd8830da22521848b1fd16869380e49a4d44248e3ab7e4d9a379",
+    "data/cdf_rough.npy": "434aff772186cf4aef8c1ac6b9843619739d749756dcfd28272c394fa3426252"
+  }
+}

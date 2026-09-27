@@ -1,0 +1,27 @@
+{
+  "source": "baseline",
+  "pair_strength": 4.0,
+  "triple_strength": 2.0,
+  "numpy": "1.26.4",
+  "comparisons": {
+    "cdf_rough.npy": {
+      "bitwise_file_match": true,
+      "max_abs_difference": 0.0,
+      "reconstructed_sha256": "3ee1727077be933d8ebc6e9d7356fe2069c6bf8ce07601b0dbd1f0174035f7de",
+      "frozen_sha256": "3ee1727077be933d8ebc6e9d7356fe2069c6bf8ce07601b0dbd1f0174035f7de"
+    },
+    "cdf_uniform.npy": {
+      "bitwise_file_match": true,
+      "max_abs_difference": 0.0,
+      "reconstructed_sha256": "92c8796e61dff22d1ac7dc84dcb0198abf786d41712e99e24ee4885a86cbddda",
+      "frozen_sha256": "92c8796e61dff22d1ac7dc84dcb0198abf786d41712e99e24ee4885a86cbddda"
+    },
+    "initial_cdf.npy": {
+      "bitwise_file_match": true,
+      "max_abs_difference": 0.0,
+      "reconstructed_sha256": "c6c67f41fefdcc9c39e72f7da61a30358b7f3fa47c971e248cb29e0783553614",
+      "frozen_sha256": "c6c67f41fefdcc9c39e72f7da61a30358b7f3fa47c971e248cb29e0783553614"
+    }
+  },
+  "note": "BLAS/platform rounding may change reconstructed tables. Use frozen hash-verified tables for exact historical trajectory replay."
+}

@@ -1,0 +1,275 @@
+{
+  "status": "COMPLETE",
+  "through": 50001,
+  "resumed_from": 25001,
+  "chunk": 10000,
+  "branches": [
+    {
+      "branch": "control",
+      "snapshot": {
+        "base_rng": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 148274203016031070904089848776258465821,
+            "state": 42526704990116768122152159257913009629
+          },
+          "uinteger": 0
+        },
+        "chunks": 6,
+        "config": {
+          "chunk": 10000,
+          "kernel_sha256": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+          "numpy_version": "1.26.4",
+          "profile": "uniform",
+          "schema": "PRIME_SEGMENTED_GAPS_V2",
+          "seed": 1000000,
+          "source_sha256": "9195bd383da45d64eae98169b7d54cced26e8f8788483700ef9c90255550a1f7"
+        },
+        "extra_rng": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 127738804630436680829221971761046295711,
+            "state": 326376298053659242033626495699785950737
+          },
+          "uinteger": 0
+        },
+        "fn": 0,
+        "fp": 0,
+        "learner": {
+          "chunks": 6,
+          "counts": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              5133
+            ],
+            [
+              8453,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              4641,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              31773,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "evaluated": 40000,
+          "first_n": 2,
+          "fn": 0,
+          "fp": 0,
+          "trained": 50000,
+          "version": "BANK_GATE_PREQUENTIAL_V1",
+          "veto_fn": 0,
+          "veto_fp": 0
+        },
+        "next_n": 50002,
+        "previous_sha256": "f48affa5f6b4a0d8f9d4f7854be092bf49c70a9c7dfa71e42b1ec99f3ff34409",
+        "raw_events": 5133,
+        "repair_mode": "control",
+        "status": [
+          71,
+          5133,
+          1102493740587405138
+        ]
+      }
+    },
+    {
+      "branch": "repair",
+      "snapshot": {
+        "base_rng": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 148274203016031070904089848776258465821,
+            "state": 42526704990116768122152159257913009629
+          },
+          "uinteger": 0
+        },
+        "chunks": 6,
+        "config": {
+          "chunk": 10000,
+          "kernel_sha256": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+          "numpy_version": "1.26.4",
+          "profile": "uniform",
+          "schema": "PRIME_SEGMENTED_GAPS_V2",
+          "seed": 1000000,
+          "source_sha256": "9195bd383da45d64eae98169b7d54cced26e8f8788483700ef9c90255550a1f7"
+        },
+        "extra_rng": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 127738804630436680829221971761046295711,
+            "state": 326376298053659242033626495699785950737
+          },
+          "uinteger": 0
+        },
+        "fn": 0,
+        "fp": 0,
+        "learner": {
+          "chunks": 6,
+          "counts": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              5133
+            ],
+            [
+              8453,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              4641,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              31773,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "evaluated": 40000,
+          "first_n": 2,
+          "fn": 0,
+          "fp": 0,
+          "trained": 50000,
+          "version": "BANK_GATE_PREQUENTIAL_V1",
+          "veto_fn": 0,
+          "veto_fp": 0
+        },
+        "next_n": 50002,
+        "previous_sha256": "8451dba5fc0933d0a370794238061a2207c165dd207d5171e1c724f853c8deba",
+        "raw_events": 5133,
+        "repair_mode": "repair",
+        "status": [
+          71,
+          5133,
+          1102493740587405138
+        ]
+      }
+    },
+    {
+      "branch": "other_repair",
+      "snapshot": {
+        "base_rng": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 264864934000845522923446220065613979731,
+            "state": 46269605429948487560101958909405052475
+          },
+          "uinteger": 0
+        },
+        "chunks": 6,
+        "config": {
+          "chunk": 10000,
+          "kernel_sha256": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+          "numpy_version": "1.26.4",
+          "profile": "uniform",
+          "schema": "PRIME_SEGMENTED_GAPS_V2",
+          "seed": 1000001,
+          "source_sha256": "9195bd383da45d64eae98169b7d54cced26e8f8788483700ef9c90255550a1f7"
+        },
+        "extra_rng": {
+          "bit_generator": "PCG64",
+          "has_uint32": 0,
+          "state": {
+            "inc": 267817854594024292261685787446391414697,
+            "state": 182055625288870574156582414910326499465
+          },
+          "uinteger": 0
+        },
+        "fn": 0,
+        "fp": 0,
+        "learner": {
+          "chunks": 6,
+          "counts": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              5133
+            ],
+            [
+              8453,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              4641,
+              0
+            ],
+            [
+              0,
+              0
+            ],
+            [
+              31773,
+              0
+            ],
+            [
+              0,
+              0
+            ]
+          ],
+          "evaluated": 40000,
+          "first_n": 2,
+          "fn": 0,
+          "fp": 0,
+          "trained": 50000,
+          "version": "BANK_GATE_PREQUENTIAL_V1",
+          "veto_fn": 0,
+          "veto_fp": 0
+        },
+        "next_n": 50002,
+        "previous_sha256": "6fabceb274eadaaddb48d2eca2f5b4432f4a70ba327192032049182fb3f0bb4d",
+        "raw_events": 5133,
+        "repair_mode": "repair",
+        "status": [
+          87,
+          5133,
+          5454064112460250181
+        ]
+      }
+    }
+  ]
+}

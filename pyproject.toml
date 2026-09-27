@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sam-prime-event"
+version = "0.1.0"
+description = "Reproducible hidden-spin prime-event feedback, calibration, and checked-repair experiments"
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy==1.26.4"]
+authors = [{name = "Sean Brady"}]
+readme = "README.md"
+
+[project.scripts]
+prime-event = "prime_event.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["prime_event*"]
+
+[tool.setuptools.package-data]
+prime_event = ["kernel.cpp", "sources/*.json", "sources/*/*.json", "sources/*/*.gz"]

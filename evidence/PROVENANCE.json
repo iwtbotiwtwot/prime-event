@@ -1,0 +1,20 @@
+{
+  "source_project": "SAM Research Project",
+  "authors": {
+    "originator_conceptual_director": "Sean Brady",
+    "AI_research_collaborators": [
+      "OpenAI ChatGPT",
+      "OpenAI Codex"
+    ]
+  },
+  "original_source_hashes": {
+    "engine.py": "507cc5d1b8a7f449c5cd39431e00bcf30ada2a31e3d5bb0af5948e680220dfee",
+    "kernel.cpp": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+    "learner.py": "457df88389d81f0df8f1f47f9bf42ab7862bc059e2ffa276936971d78dedaad7"
+  },
+  "portability_edits": [
+    "relative module import in engine.py",
+    "new standalone CLI, source preparation and source reconstruction; no private native runtime required"
+  ],
+  "methodology": "Original research calculations used source-bound SLC/CE operations. Public code is the portable numerical implementation; its tests verify source and trajectory equivalence."
+}

@@ -1,0 +1,23 @@
+{
+  "source_campaign": "prime_fidelity1",
+  "source_result_sha256": "8b45b44eae50688512e3f5cf007678dedee7d825795be5b30ea7fb82d4dee496",
+  "source_array": {
+    "scale": "2",
+    "path": "GEN4/prime_fidelity1/PROPAGATORS_scale2.npz",
+    "sha256": "f1dbb36243c1ae193cbc8f55788769769e44d201fc42f253d69cfeae58fb563d"
+  },
+  "scale": "2",
+  "gamma": 512,
+  "readings": 3,
+  "data_files": {
+    "data/initial_cdf.npy": "c6c67f41fefdcc9c39e72f7da61a30358b7f3fa47c971e248cb29e0783553614",
+    "data/cdf_uniform.npy": "92c8796e61dff22d1ac7dc84dcb0198abf786d41712e99e24ee4885a86cbddda",
+    "data/cdf_rough.npy": "3ee1727077be933d8ebc6e9d7356fe2069c6bf8ce07601b0dbd1f0174035f7de"
+  },
+  "profiles": [
+    "uniform",
+    "rough"
+  ],
+  "numpy_version": "1.26.4",
+  "microscopic_states": 128
+}

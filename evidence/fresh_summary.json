@@ -1,0 +1,61 @@
+{
+  "uniform": {
+    "seeds": 16,
+    "fp": 2,
+    "fn": 1,
+    "exact_seeds": [
+      "uniform_seed10000005",
+      "uniform_seed10000001",
+      "uniform_seed10000013",
+      "uniform_seed10000009",
+      "uniform_seed10000011",
+      "uniform_seed10000003",
+      "uniform_seed10000007",
+      "uniform_seed10000014",
+      "uniform_seed10000008",
+      "uniform_seed10000010",
+      "uniform_seed10000015",
+      "uniform_seed10000000",
+      "uniform_seed10000002"
+    ],
+    "worst_errors": 1,
+    "exact_by_horizon": {
+      "1000000": 16,
+      "10000000": 16,
+      "100000000": 15,
+      "1000000000": 13
+    }
+  },
+  "rough": {
+    "seeds": 16,
+    "fp": 2,
+    "fn": 1,
+    "exact_seeds": [
+      "rough_seed10000005",
+      "rough_seed10000007",
+      "rough_seed10000011",
+      "rough_seed10000003",
+      "rough_seed10000000",
+      "rough_seed10000013",
+      "rough_seed10000008",
+      "rough_seed10000014",
+      "rough_seed10000010",
+      "rough_seed10000001",
+      "rough_seed10000002",
+      "rough_seed10000015",
+      "rough_seed10000009"
+    ],
+    "worst_errors": 1,
+    "exact_by_horizon": {
+      "1000000": 16,
+      "10000000": 16,
+      "100000000": 15,
+      "1000000000": 13
+    }
+  },
+  "candidate_advances": 31999999968,
+  "chunks_checked": 6400,
+  "prefix_spin_samples_checked": 393216,
+  "profile_differences": [],
+  "scope": "Fixed source,16new seed pairs,disjoint base/auxiliary RNG seed ranges;no paired baseline runs for these new seeds"
+}

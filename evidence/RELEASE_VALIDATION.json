@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "date": "2026-09-27",
+  "python": "3.12.3",
+  "numpy": "1.26.4",
+  "tests": [
+    "scalar linear-CDF/modulo replay across three segments, both sources and profiles",
+    "tiny-cache read path and generator/model restart",
+    "exact10% and write-reserve disk guards",
+    "prediction-before-training and model snapshot recovery",
+    "288 published evidence records recomputed",
+    "follower: three generators plus checker, partial final chunk and continuation25001->50001",
+    "baseline seed1000063 exact replay through1B with original terminal checksum",
+    "both sources reconstructed byte-identically for all six frozen arrays"
+  ],
+  "source_scope": "Public portable implementation; no private SAM runtime needed",
+  "original_experiment_scope": "Source-bound native research provenance retained separately"
+}
