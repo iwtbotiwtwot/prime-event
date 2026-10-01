@@ -1,0 +1,16 @@
+{
+  "adapted_from": "Prime_Event_Guide_2026-10-01.pdf",
+  "date": "2026-10-01",
+  "pdf_sha256": "47b88dc4ab7fd248cf53561775d8bd7da5c028228b9e0883281ea07ff9d98741",
+  "equation_text_sha256": "72c331b3c0f9caa8e7fb10ececb4909b9f7053c0cce8416a35e99e619ee16a46",
+  "adaptation": "README data access and reproduction first; guide narrative and all equations follow; page references adapted to sections; existing runner, licensing and package instructions retained.",
+  "source_reports": [
+    "https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/prime_feedback1/REPORT.md",
+    "https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/prime_event_report2/REPORT.md",
+    "https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/prime_balance1/REPORT.md",
+    "https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/prime_sam_dynamics1/REPORT.md",
+    "https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/spin_prime_progress1/REPORT.md",
+    "https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/spin_prime_connection1/REPORT.md",
+    "https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/sb_dynamics_extension1/REPORT.md"
+  ]
+}

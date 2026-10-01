@@ -1,0 +1,7 @@
+experiment,source,profile,trajectories,through,candidate_decisions,false_events,missed_primes,total_errors,errors_per_billion_decisions,exact_trajectories
+baseline-matched,Original,uniform,64,1000000000,63999999936,271,13,284,4.4375000044375,1
+baseline-matched,Original,rough,64,1000000000,63999999936,272,13,285,4.453125004453125,1
+balanced-matched,"Balanced, matched",uniform,64,1000000000,63999999936,17,3,20,0.3125000003125,47
+balanced-matched,"Balanced, matched",rough,64,1000000000,63999999936,17,3,20,0.3125000003125,47
+balanced-fresh,"Balanced, fresh",uniform,16,1000000000,15999999984,2,1,3,0.1875000001875,13
+balanced-fresh,"Balanced, fresh",rough,16,1000000000,15999999984,2,1,3,0.1875000001875,13

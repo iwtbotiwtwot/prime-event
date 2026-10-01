@@ -1,0 +1,110 @@
+
+How prime events are created
+The mechanism, the physical ingredients, and the measured results
+
+A new event creates a repeating signal. Returning signals suppress later events. A small interacting-spin system makes the accept-or-suppress decision. With an ideal decision rule, the emitted indices are exactly the primes; with a thermal gate, accuracy depends on its interactions, clock, and memory.
+The idea in one loop
+Candidate n → returning channels → two input banks → spin evolution → three confirming readings → accepted event → a new period-n channel.
+What makes this a physics calculation?
+Energy biases the output spin. Entropy changes that bias when hidden configurations are summed. Geometry and accumulation set the available relaxation time. Hidden spins retain history. These ingredients determine a calculable probability of creating the next event. [1–4]
+The main measured result
+Changing one interaction strength reduced total errors from 569 to 40 across 64 paired seeds under two accumulation profiles, each trajectory extending through candidate 1,000,000,000. That is a 92.97% reduction. For each profile, 47 of 64 balanced-gate trajectories were exact throughout the billion-index range. [3]
+What “predict” means here
+The generator advances through integer candidates and emits decisions before an independent checker scores them. The arithmetic structure is an event-built sieve; the physical model supplies its stochastic gate. The demonstrated result is accurate sequential prime-event generation in simulation. The production architecture also explicitly supplies integer counters, channel storage, and readout logic.
+Sean Brady: originator and conceptual director. OpenAI ChatGPT and Codex: AI research collaborators. This guide explains existing experiments; it introduces no new simulation.
+
+Start with an empty network
+A worked example and the mathematical reason primes emerge
+
+Begin at n = 2 with no channels. An event accepted at p installs a period-p channel whose first return is at 2p, followed by 3p, 4p, and so on. Successive channels alternate between two banks. Each bank reports whether any of its channels returns. [1]
+Candidate | Returning periods | Ideal action
+2 | None | Emit; install period 2
+3 | None | Emit; install period 3
+4 | 2 | Suppress
+5 | None | Emit; install period 5
+6 | 2 and 3 | Suppress
+7 | None | Emit; install period 7
+8 / 9 / 10 | 2 / 3 / (2 and 5) | Suppress
+11 | None | Emit; install period 11
+Write B₀(n) and B₁(n) for the return bits of the two banks. The ideal output is:
+MATH: y_n=(1-B_0(n))(1-B_1(n)).
+Why this continues: assume all earlier events are primes. A prime n has no earlier prime divisor, so no channel returns. A composite n has a smaller prime divisor p; the already installed channel p returns at n. Starting from 2 establishes the prime sequence by induction.
+The software schedules future multiples of accepted periods. In raw feedback, even an erroneous accepted composite installs its own channel. Prime labels are used afterward for scoring; they do not steer those raw decisions.
+
+Build the decision from spins
+Seven free spins, two clamped inputs, and a controllable energy margin
+
+Let r₁ and r₂ be +1 for a returning bank and −1 for no return. The output e = −1 means accept. Two pair modules and four additional hidden spins give seven free spins altogether: 2⁷ = 128 microscopic states. Summing the hidden states gives the output free energy [2]:
+MATH: F(e\mid r_1,r_2)=C+eH,\qquad H=-a(r_1+r_2)+b r_1r_2.
+C is independent of e. The microscopic construction uses pair couplings and hidden fields; the effective three-spin term b emerges when hidden variables are eliminated. For inverse temperature β, pair strength u, and triple-module strength t:
+MATH: a=\frac{\log\cosh(2\beta u)}{2\beta},\qquad b=\frac{4\log\cosh(2\beta t)-\log\cosh(4\beta t)}{2\beta}.
+Returns | Field H | Desired output
+Neither bank | 2a + b | Accept
+One bank | −b | Suppress
+Both banks | −2a + b | Suppress
+At equilibrium, the accepting probability follows directly from the two output weights:
+MATH: P(e=-1\mid r_1,r_2)=\frac{1}{1+\exp(-2\beta H)}.
+The suppressing margins are b and 2a − b. At fixed a > 0, their smaller value is largest at b = a. This selected the balanced gate algebraically, before its new prime-event outcomes were examined. At β = 1 and u = 4, changing t from 2 to 2.3464897299 made a = b = 3.653426466. [3]
+
+Geometry, accumulation, and time
+The source needs time to respond—and carries memory into the next decision
+
+For a one-spin change x → y, the heat-bath transition rate is set by the energy change. Q is the generator with unit attempt rate; its diagonal makes every column sum zero. [2,4]
+MATH: Q_{yx}=\frac{1}{1+\exp[\beta(E_y-E_x)]},\qquad Q_{xx}=-\sum_{y\ne x}Q_{yx}.
+The supplied corrugated-sphere path gives candidate duration dₙ. The dimensionless accumulation profile Aₙ gives a clock factor νₙ = √(1 − Aₙ). With attempt multiplier Γ, each of three equal reading intervals evolves by:
+MATH: T_n=\exp\!\left(Q\,\Gamma d_n\sqrt{1-A_n}/3\right).
+The declared profile normalization is absorbed into the exposure. Uniform and rough profiles match total exposure but can distribute it differently across the 35 geometry phases. Geometry changes response time; the shared integer counter still fixes channel-return positions.
+Three readings, with the hidden state retained
+Let D keep only states whose output is −1, and let ρ be the incoming state distribution. The probability that all three readings accept is:
+MATH: P_{\rm accept}=\mathbf{1}^{\mathsf{T}}D T_n D T_n D T_n\rho.
+This matrix product retains correlations between readings. The simulated microscopic state also carries into the next candidate; three independent equilibrium draws would discard that memory.
+How “absolute time” enters this implementation
+The common candidate counter supplies a shared ordering coordinate. Local operational exposure controls how far the spins evolve before a reading. These are distinct clocks in the model. The retained runs use dimensionless energies and times; an absolute calibration in seconds is not part of these prime-event results. A separately tested state-dependent accumulation clock can also change residence probabilities. [4]
+
+Where entropy and spin data enter
+A concrete bridge from a graph’s configurations to a prime gate
+
+For an Ising graph, g(E,M,σ) counts configurations with energy E, magnetization M, and ordered boundary assignment σ. This guide uses σ for the boundary so it is not confused with gate coefficient b. A uniform field h changes the energy to E − hM. [5]
+MATH: Z_\sigma(\beta,h)=\sum_{E,M}g(E,M,\sigma)e^{-\beta(E-hM)},\qquad F_\sigma=-\beta^{-1}\log Z_\sigma.
+With Boltzmann’s constant set to one, F = ⟨E⟩ − TS. Degeneracy matters: many accessible hidden configurations can change a boundary preference even when a ground-energy comparison looks similar.
+The tested source-to-gate map
+A zero-field four-port source has pair and four-spin free-energy terms. Pinning one port turns the four-spin term into an effective three-spin term on the remaining ports. Choosing input/output signs and cancelling the output bias gives the same pair/triple form used on page 3. [6]
+MATH: \beta F=e[d+u_1r_1+u_2r_2+w r_1r_2]+\mathrm{input\ terms}.
+For the N = 1000 positive-fill packet source, the mapped ratio is b/a = 0.90706987. Compiling that ratio into a new 128-state gate reduced the worst uniform one-bank false-emission probability from 1.91437 × 10⁻⁸ to 2.31833 × 10⁻⁹: about 8.26-fold. These are finite-rate conditional calculations; this source-derived gate did not receive a new closed-loop prime run. The balanced gate remains more accurate. [6]
+Entropy makes a numerical contribution
+MATH: \frac{\beta\Delta F}{2}=\frac{\beta\Delta\langle E\rangle}{2}-\frac{\Delta S}{2}=4.0074318192-0.3687797623.
+The resulting pinned-source field is 3.6386520569 before the output-field cancellation. This is an explicit energy–entropy contribution to the gate design. The useful response also occurs in an unfrustrated packet graph; the measured improvement is tied to boundary interactions, not uniquely to frustration. [6]
+
+What the evidence establishes
+Prime streams, particle connections, and the most useful next bridge
+
+A physical change improved the generated stream
+Billion-index matched runs | Original | Balanced
+Uniform: false events / misses | 271 / 13 | 17 / 3
+Rough: false events / misses | 272 / 13 | 17 / 3
+Exact trajectories, each profile | 1 / 64 | 47 / 64
+Each profile uses the same 64 seeds for comparison; the two profiles share random streams within a seed. In a separate 16-seed continuation, 13 of 16 trajectories per profile were exact through one billion, with two false events and one miss per profile. [3]
+What “particle data” contributes today
+The direct numerical bridge into new prime gates is the exact spin-configuration and thermal-response data on page 5. These are calculated model data. The related matter work supplies source-resolved species/site observables and methods for retaining hidden history; the cited prime experiments have not used measured particle-detector data as inputs to prime decisions. [4–6]
+The separate Starbreaker extension tests source-dependent boundary dynamics through N = 5000. At that size, retaining boundary memory changes three-reading acceptance by about 0.918–0.934 percentage points for positive-fill sources. That is a measured memory response in its declared reduced dynamics, not a prime-classification accuracy. [7]
+A precise next connection
+Use source-resolved matter or spin observables to set the gate coefficients and accumulation clock, then compare raw prime-event histories with those source choices fixed in advance. This would measure the additional prime-prediction value of those data. The source-to-gate and state-dependent-clock components have been calculated separately; their fully coupled long-run test remains open in the cited record. [4,6]
+The case to put to a prime-number specialist
+The arithmetic recurrence explains why primes are the ideal event positions. Statistical physics explains the probability of realizing each event. We can derive the gate, identify its weakest input condition, and improve an actual generated prime stream by changing its interactions. That is the demonstrated connection to examine and extend.
+
+Sources and a compact derivation
+For a reader who wants to follow the mathematics one level deeper
+
+The seven-spin Hamiltonian behind page 3 can be written using four sign triples p with p₁p₂p₃ = +1. The hidden spins are h₁, h₂, and zₚ:
+MATH: E=-u h_1(e+r_1)-u h_2(e+r_2)-t\sum_{p_1p_2p_3=1}z_p(1+p_1e+p_2r_1+p_3r_2).
+Summing a hidden spin gives 2 cosh of its local field. The pair module has field magnitudes 2u or 0. The four-spin module has magnitudes (4t, 0, 0, 0) when er₁r₂ = +1 and (2t, 2t, 2t, 2t) when er₁r₂ = −1. Taking −β⁻¹ log of those weights gives the coefficients on page 3. [2]
+Retained source reports
+All paths below are relative to SAM_Research_Project/GEN4/. The accompanying folder contains a SHA-256 source manifest. These reports provide equations, original result tables, execution records, and links to the underlying artifacts.
+[1] prime_feedback1/REPORT.md — event-created channels, ideal-sequence argument, raw feedback, and the shared counter.
+[2] prime_event_report2/REPORT.md — §§3–6: microscopic Hamiltonian, elimination, truth table, and confirming-readout equations. Historical status statements are superseded by [3].
+[3] prime_balance1/REPORT.md — completed matched billion-index results and the frozen-source fresh-seed continuation.
+[4] prime_sam_dynamics1/REPORT.md — geometry, accumulation clocks, memory, matter connections, and which loops have been combined.
+[5] spin_prime_progress1/REPORT.md — exact g(E,M,b), thermal reconstruction, source-to-gate synthesis, and raw versus checked feedback.
+[6] spin_prime_connection1/REPORT.md — pinned-port mapping, compiled gates, finite-rate comparisons, and energy–entropy decomposition.
+[7] sb_dynamics_extension1/REPORT.md — separate boundary-dynamics extension through N5000 and its declared preparation/readout model.
+Reading the numbers: conditional gate probabilities, observed stream errors, and reference-repaired production streams are different measurements. The billion-index table in this guide is raw feedback. Large checked-feedback production prefixes are not used here as evidence of an error-free raw generator.
