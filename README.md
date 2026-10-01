@@ -41,6 +41,29 @@ The physical change is the triple-module strength **t: 2 → 2.3464897299**, at 
 
 [Download the headline table](evidence/headline_results.csv) · [Inspect every trajectory and error position](evidence/trajectories.json) · [Matched comparison](evidence/matched_comparison.json) · [Fresh-seed summary](evidence/fresh_summary.json).
 
+## Longer runs: retained checkpoints beyond one billion
+
+The longer experiments include a **fully unrepaired trajectory through 172,469,780,479**, with **44 false events and 4 missed primes**: **0.2783 errors per billion decisions**. The original 128-state CPU raw control reached **81,820,000,001**, with **30 errors**. These are individual trajectory endpoints.
+
+The following compact table separates raw feedback from reference-assisted repair. **Error totals always count raw gate errors before any repair.** “Fork” denotes a raw branch that inherited an earlier repaired history.
+
+| Seed / branch | Through (billions) | Feedback | Errors / billion |
+|---|---:|---|---:|
+| 20000001 CPU | 81.820 | raw | 0.3667 |
+| 20000001 CPU repaired | 81.175 | checked repair | 0.3696 |
+| 20000002 CPU | 81.140 | checked repair | 0.1972 |
+| 30000001 GPU | 104.480 | checked repair | 0.2680 |
+| 9360001 GPU | 172.470 | checked repair | 0.3073 |
+| 9360001 GPU fork | 172.470 | fork | 0.3015 |
+| 9360002 GPU | 172.470 | checked repair | 0.3595 |
+| 9360003 GPU | 172.470 | raw | 0.2783 |
+
+**Latest sole seed — 9365001: no repair or correction.** It started with empty history at candidate 2. Every accepted event feeds back unchanged, and missed primes are never inserted. The independent checker only scores decisions; no learner or reference correction steers the run. Its retained dated snapshot is included in the long-run report.
+
+[Full long-run results and methodology](docs/long-runs.md) · [Exact endpoints and counts (CSV)](evidence/long-runs/summary.csv) · [Checkpoint-derived result records](evidence/long-runs/).
+
+The CPU and seed 30000001 records use the original 128-state balanced source. Seeds 9360001–9360003 use the later 8-state production model with Γ = 512 and η = 3/8. Their model/source identities and paired-history details are given in the linked report. The earlier 288-trajectory matched experiment remains a separate comparison.
+
 ## Data access
 
 - **[Published trajectory data](evidence/trajectories.json):** all 288 trajectory records, exact error positions, terminal states, event counts and historical checksums.

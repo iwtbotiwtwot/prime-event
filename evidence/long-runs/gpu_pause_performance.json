@@ -1,0 +1,8 @@
+{
+  "status": "STOPPED",
+  "utc": "2026-10-01T18:47:45Z",
+  "reason": "OWNER_STOP",
+  "positions_this_launch": 494525218816,
+  "wall_seconds": 6039.047326482832,
+  "aggregate_positions_per_second": 81887952.18166283
+}

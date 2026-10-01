@@ -1,0 +1,86 @@
+[
+  {
+    "source_record": "T500/prime_follow1/run/STATUS.json",
+    "source_sha256": "7c5edeff099c5bf6dcd63079f624769b2569fe35e203e58147a5d296b184f5b4",
+    "public_record": "cpu_stop_status.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "T500/prime_follow1/run/control_seed20000001/CHECKPOINT.json",
+    "source_sha256": "3bdadbb2ab8698d4b91d99e14ea6b1b50806c5b14005b35d7978be07c1aaab87",
+    "public_record": "control_seed20000001.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "T500/prime_follow1/run/repair_seed20000001/CHECKPOINT.json",
+    "source_sha256": "dfd11c9f112043bc46523ff2bb93d6ed781d815bdc09f009537458daaf8de656",
+    "public_record": "repair_seed20000001.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "T500/prime_follow1/run/repair_seed20000002/CHECKPOINT.json",
+    "source_sha256": "fd96d5e683f339708e84fbaac5790f3dcd22c70f4595d6fedcf1bc08ce045b17",
+    "public_record": "repair_seed20000002.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_gpu5/download_20260929/CHECKPOINT.json",
+    "source_sha256": "d0533ebb17b83faca0dbdd0110df136f0bac9988a981dbea2cef3bdf08df1f7a",
+    "public_record": "gpu_30000001.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_gpu5/download_20260929/CUSTODY.json",
+    "source_sha256": "0d15abd967e89cbfcf49137773c92ae84a9bf8905ce8244ac5646d131f927c32",
+    "public_record": "gpu_30000001_custody.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_single1/PAUSE.json",
+    "source_sha256": "88f3dfa8714d96960e56555ae6115dbdeebc49010cc8165d8e9c9181498ee2e4",
+    "public_record": "gpu_9360001.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_single1/PAUSE.json",
+    "source_sha256": "88f3dfa8714d96960e56555ae6115dbdeebc49010cc8165d8e9c9181498ee2e4",
+    "public_record": "gpu_9360001_paired_raw.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_single1/PAUSE.json",
+    "source_sha256": "88f3dfa8714d96960e56555ae6115dbdeebc49010cc8165d8e9c9181498ee2e4",
+    "public_record": "gpu_9360002.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_single1/PAUSE.json",
+    "source_sha256": "88f3dfa8714d96960e56555ae6115dbdeebc49010cc8165d8e9c9181498ee2e4",
+    "public_record": "gpu_9360003.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_single1/PAUSE.json",
+    "source_sha256": "88f3dfa8714d96960e56555ae6115dbdeebc49010cc8165d8e9c9181498ee2e4",
+    "public_record": "gpu_pair_comparison.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_single1/PAUSE.json",
+    "source_sha256": "88f3dfa8714d96960e56555ae6115dbdeebc49010cc8165d8e9c9181498ee2e4",
+    "public_record": "gpu_pause_performance.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_solo1/OBSERVED_STATUS_LATER.json",
+    "source_sha256": "bbbdea26dd2b45046469abfed4a33d2c379ca1a13ff11086298c2ae5fd48c634",
+    "public_record": "solo_9365001_observation.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  },
+  {
+    "source_record": "prime_3090_solo1/CHECKPOINT_SNAPSHOT.json",
+    "source_sha256": "9216260f3c5a4c4b0aac3617c6e43ef97743b6ae4a626507d608a39ad0724139",
+    "public_record": "solo_9365001_checkpoint.json",
+    "export": "Public scientific counters/measurements only; RNG state, code maps and operational metadata excluded. Source SHA-256 identifies privately retained original."
+  }
+]

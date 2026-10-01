@@ -1,0 +1,30 @@
+{
+  "status": "STOPPED",
+  "utc": "2026-09-30T10:33:14Z",
+  "workers": [
+    {
+      "branch": "control_seed20000001",
+      "checked_through": 81820000001,
+      "feedback_events": 3397521575,
+      "fn": 2,
+      "fp": 28,
+      "raw_events": 3397521575
+    },
+    {
+      "branch": "repair_seed20000001",
+      "checked_through": 81175000001,
+      "feedback_events": 3371849269,
+      "fn": 2,
+      "fp": 28,
+      "raw_events": 3371849295
+    },
+    {
+      "branch": "repair_seed20000002",
+      "checked_through": 81140000001,
+      "feedback_events": 3370454564,
+      "fn": 1,
+      "fp": 15,
+      "raw_events": 3370454578
+    }
+  ]
+}

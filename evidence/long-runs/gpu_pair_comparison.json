@@ -1,0 +1,40 @@
+{
+  "baseline_fn": 1,
+  "baseline_fp": 9,
+  "branches": {
+    "repaired": {
+      "checked_through": 172469780479,
+      "feedback_events": 6946176851,
+      "microscopic_state": 5,
+      "post_trigger_errors": 42,
+      "post_trigger_fn": 6,
+      "post_trigger_fp": 36,
+      "state_hash": 7845116182110282233
+    },
+    "unrepaired": {
+      "checked_through": 172469780479,
+      "feedback_events": 6946176881,
+      "microscopic_state": 5,
+      "post_trigger_errors": 41,
+      "post_trigger_fn": 6,
+      "post_trigger_fp": 35,
+      "state_hash": 12817514077690705897
+    }
+  },
+  "common_random_draws_verified_through": 172469780479,
+  "first_bank_divergence_block": [
+    106854088704,
+    106870865919
+  ],
+  "first_emission_divergence_block": [
+    145122918400,
+    145139695615
+  ],
+  "first_possible_feedback_return": 106868579762,
+  "initiating_error": {
+    "index": 53434289881,
+    "kind": "composite_emission"
+  },
+  "seed": 9360001,
+  "trigger_block_first": 53418655744
+}

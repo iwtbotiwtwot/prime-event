@@ -1,0 +1,11 @@
+{
+  "status": "VERIFIED",
+  "files": 6550,
+  "bytes": 4972759124,
+  "chunks": 6526,
+  "saved_through": 104479850495,
+  "manifest_sha256": "281212e3c1ef728f77ebef7b9380a53cc425bde2789bc1178d9a1f707473b987",
+  "verified_utc": "2026-09-29T18:39:43Z",
+  "raw_fp": 23,
+  "raw_fn": 5
+}

@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-01T19:43:31Z",
+  "seed": 9365001,
+  "checked_through": 9110028287,
+  "saved_through": 7298088959,
+  "raw_fp": 3,
+  "raw_fn": 1,
+  "repairs": 0,
+  "positions_this_launch": 9110028286,
+  "wall_seconds": 136.0816418621689,
+  "positions_per_second": 66945314.307914846,
+  "longest_clean": {
+    "length": 4712817616,
+    "start": 4397210672,
+    "end": 9110028287
+  },
+  "repair": "RAW_FEEDBACK",
+  "learner": "DISABLED"
+}
