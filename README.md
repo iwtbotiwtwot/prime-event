@@ -67,6 +67,14 @@ The following compact table separates raw feedback from reference-assisted repai
 
 The CPU and seed 30000001 records use the original 128-state balanced source. Seeds 9360001–9360003 use the later 8-state production model with Γ = 512 and η = 3/8. Their model/source identities and paired-history details are given in the linked report. The earlier 288-trajectory matched experiment remains a separate comparison.
 
+## Connection to the frustrated-spin project
+
+The **[frustrated-spin repository](https://github.com/iwtbotiwtwot/frustrated-spin)** supplies an important foundation for this work: exact joint configuration counts and thermal boundary responses that connect an Ising graph's interactions, degeneracy and entropy to prime-event gate design.
+
+That connection has been calculated explicitly. A four-port spin source is reduced to the gate's pair/triple interaction form by pinning one port and selecting the input/output signs. For the **N1000 positive-fill packet source**, compiling the resulting interaction ratio into a 128-state gate reduced the worst uniform one-bank false-emission probability by **about 8.26-fold**, from **1.91437 × 10⁻⁸ to 2.31833 × 10⁻⁹**. This is a finite-rate conditional gate result; the balanced-gate stream results above are a separate experiment. The spin dataset provides a concrete route from exact many-spin calculations to new gate designs.
+
+[Source-to-gate derivation and results](https://github.com/iwtbotiwtwot/SAM_Research_Project/blob/concept/nonzero-amplification-bridge/GEN4/spin_prime_connection1/REPORT.md) · [How entropy and spin data enter this model](#where-entropy-and-spin-data-enter).
+
 ## Data access
 
 - **[Published trajectory data](evidence/trajectories.json):** all 288 trajectory records, exact error positions, terminal states, event counts and historical checksums.
@@ -244,6 +252,8 @@ This matrix product retains correlations between readings. The simulated microsc
 The common candidate counter supplies a shared ordering coordinate. Local operational exposure controls how far the spins evolve before a reading. These are distinct clocks in the model. The retained runs use dimensionless energies and times; an absolute calibration in seconds is not part of these prime-event results. A separately tested state-dependent accumulation clock can also change residence probabilities. [4]
 
 ## Where entropy and spin data enter
+
+The underlying exact Ising-graph data and methodology are documented in the companion **[frustrated-spin project](https://github.com/iwtbotiwtwot/frustrated-spin)**.
 
 *A concrete bridge from a graph’s configurations to a prime gate*
 
