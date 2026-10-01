@@ -9,14 +9,29 @@ Sean Brady: originator and conceptual director. OpenAI ChatGPT and Codex: AI res
 
 Each trajectory starts at candidate 2 and runs through **1,000,000,000**, including **50,847,534 primes**. The table reports errors made by the gate's own event stream, with **no reference repair**. An independent checker scores the decisions afterward.
 
-| Source | Accumulation profile | Trajectories | Candidate decisions, approximately | False events | Missed primes | Total errors | Errors per billion decisions | Error-free trajectories |
-|---|---|---:|---:|---:|---:|---:|---:|---:|
-| Original | uniform | 64 | 64 billion | 271 | 13 | 284 | 4.4375 | 1/64 |
-| Original | rough | 64 | 64 billion | 272 | 13 | 285 | 4.4531 | 1/64 |
-| Balanced, matched | uniform | 64 | 64 billion | 17 | 3 | 20 | 0.3125 | 47/64 |
-| Balanced, matched | rough | 64 | 64 billion | 17 | 3 | 20 | 0.3125 | 47/64 |
-| Balanced, fresh | uniform | 16 | 16 billion | 2 | 1 | 3 | 0.1875 | 13/16 |
-| Balanced, fresh | rough | 16 | 16 billion | 2 | 1 | 3 | 0.1875 | 13/16 |
+### Accuracy by experiment
+
+Each matched row covers 64 trajectories (about 64 billion decisions); each fresh row covers 16 trajectories (about 16 billion decisions).
+
+| Experiment | Profile | Errors / billion | Error-free runs |
+|---|---|---:|---:|
+| Original | uniform | 4.4375 | 1/64 |
+| Original | rough | 4.4531 | 1/64 |
+| Balanced, matched | uniform | 0.3125 | 47/64 |
+| Balanced, matched | rough | 0.3125 | 47/64 |
+| Balanced, fresh | uniform | 0.1875 | 13/16 |
+| Balanced, fresh | rough | 0.1875 | 13/16 |
+
+### What the errors were
+
+| Experiment | Profile | False events | Missed primes | Total |
+|---|---|---:|---:|---:|
+| Original | uniform | 271 | 13 | 284 |
+| Original | rough | 272 | 13 | 285 |
+| Balanced, matched | uniform | 17 | 3 | 20 |
+| Balanced, matched | rough | 17 | 3 | 20 |
+| Balanced, fresh | uniform | 2 | 1 | 3 |
+| Balanced, fresh | rough | 2 | 1 | 3 |
 
 **How to read these numbers.** A false event emits a composite; a miss suppresses a prime. “Error-free” means neither occurred anywhere in that complete trajectory. The rate divides total errors by all candidate decisions, not just primes or emitted events. Each run contains exactly 999,999,999 decisions; the billion totals above are rounded for readability.
 
