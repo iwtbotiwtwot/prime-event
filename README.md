@@ -41,7 +41,7 @@ The physical change is the triple-module strength **t: 2 → 2.3464897299**, at 
 
 [Download the headline table](evidence/headline_results.csv) · [Inspect every trajectory and error position](evidence/trajectories.json) · [Matched comparison](evidence/matched_comparison.json) · [Fresh-seed summary](evidence/fresh_summary.json).
 
-## Longer runs: retained checkpoints beyond one billion
+## Longer runs: checkpoints and dated snapshots
 
 The longer experiments include a **fully unrepaired trajectory through 172,469,780,479**, with **44 false events and 4 missed primes**: **0.2783 errors per billion decisions**. The original 128-state CPU raw control reached **81,820,000,001**, with **30 errors**. These are individual trajectory endpoints.
 
@@ -57,6 +57,9 @@ The following compact table separates raw feedback from reference-assisted repai
 | 9360001 GPU fork | 172.470 | fork | 0.3015 |
 | 9360002 GPU | 172.470 | checked repair | 0.3595 |
 | 9360003 GPU | 172.470 | raw | 0.2783 |
+| **9365001 sole GPU*** | **9.110** | **no correction** | **0.4391** |
+
+*9365001 is the retained **October 1, 19:43:31 UTC early snapshot**: **3 false events + 1 missed prime = 4 errors** through **9,110,028,287**. This is not its final endpoint.
 
 **Latest sole seed — 9365001: no repair or correction.** It started with empty history at candidate 2. Every accepted event feeds back unchanged, and missed primes are never inserted. The independent checker only scores decisions; no learner or reference correction steers the run. Its retained dated snapshot is included in the long-run report.
 

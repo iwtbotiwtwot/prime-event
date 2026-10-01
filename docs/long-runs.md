@@ -14,6 +14,9 @@ Evidence snapshot assembled October 1, 2026 from retained stopped checkpoints an
 | gpu_9360001_paired_raw | 172,469,780,479 | 45 | 7 | 52 |
 | gpu_9360002 | 172,469,780,479 | 56 | 6 | 62 |
 | gpu_9360003 | 172,469,780,479 | 44 | 4 | 48 |
+| gpu_9365001 (early snapshot) | 9,110,028,287 | 3 | 1 | 4 |
+
+The 9365001 row is checked progress observed October 1 at 19:43:31 UTC, not a terminal checkpoint. Its recorded saved prefix and later checkpoint are distinguished below.
 
 ## Feedback, source and hardware
 
