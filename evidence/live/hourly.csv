@@ -1,0 +1,2 @@
+observed_utc,chicago_time,checkpoint_utc,seed,decisions,through,false_events,missed_primes,total_errors,status,recent_decisions_per_second,throughput_observed_utc,feedback,cdf_sha256
+2026-10-02T05:32:07+00:00,2026-10-02T00:32:07-05:00,2026-10-02T05:32:07+00:00,9370001,72080000000,72080000001,0,0,0,RUNNING,10373448.786397362,2026-10-02T05:32:04Z,raw; no repair or correction,6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210

@@ -1,0 +1,21 @@
+{
+  "source": "128-state balanced u5",
+  "beta": 1,
+  "u": 5,
+  "t": 2.8465622403941495,
+  "Gamma": 512,
+  "readings": 3,
+  "profile": "uniform",
+  "seed": 9370001,
+  "extra_seed": 10370001,
+  "numpy": "1.26.4",
+  "files": {
+    "runner.py": "dff6105be4fa69a8fc94d09d75a736902b0a0e892824813908f997feace2e13a",
+    "random_buffers.py": "868fa40d47441f2caabe06ca200fe2f534f73ea53159ddcd8516d81dd5888bf4",
+    "reference.cpp": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+    "index.cpp": "69d23c4f995ffa7ba3e0fa59fe897af3f531adb8f8f128df147c5468d5357e0e",
+    "u5_cdf.npy": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "u5_initial.npy": "66490bed64908617e79362dce54146335dd74c0258572839c5a502ff725f6b70"
+  },
+  "provenance": "SAM_Research_Project/GEN4/prime_u5_local1; exact production code/tables; no repair or correction"
+}

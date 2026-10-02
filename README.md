@@ -3,6 +3,21 @@
 **Data, reproducible experiments, and the mechanism behind the generated stream.**
 Sean Brady: originator and conceptual director. OpenAI ChatGPT and Codex: AI research collaborators.
 
+## Latest run, data and reproduction
+
+**The current balanced u5 run is fully unrepaired.** Seed **9370001** starts at
+candidate 2 with empty history; every emitted event feeds back unchanged.
+[Hourly live results: time, decisions and errors](docs/live-run.md) ·
+[Latest reproducible CPU implementation and methodology](docs/latest-u5.md) ·
+[Machine-readable hourly data](evidence/live/hourly.csv) ·
+[Exact source hashes](production/u5/SOURCE.json).
+
+The live page is a dated observation, not a completed-run total. The latest
+source uses **128 states, u=5, Gamma=512 and three readings**. It is separate
+from the earlier u4 ensembles and 8-state GPU runs below. Frozen source tables,
+C++ kernels and a 100M replay checker are included; the moving raw production
+journal is retained on T500 rather than GitHub.
+
 ## Headline results: raw feedback through one billion
 
 **Changing one spin interaction reduced errors by 92.97%: 569 → 40 across the matched experiments.** Error-free billion-index trajectories increased from **1/64 to 47/64 per profile**. A separate fresh-seed continuation achieved **13/16 error-free trajectories per profile**.
@@ -58,10 +73,11 @@ The following compact table separates raw feedback from reference-assisted repai
 | 9360002 GPU | 172.470 | checked repair | 0.3595 |
 | 9360003 GPU | 172.470 | raw | 0.2783 |
 | **9365001 sole GPU*** | **9.110** | **no correction** | **0.4391** |
+| **9370001 u5 CPU (active)** | [Dated live endpoint](docs/live-run.md) | **no correction** | [Current counts](evidence/live/latest.json) |
 
 *9365001 is the retained **October 1, 19:43:31 UTC early snapshot**: **3 false events + 1 missed prime = 4 errors** through **9,110,028,287**. This is not its final endpoint.
 
-**Latest sole seed — 9365001: no repair or correction.** It started with empty history at candidate 2. Every accepted event feeds back unchanged, and missed primes are never inserted. The independent checker only scores decisions; no learner or reference correction steers the run. Its retained dated snapshot is included in the long-run report.
+**Earlier sole GPU seed — 9365001: no repair or correction.** It started with empty history at candidate 2. Every accepted event feeds back unchanged, and missed primes are never inserted. The independent checker only scores decisions; no learner or reference correction steers the run. Its retained dated snapshot is included in the long-run report.
 
 [Full long-run results and methodology](docs/long-runs.md) · [Exact endpoints and counts (CSV)](evidence/long-runs/summary.csv) · [Checkpoint-derived result records](evidence/long-runs/).
 

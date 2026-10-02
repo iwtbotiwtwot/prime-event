@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "sam-prime-event"
-version = "0.1.1"
-description = "Reproducible hidden-spin prime-event feedback, calibration, and checked-repair experiments"
+version = "0.1.2"
+description = "Reproducible hidden-spin prime-event feedback, raw u5 production, and historical calibration experiments"
 requires-python = ">=3.10,<3.13"
 dependencies = ["numpy==1.26.4"]
 authors = [{name = "Sean Brady"}]

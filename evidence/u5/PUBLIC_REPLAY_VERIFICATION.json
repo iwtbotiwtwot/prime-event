@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "reference_checks": 160,
+  "production_prefix_checks": 16,
+  "renewal_checks": 5,
+  "reference_unique_decisions": 100000000,
+  "production_replay_decisions": 10000000,
+  "production_data": "immutable first two chunks of ongoing seed9370001",
+  "restart": "35M to100M, exact qualification source"
+}

@@ -1,0 +1,702 @@
+{
+  "chunk_00000.npz": {
+    "bank_sha256": "41823d92abfec4584a2fe86114fa6b25887d8d115a61cc8da59711c81d2b07db",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 289646513477129419196239155567536865209
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "9f80da71d73dc6497252ab70d3e318e2a47186cfb2cf81588a2f5c6a265edabc",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 202300491339107156408109839821109684928
+      },
+      "uinteger": 0
+    },
+    "first": 2,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 5000002,
+    "period_count": 348513,
+    "period_sha256": "ac498b187a8e3077ff60408699f6afceaebf75d66491bd941f45c07478b218d5",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      103,
+      348513,
+      9453990356790109155
+    ]
+  },
+  "chunk_00001.npz": {
+    "bank_sha256": "824c941b4d8a4fc068adc0ffe99f46d115705583bc00626a834cd7ca8a30837c",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 233564931096937892847427066748418700025
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "1058fd2a2049f19c6ed219982e58aec2af577f4986af01138331447498f9d8fb",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 135753738860409393056073546637822995520
+      },
+      "uinteger": 0
+    },
+    "first": 5000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 10000002,
+    "period_count": 316066,
+    "period_sha256": "26d54f76f620c8e7745a3abafe106b1f709581f7a9536bfda1d7d3a70038b8ef",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      95,
+      664579,
+      8978957521470105749
+    ]
+  },
+  "chunk_00002.npz": {
+    "bank_sha256": "65044f6a74a5b0122cba695ce3c54adc296d71f1d1a577ffba4a68681eeccb53",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 22964153658034217240902504010409027129
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "240f90bb6c5f4f065535826b6f67e581938b97b4e83c369e128c328ef76b9e57",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 61439614525326843138484590793167465920
+      },
+      "uinteger": 0
+    },
+    "first": 10000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 15000002,
+    "period_count": 306125,
+    "period_sha256": "b92c8e6648563dced1a400eb0002427fe3e02388402481b1ac71a5b96d689b42",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      119,
+      970704,
+      16042551164819186508
+    ]
+  },
+  "chunk_00003.npz": {
+    "bank_sha256": "26ab36deec204ac8380f816e3a836029649486d5a6d2f5c3caeab21bc38d41b4",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 245429364988735100550493755283520903545
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "f43d11fb3a6f541bc5f77dd8e8b164165761576fec9cc06bdea675a91fd27fe0",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 30859900389460461515682392851933802304
+      },
+      "uinteger": 0
+    },
+    "first": 15000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 20000002,
+    "period_count": 299903,
+    "period_sha256": "19255213db459012a5cc678c3bedb08825c3dc7d4e9a60eb3584128e5c4b8cc5",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      109,
+      1270607,
+      16542601133800670571
+    ]
+  },
+  "chunk_00004.npz": {
+    "bank_sha256": "018c9a133456b9ab6e7b86e3e29e7183a6e1aeb84906ccec7a8b6ead2b517643",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 2029242256978569505820520334281329849
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "80d104679d555d81864af837025b2f45aafa1f5600d2dd699b55a02e1b9064ee",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 310495173880964166334489842168685686976
+      },
+      "uinteger": 0
+    },
+    "first": 20000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 25000002,
+    "period_count": 295320,
+    "period_sha256": "4831628424aa9dcd71a2476763510d972406bb4e195947a823bd184a96d53776",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      109,
+      1565927,
+      16365182510014570165
+    ]
+  },
+  "chunk_00005.npz": {
+    "bank_sha256": "2f8d32c5fa8e87e980fefd6714ff2affd7c30a337807427ca0caf8b2a21b4118",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 73781819184038252839041369067257790457
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "deca77a753a409fc45dfa50675350987a73f8211e8bdda090f401382ecdbd770",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 12358577778116342874333709253594722880
+      },
+      "uinteger": 0
+    },
+    "first": 25000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 30000002,
+    "period_count": 291933,
+    "period_sha256": "f90905197f63d716eb2c8d30d413d9c9317bd0402bd768cd4a3f96fdcc72b54e",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      56,
+      1857860,
+      13352605714457724343
+    ]
+  },
+  "chunk_00006.npz": {
+    "bank_sha256": "fe6ef08e4517b989f879a922c4bc8371dfe6a14a88b0e217daff84c61dd26e49",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 259591789475760857589694391878525973305
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "e12fbfbda17ea0e04465841d2d17bedcdfbf11bb4a9b8774f5ca0c0df634f6c2",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 272164439003656005070847747754367185856
+      },
+      "uinteger": 0
+    },
+    "first": 30000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 35000002,
+    "period_count": 288915,
+    "period_sha256": "fe691c09159eef8e92dc227418e4d5dd13ffa83ca7efc536e1d092543ba65dcf",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      79,
+      2146775,
+      6628049051267361922
+    ]
+  },
+  "chunk_00007.npz": {
+    "bank_sha256": "b202ffef449e6345aa64f7e093d1d5e40d1542372e64180f675bd915b2560ed5",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 154594292890734411435790739011125421689
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "a579c83367f3f191d9775f5a90dd6fc30c9090f434012b87540b62b930b3bdf9",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 135939909285133942051853970652355409216
+      },
+      "uinteger": 0
+    },
+    "first": 35000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 40000002,
+    "period_count": 286879,
+    "period_sha256": "6f90f11eb9ebbdb403083dc22e12a511c4ef9f9cf5263b834b43668c5a243db5",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      127,
+      2433654,
+      16400534642058757465
+    ]
+  },
+  "chunk_00008.npz": {
+    "bank_sha256": "e3d54b108f3f43b754a74f251968366acb95b0caebc136d62b694fdcae356f04",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 170270241824652127946906799960494315961
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "814f2099484b77e8976ae20b81875c1c5148e6e6cda264e94dc301aa460aa1f9",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 78907312606336887065493231763812087488
+      },
+      "uinteger": 0
+    },
+    "first": 40000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 45000002,
+    "period_count": 284506,
+    "period_sha256": "1f9cdf582c225101022d3448a0908f40e5d3c5ebb5c9b86344cbc43a3b296cf0",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      115,
+      2718160,
+      14362872781417237493
+    ]
+  },
+  "chunk_00009.npz": {
+    "bank_sha256": "a67bcbc7918659835860520f2000b9ecaeeaad3f65e87552f59cd4df80cc968b",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 321020077614572412417186836654334495993
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "22ec5858fa38563004c61029ea01ddbba107480d6ca6aa900904dc26212dc46b",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 142853818939016103771346840936732637248
+      },
+      "uinteger": 0
+    },
+    "first": 45000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 50000002,
+    "period_count": 282974,
+    "period_sha256": "5465768a7102d7b9b432ac697876532b959ca27132ded3ce0149e4f6e51175b7",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      71,
+      3001134,
+      6097824381250020095
+    ]
+  },
+  "chunk_00010.npz": {
+    "bank_sha256": "fcd82c45fa8eccd4af91c0defaef67c3b7b460d9b72f5c0d96fe6683c7b34872",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 141037898734856141773537688517823578169
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "a66fb9d585afdef65416a05c98a4fa9008178782215e8d5eca102998e2142be9",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 290676025595200818930091380703482476992
+      },
+      "uinteger": 0
+    },
+    "first": 50000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 55000002,
+    "period_count": 281066,
+    "period_sha256": "cc8e42a9c7db8a28bbc1681216897187838a45d3706b443b4f356a5c83e6f16e",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      109,
+      3282200,
+      4667396060842896570
+    ]
+  },
+  "chunk_00011.npz": {
+    "bank_sha256": "7161bf802c3c3564bfa9fcd43fa22b07a0c40cb4b310f8d1885e5aa7f029eefc",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 26335544247642846414090764830138495865
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "57816ac55b330ccc69d723952a41e6fb98203565d35e7c177fc9b986ca917776",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 138183259807209307396287447343346072384
+      },
+      "uinteger": 0
+    },
+    "first": 55000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 60000002,
+    "period_count": 279915,
+    "period_sha256": "9fc8299e53e95b707eb0385ede6cbb1d73522456659afe8ffa8791fc26d055ff",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      119,
+      3562115,
+      557672929436303564
+    ]
+  },
+  "chunk_00012.npz": {
+    "bank_sha256": "b57fa39b4d7299e33fac46432dbcc18511e4e5252c66244f2c8328d9f112ec37",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 250731807917839372759592672381641516729
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "7b975bb2e7dc5c0216533bb59887c95a2b0d714817272252d7ddc7b64c60faa9",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 150348893246220053156528388143036398784
+      },
+      "uinteger": 0
+    },
+    "first": 60000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 65000002,
+    "period_count": 278439,
+    "period_sha256": "3b7cc32874985590ad17c2943c775e5a59ceac1ee43bc7d610130314701b0255",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      95,
+      3840554,
+      4976863468954813675
+    ]
+  },
+  "chunk_00013.npz": {
+    "bank_sha256": "154f19583e0e7a74aa392fa2958175412764117236267c22552a853d9469eab1",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 328374364343979290171147037087559293433
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "68b86edccdac42b9ab1c62bdfbcb366fa056ec479068c470168dcab3f40331a6",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 320586190578838612529364683377420025408
+      },
+      "uinteger": 0
+    },
+    "first": 65000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 70000002,
+    "period_count": 277510,
+    "period_sha256": "f5afcc30270921d24ec92346667e3fd2e471035361cde26486c45ef7b92f0e97",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      109,
+      4118064,
+      1217260337420629841
+    ]
+  },
+  "chunk_00014.npz": {
+    "bank_sha256": "955f577ab687f16c6869940cee293828cd4177fae0bffbc7556448e6ee046a83",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 283947095128600310753811325182681779513
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "c3c5940df32d5e36c6456c9f499db96fe2489834d39994dbae228b79cc625c12",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 165944877499313950568579650260870299584
+      },
+      "uinteger": 0
+    },
+    "first": 70000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 75000002,
+    "period_count": 276240,
+    "period_sha256": "dfc0676348907dabb82129c07c4c88b37020c6dc345bd75c6cfa9fc4bb1702f1",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      119,
+      4394304,
+      3460994648685240064
+    ]
+  },
+  "chunk_00015.npz": {
+    "bank_sha256": "91fa30bf6051f32d1f4f4a5cd8b66d9438917723c49952835bea6f3bc1d3fbf1",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 39132165870020022273855421492642529401
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "37f92d1148efe2c212ca0a230ec17365fde5d8057efbebebf3baa90320ea8da7",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 176070372330621188901550391833329058112
+      },
+      "uinteger": 0
+    },
+    "first": 75000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 80000002,
+    "period_count": 275078,
+    "period_sha256": "2e9266fd3ac8bfbd46f7c7192a2a33948e8e94bd4e69db69f58c8c2350de8933",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      109,
+      4669382,
+      14483097638079577582
+    ]
+  },
+  "chunk_00016.npz": {
+    "bank_sha256": "c178dd6122cde9ce01f7d72bff7d45ed4fe42cc41a63e50a9eabb3c304619dd9",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 249855313732017922907325753790389072825
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "2e40dffde0479468d974c59ca68e238d3fb1e5190b943eeba3be9b795296a6f1",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 239918403525222069801960789921476346560
+      },
+      "uinteger": 0
+    },
+    "first": 80000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 85000002,
+    "period_count": 274349,
+    "period_sha256": "6c62aad64cf9aa240740cb0ec8eef8b89e908e94b3bf63f95ff6f178d385fe3b",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      79,
+      4943731,
+      1819656536504351565
+    ]
+  },
+  "chunk_00017.npz": {
+    "bank_sha256": "e418d11e69d553a14b5090a32aa5baaea96e3925a5a80b25e15c26d8f4b878d3",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 170940572564784667920136620437915166457
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "c2696430aecec335a76d2fec442166c53dccd3c02fd371925118294b0fd5640b",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 251600787670151021483758116980186498112
+      },
+      "uinteger": 0
+    },
+    "first": 85000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 90000002,
+    "period_count": 273223,
+    "period_sha256": "519cac626e1e4cf937c72cebe48c9a82b9370e59851801e3b3b42c10214989b8",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      111,
+      5216954,
+      13772775240726675356
+    ]
+  },
+  "chunk_00018.npz": {
+    "bank_sha256": "b357bbc7fe84d804297ae83a69b143e22bc82dc82d1b860ed38289b62691b115",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 216086276291703717016164623428750989881
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "6b2f77eb94e876ccd671c755f6309d999b5f9986af9f1cc73461140e2215b9af",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 85996320806349431309188282620043593152
+      },
+      "uinteger": 0
+    },
+    "first": 90000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 95000002,
+    "period_count": 272795,
+    "period_sha256": "a451eb34403a28af9495648e96e3c4633609457503a47e3fe4e9530a0ddc07a3",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      87,
+      5489749,
+      5558575326854462125
+    ]
+  },
+  "chunk_00019.npz": {
+    "bank_sha256": "74295ba63d23217564f227edbd9d5f25748944fc3e07488322fb3b100a99ae9f",
+    "base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 319512140361620339800119693429199244987,
+        "state": 67276206924756372290591643518435691897
+      },
+      "uinteger": 0
+    },
+    "emission_sha256": "26ec1cab0fb24e2ebf268bc3c3ad85092e5967aa1f9d284505cfd67b393d3a03",
+    "errors": [],
+    "extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 112195051481260898900433987561720235537,
+        "state": 234551987887736299913527545495721330496
+      },
+      "uinteger": 0
+    },
+    "first": 95000002,
+    "fn": 0,
+    "fp": 0,
+    "next_n": 100000002,
+    "period_count": 271706,
+    "period_sha256": "3bd9cc51169824ce8abb523d1fa37281ec11163f337ff3bd7b3a4caf8557178a",
+    "source": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "status": [
+      111,
+      5761455,
+      16733553172890432941
+    ]
+  }
+}

@@ -1,0 +1,2965 @@
+{
+  "status": "PASS",
+  "seed": 9369001,
+  "unique_decisions": 100000000,
+  "executed_decisions": 700000000,
+  "fp": 0,
+  "fn": 0,
+  "checks": 163,
+  "workers_selected": 4,
+  "median_seconds": {
+    "1": 8.838647563996346,
+    "4": 8.312926005499321,
+    "7": 8.417110150501685
+  },
+  "trials": [
+    {
+      "name": "trial0_w1",
+      "workers": 1,
+      "result": {
+        "cache": {
+          "cache_bytes": 24009072,
+          "evictions": 0,
+          "hits": 106,
+          "misses": 10,
+          "peak_bytes": 24009072,
+          "read_bytes": 3094633
+        },
+        "end_step": 20,
+        "events": 5761455,
+        "fn": 0,
+        "fp": 0,
+        "mode": "indexed",
+        "new_decisions": 100000000,
+        "orphan_quarantined": 0,
+        "peak_rss_kib": 228952,
+        "per_second": 11560031.969445832,
+        "restore_seconds": 0.012950099997397047,
+        "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/trial0_w1",
+        "rows": [
+          {
+            "banks": 4.325000190874562e-05,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011440149995905813,
+            "durable_write": 0.023772121996444184,
+            "first": 2,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.023177648996352218,
+            "rng": 0.06693810599972494,
+            "seconds": 0.4726581200011424,
+            "step": 0,
+            "transitions": 0.3472781269956613
+          },
+          {
+            "banks": 0.016101624998555053,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 1,
+              "read_bytes": 341202
+            },
+            "compression": 0.011078027004259638,
+            "durable_write": 0.022523964995343704,
+            "first": 5000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015627165004843846,
+            "rng": 0.034038505000353325,
+            "seconds": 0.4378802779974649,
+            "step": 1,
+            "transitions": 0.33850521099520847
+          },
+          {
+            "banks": 0.011441891998401843,
+            "cache": {
+              "evictions": 0,
+              "hits": 2,
+              "misses": 1,
+              "read_bytes": 320328
+            },
+            "compression": 0.010955139994621277,
+            "durable_write": 0.02087384500191547,
+            "first": 10000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013551926000218373,
+            "rng": 0.033683305999147706,
+            "seconds": 0.4395776149976882,
+            "step": 2,
+            "transitions": 0.3490683509953669
+          },
+          {
+            "banks": 0.007786632006173022,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010852007995708846,
+            "durable_write": 0.018362456998147536,
+            "first": 15000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013619691002531908,
+            "rng": 0.03352314899530029,
+            "seconds": 0.4234619139970164,
+            "step": 3,
+            "transitions": 0.33931476999714505
+          },
+          {
+            "banks": 0.011709058002452366,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 1,
+              "read_bytes": 313775
+            },
+            "compression": 0.010791615000925958,
+            "durable_write": 0.02517933199851541,
+            "first": 20000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015174294996540993,
+            "rng": 0.03346290699846577,
+            "seconds": 0.4381410700007109,
+            "step": 4,
+            "transitions": 0.3418190149968723
+          },
+          {
+            "banks": 0.007966086006490514,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010670540999853984,
+            "durable_write": 0.021058569000160787,
+            "first": 25000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01372714099852601,
+            "rng": 0.033358443004544824,
+            "seconds": 0.4285977100007585,
+            "step": 5,
+            "transitions": 0.34181258299940964
+          },
+          {
+            "banks": 0.011638477000815328,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 1,
+              "read_bytes": 309518
+            },
+            "compression": 0.0108250479970593,
+            "durable_write": 0.008978352998383343,
+            "first": 30000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01521164400037378,
+            "rng": 0.03361215299810283,
+            "seconds": 0.4221981800001231,
+            "step": 6,
+            "transitions": 0.3419289180019405
+          },
+          {
+            "banks": 0.007909740998002235,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010761270001239609,
+            "durable_write": 0.020939055997587275,
+            "first": 35000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013760772999376059,
+            "rng": 0.03368632100318791,
+            "seconds": 0.42942340000445256,
+            "step": 7,
+            "transitions": 0.34236235299613327
+          },
+          {
+            "banks": 0.01143533999857027,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 1,
+              "read_bytes": 306434
+            },
+            "compression": 0.010718388999521267,
+            "durable_write": 0.017805665003834292,
+            "first": 40000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014509161999740172,
+            "rng": 0.03372405000118306,
+            "seconds": 0.4304771149982116,
+            "step": 8,
+            "transitions": 0.3422795589940506
+          },
+          {
+            "banks": 0.008144747000187635,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010645565002050716,
+            "durable_write": 0.02292670399765484,
+            "first": 45000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013866489003703464,
+            "rng": 0.03371759899891913,
+            "seconds": 0.43172485000104643,
+            "step": 9,
+            "transitions": 0.34241937800106825
+          },
+          {
+            "banks": 0.012059837994456757,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 1,
+              "read_bytes": 303983
+            },
+            "compression": 0.01067711399809923,
+            "durable_write": 0.021110574998601805,
+            "first": 50000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01458619400364114,
+            "rng": 0.033671482000499964,
+            "seconds": 0.4345817390058073,
+            "step": 10,
+            "transitions": 0.34246994300337974
+          },
+          {
+            "banks": 0.007870268003898673,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.01050126699556131,
+            "durable_write": 0.010841739000170492,
+            "first": 55000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013947439001640305,
+            "rng": 0.033792397000070196,
+            "seconds": 0.42016277500079013,
+            "step": 11,
+            "transitions": 0.3432059080005274
+          },
+          {
+            "banks": 0.011913836999156047,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 302059
+            },
+            "compression": 0.01068425700213993,
+            "durable_write": 0.01136594099807553,
+            "first": 60000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013963909994345158,
+            "rng": 0.0335155940047116,
+            "seconds": 0.42189911600144114,
+            "step": 12,
+            "transitions": 0.34045118799986085
+          },
+          {
+            "banks": 0.00833407799655106,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010517357004573569,
+            "durable_write": 0.018138090999855194,
+            "first": 65000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014129025999864098,
+            "rng": 0.033707328999298625,
+            "seconds": 0.42560931600019103,
+            "step": 13,
+            "transitions": 0.34077940700080944
+          },
+          {
+            "banks": 0.011575891003303695,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 300459
+            },
+            "compression": 0.010686600995541085,
+            "durable_write": 0.023956603996339254,
+            "first": 70000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014651555000455119,
+            "rng": 0.03332149500056403,
+            "seconds": 0.4348642139957519,
+            "step": 14,
+            "transitions": 0.3406682919958257
+          },
+          {
+            "banks": 0.007884853999712504,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010438760997203644,
+            "durable_write": 0.021167840997804888,
+            "first": 75000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014071648998651654,
+            "rng": 0.03369290199771058,
+            "seconds": 0.4279748839981039,
+            "step": 15,
+            "transitions": 0.34071506799955387
+          },
+          {
+            "banks": 0.01184751400433015,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 1,
+              "read_bytes": 299025
+            },
+            "compression": 0.010599098997772671,
+            "durable_write": 0.010619386004691478,
+            "first": 80000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014058995999221224,
+            "rng": 0.033591744999284856,
+            "seconds": 0.4218583910042071,
+            "step": 16,
+            "transitions": 0.3411379829994985
+          },
+          {
+            "banks": 0.008143423998262733,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010366378002800047,
+            "durable_write": 0.025056694998056628,
+            "first": 85000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014755276999494527,
+            "rng": 0.033819918004155625,
+            "seconds": 0.432917872996768,
+            "step": 17,
+            "transitions": 0.340771962000872
+          },
+          {
+            "banks": 0.012007830999209546,
+            "cache": {
+              "evictions": 0,
+              "hits": 9,
+              "misses": 1,
+              "read_bytes": 297850
+            },
+            "compression": 0.01037572499626549,
+            "durable_write": 0.026574458002869505,
+            "first": 90000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014246003003790975,
+            "rng": 0.03362682899751235,
+            "seconds": 0.43786914499651175,
+            "step": 18,
+            "transitions": 0.3410334389991476
+          },
+          {
+            "banks": 0.008353805002116133,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010403626998595428,
+            "durable_write": 0.014136017998680472,
+            "first": 95000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014123113993264269,
+            "rng": 0.033588329002668615,
+            "seconds": 0.4216892869953881,
+            "step": 19,
+            "transitions": 0.34108081799786305
+          }
+        ],
+        "seconds": 8.650495107998722,
+        "start_step": 0,
+        "status": "PASS",
+        "stop_reason": "target",
+        "through": 100000001
+      }
+    },
+    {
+      "name": "trial1_w4",
+      "workers": 4,
+      "result": {
+        "cache": {
+          "cache_bytes": 24009072,
+          "evictions": 0,
+          "hits": 106,
+          "misses": 10,
+          "peak_bytes": 24009072,
+          "read_bytes": 3094640
+        },
+        "end_step": 20,
+        "events": 5761455,
+        "fn": 0,
+        "fp": 0,
+        "mode": "indexed",
+        "new_decisions": 100000000,
+        "orphan_quarantined": 0,
+        "peak_rss_kib": 233660,
+        "per_second": 12005229.295406807,
+        "restore_seconds": 0.007502765998651739,
+        "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/trial1_w4",
+        "rows": [
+          {
+            "banks": 2.9845999961253256e-05,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011586230000830255,
+            "durable_write": 0.011424117998103611,
+            "first": 2,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.019168512997566722,
+            "rng": 0.018368969998846296,
+            "seconds": 0.4194432899967069,
+            "step": 0,
+            "transitions": 0.35885968300135573
+          },
+          {
+            "banks": 0.012019683999824338,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 1,
+              "read_bytes": 341202
+            },
+            "compression": 0.010970037001243327,
+            "durable_write": 0.02115655899979174,
+            "first": 5000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014855462999548763,
+            "rng": 0.00931054900138406,
+            "seconds": 0.41931774799741106,
+            "step": 1,
+            "transitions": 0.3509999849993619
+          },
+          {
+            "banks": 0.011606958003540058,
+            "cache": {
+              "evictions": 0,
+              "hits": 2,
+              "misses": 1,
+              "read_bytes": 320328
+            },
+            "compression": 0.010916197003098205,
+            "durable_write": 0.019149897001625504,
+            "first": 10000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014325680000183638,
+            "rng": 0.009582022998074535,
+            "seconds": 0.4193936789961299,
+            "step": 2,
+            "transitions": 0.35380817300028866
+          },
+          {
+            "banks": 0.007529315997089725,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011037311996915378,
+            "durable_write": 0.021587098999589216,
+            "first": 15000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01511433300038334,
+            "rng": 0.009331448003649712,
+            "seconds": 0.41830619299435057,
+            "step": 3,
+            "transitions": 0.3537022259988589
+          },
+          {
+            "banks": 0.011674834000586998,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 1,
+              "read_bytes": 313774
+            },
+            "compression": 0.010829726998053957,
+            "durable_write": 0.027033109006879386,
+            "first": 20000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013756074004049879,
+            "rng": 0.009739724999235477,
+            "seconds": 0.4269931529997848,
+            "step": 4,
+            "transitions": 0.35395488500216743
+          },
+          {
+            "banks": 0.00882426699536154,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010703341999033,
+            "durable_write": 0.010496308001165744,
+            "first": 25000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013807269002427347,
+            "rng": 0.0097175539995078,
+            "seconds": 0.4056675510000787,
+            "step": 5,
+            "transitions": 0.35211557400180027
+          },
+          {
+            "banks": 0.01178041000093799,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 1,
+              "read_bytes": 309523
+            },
+            "compression": 0.010662256994692143,
+            "durable_write": 0.02334115199482767,
+            "first": 30000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015182689996436238,
+            "rng": 0.009116670000366867,
+            "seconds": 0.42317870899569243,
+            "step": 6,
+            "transitions": 0.3530911530033336
+          },
+          {
+            "banks": 0.00776880000194069,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010587577999103814,
+            "durable_write": 0.024363066993828397,
+            "first": 35000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013933633003034629,
+            "rng": 0.009767686999111902,
+            "seconds": 0.42124981199594913,
+            "step": 7,
+            "transitions": 0.35482450800191145
+          },
+          {
+            "banks": 0.012340359004156198,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 1,
+              "read_bytes": 306433
+            },
+            "compression": 0.01082253400090849,
+            "durable_write": 0.01122426800429821,
+            "first": 40000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014520992997859139,
+            "rng": 0.009250897994206753,
+            "seconds": 0.41086623299634084,
+            "step": 8,
+            "transitions": 0.35270321499410784
+          },
+          {
+            "banks": 0.00805180399765959,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010572829996817745,
+            "durable_write": 0.012593248000484891,
+            "first": 45000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01387867199809989,
+            "rng": 0.009334454000054393,
+            "seconds": 0.40720065500499913,
+            "step": 9,
+            "transitions": 0.35276618100033375
+          },
+          {
+            "banks": 0.011736547996406443,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 1,
+              "read_bytes": 303984
+            },
+            "compression": 0.010590603000309784,
+            "durable_write": 0.016442025000287686,
+            "first": 50000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01459239600080764,
+            "rng": 0.009203028996125795,
+            "seconds": 0.4157521950037335,
+            "step": 10,
+            "transitions": 0.353183846003958
+          },
+          {
+            "banks": 0.0077295869996305555,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010730082001828123,
+            "durable_write": 0.0216533119964879,
+            "first": 55000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013975602007121779,
+            "rng": 0.009470286000578199,
+            "seconds": 0.4164256349977222,
+            "step": 11,
+            "transitions": 0.35286237000400433
+          },
+          {
+            "banks": 0.011985420002019964,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 302059
+            },
+            "compression": 0.010651687000063248,
+            "durable_write": 0.015865647997998167,
+            "first": 60000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013962716999230906,
+            "rng": 0.009527771995635703,
+            "seconds": 0.41739323899673764,
+            "step": 12,
+            "transitions": 0.35539579799660714
+          },
+          {
+            "banks": 0.008184239995898679,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010421058999781962,
+            "durable_write": 0.016873307002242655,
+            "first": 65000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014007650999701582,
+            "rng": 0.009160180001344997,
+            "seconds": 0.41435967400320806,
+            "step": 13,
+            "transitions": 0.3557091600014246
+          },
+          {
+            "banks": 0.011526960006449372,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 300460
+            },
+            "compression": 0.01046994000353152,
+            "durable_write": 0.019824650000373367,
+            "first": 70000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015316548997361679,
+            "rng": 0.009494940997683443,
+            "seconds": 0.42232439600047655,
+            "step": 14,
+            "transitions": 0.3556870090033044
+          },
+          {
+            "banks": 0.008084273998974822,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010660152001946699,
+            "durable_write": 0.012199848002637736,
+            "first": 75000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014072952006245032,
+            "rng": 0.009371310996357352,
+            "seconds": 0.407616987999063,
+            "step": 15,
+            "transitions": 0.3532246819959255
+          },
+          {
+            "banks": 0.011699089001922403,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 1,
+              "read_bytes": 299025
+            },
+            "compression": 0.010654291996615939,
+            "durable_write": 0.012558771995827556,
+            "first": 80000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014768252003705129,
+            "rng": 0.009531399002298713,
+            "seconds": 0.4124405719994684,
+            "step": 16,
+            "transitions": 0.3532251030046609
+          },
+          {
+            "banks": 0.008201982003811281,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010359214000345673,
+            "durable_write": 0.019078366000030655,
+            "first": 85000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01408356200408889,
+            "rng": 0.00909591099480167,
+            "seconds": 0.4166763009998249,
+            "step": 17,
+            "transitions": 0.3558529579968308
+          },
+          {
+            "banks": 0.01180562600347912,
+            "cache": {
+              "evictions": 0,
+              "hits": 9,
+              "misses": 1,
+              "read_bytes": 297852
+            },
+            "compression": 0.010481770994374529,
+            "durable_write": 0.02348587100277655,
+            "first": 90000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01473479999549454,
+            "rng": 0.00950173399905907,
+            "seconds": 0.4232664740047767,
+            "step": 18,
+            "transitions": 0.3532529239964788
+          },
+          {
+            "banks": 0.00803753799846163,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010553463995165657,
+            "durable_write": 0.0079320299992105,
+            "first": 95000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014132693002466112,
+            "rng": 0.009528884002065752,
+            "seconds": 0.40336217399453744,
+            "step": 19,
+            "transitions": 0.35317389800184174
+          }
+        ],
+        "seconds": 8.32970345999638,
+        "start_step": 0,
+        "status": "PASS",
+        "stop_reason": "target",
+        "through": 100000001
+      }
+    },
+    {
+      "name": "trial2_w7",
+      "workers": 7,
+      "result": {
+        "cache": {
+          "cache_bytes": 24009072,
+          "evictions": 0,
+          "hits": 106,
+          "misses": 10,
+          "peak_bytes": 24009072,
+          "read_bytes": 3094635
+        },
+        "end_step": 20,
+        "events": 5761455,
+        "fn": 0,
+        "fp": 0,
+        "mode": "indexed",
+        "new_decisions": 100000000,
+        "orphan_quarantined": 0,
+        "peak_rss_kib": 231240,
+        "per_second": 11597121.537051583,
+        "restore_seconds": 0.010435165000671986,
+        "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/trial2_w7",
+        "rows": [
+          {
+            "banks": 2.7111003873869777e-05,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.01173743000254035,
+            "durable_write": 0.017353795999952126,
+            "first": 2,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.019229426005040295,
+            "rng": 0.012515212998550851,
+            "seconds": 0.4361333279957762,
+            "step": 0,
+            "transitions": 0.3752621570019983
+          },
+          {
+            "banks": 0.011956327005464118,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 1,
+              "read_bytes": 341202
+            },
+            "compression": 0.01099667599919485,
+            "durable_write": 0.025090226998145226,
+            "first": 5000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014888284997141454,
+            "rng": 0.007971926002937835,
+            "seconds": 0.43904013100109296,
+            "step": 1,
+            "transitions": 0.3681310410029255
+          },
+          {
+            "banks": 0.011661338998237625,
+            "cache": {
+              "evictions": 0,
+              "hits": 2,
+              "misses": 1,
+              "read_bytes": 320330
+            },
+            "compression": 0.010895598999923095,
+            "durable_write": 0.018964974995469674,
+            "first": 10000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01438672399672214,
+            "rng": 0.009316700998169836,
+            "seconds": 0.4345078930055024,
+            "step": 2,
+            "transitions": 0.36927698500221595
+          },
+          {
+            "banks": 0.007832677998521831,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011002958999597467,
+            "durable_write": 0.015142076001211535,
+            "first": 15000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015175136002653744,
+            "rng": 0.006208515995240305,
+            "seconds": 0.42477794799924595,
+            "step": 3,
+            "transitions": 0.3694128780043684
+          },
+          {
+            "banks": 0.011472508995211683,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 1,
+              "read_bytes": 313773
+            },
+            "compression": 0.010839054004463833,
+            "durable_write": 0.02030046299478272,
+            "first": 20000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013715418994252104,
+            "rng": 0.007541988001321442,
+            "seconds": 0.43127753299631877,
+            "step": 4,
+            "transitions": 0.3674036110023735
+          },
+          {
+            "banks": 0.007482569002604578,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010757714000646956,
+            "durable_write": 0.016007900005206466,
+            "first": 25000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013810996999382041,
+            "rng": 0.008976388999144547,
+            "seconds": 0.42706549799913773,
+            "step": 5,
+            "transitions": 0.37002603500150144
+          },
+          {
+            "banks": 0.011434378997364547,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 1,
+              "read_bytes": 309521
+            },
+            "compression": 0.010697630998038221,
+            "durable_write": 0.021569315998931415,
+            "first": 30000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015232072000799235,
+            "rng": 0.006267515003855806,
+            "seconds": 0.43294642899854807,
+            "step": 6,
+            "transitions": 0.3677410179952858
+          },
+          {
+            "banks": 0.00801012699957937,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010674287994334009,
+            "durable_write": 0.013962015000288375,
+            "first": 35000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01381982299790252,
+            "rng": 0.011427154997363687,
+            "seconds": 0.428624210995622,
+            "step": 7,
+            "transitions": 0.3707269849983277
+          },
+          {
+            "banks": 0.011744975003239233,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 1,
+              "read_bytes": 306432
+            },
+            "compression": 0.010786525999719743,
+            "durable_write": 0.024972737999632955,
+            "first": 40000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014582156996766571,
+            "rng": 0.006541572998685297,
+            "seconds": 0.43900240099901566,
+            "step": 8,
+            "transitions": 0.3703701539998292
+          },
+          {
+            "banks": 0.008118177996948361,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010666373003914487,
+            "durable_write": 0.021574054997472558,
+            "first": 45000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013919117001933046,
+            "rng": 0.00648446699779015,
+            "seconds": 0.4311314919978031,
+            "step": 9,
+            "transitions": 0.37036534499929985
+          },
+          {
+            "banks": 0.011590037000132725,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 1,
+              "read_bytes": 303982
+            },
+            "compression": 0.010601952999422792,
+            "durable_write": 0.010895658997469582,
+            "first": 50000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013894171002903022,
+            "rng": 0.011440289003076032,
+            "seconds": 0.4268310850020498,
+            "step": 10,
+            "transitions": 0.36840297500020824
+          },
+          {
+            "banks": 0.008170565000909846,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.01063163900107611,
+            "durable_write": 0.024014100003114436,
+            "first": 55000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01394072699622484,
+            "rng": 0.006395762997271959,
+            "seconds": 0.43163115799688967,
+            "step": 11,
+            "transitions": 0.3684740770040662
+          },
+          {
+            "banks": 0.011935757996980101,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 302060
+            },
+            "compression": 0.010624166003253777,
+            "durable_write": 0.02033061900147004,
+            "first": 60000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01464795900392346,
+            "rng": 0.006624526999075897,
+            "seconds": 0.43225003800034756,
+            "step": 12,
+            "transitions": 0.3680824120019679
+          },
+          {
+            "banks": 0.007933425004011951,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010508801002288237,
+            "durable_write": 0.014693864002765622,
+            "first": 65000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014030304002517369,
+            "rng": 0.006463097997766454,
+            "seconds": 0.42192672999954084,
+            "step": 13,
+            "transitions": 0.3682932020019507
+          },
+          {
+            "banks": 0.011860828999488149,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 300459
+            },
+            "compression": 0.010628503994666971,
+            "durable_write": 0.02633778900053585,
+            "first": 70000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014856556001177523,
+            "rng": 0.006313190002401825,
+            "seconds": 0.440968597002211,
+            "step": 14,
+            "transitions": 0.37096626900165575
+          },
+          {
+            "banks": 0.008989042005850933,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010594560000754427,
+            "durable_write": 0.01769836700259475,
+            "first": 75000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013995968998642638,
+            "rng": 0.006320422995486297,
+            "seconds": 0.42864018300315365,
+            "step": 15,
+            "transitions": 0.37103778299933765
+          },
+          {
+            "banks": 0.012079675005224999,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 1,
+              "read_bytes": 299027
+            },
+            "compression": 0.01062222100154031,
+            "durable_write": 0.013827007001964375,
+            "first": 80000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01483412399829831,
+            "rng": 0.009345082995423581,
+            "seconds": 0.42952150600467576,
+            "step": 16,
+            "transitions": 0.3688095190009335
+          },
+          {
+            "banks": 0.008269598001788836,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010556139000982512,
+            "durable_write": 0.007162465000874363,
+            "first": 85000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01400601799832657,
+            "rng": 0.006344617999275215,
+            "seconds": 0.41511993499443633,
+            "step": 17,
+            "transitions": 0.36877798099885695
+          },
+          {
+            "banks": 0.011658773997623939,
+            "cache": {
+              "evictions": 0,
+              "hits": 9,
+              "misses": 1,
+              "read_bytes": 297849
+            },
+            "compression": 0.010575264001090545,
+            "durable_write": 0.007104197000444401,
+            "first": 90000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01475117100198986,
+            "rng": 0.006386955996276811,
+            "seconds": 0.41940973100281553,
+            "step": 18,
+            "transitions": 0.3689297919991077
+          },
+          {
+            "banks": 0.008314291000715457,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.01053715400485089,
+            "durable_write": 0.021583061999990605,
+            "first": 95000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014091586002905387,
+            "rng": 0.00926382199395448,
+            "seconds": 0.4329254209951614,
+            "step": 19,
+            "transitions": 0.36913090600137366
+          }
+        ],
+        "seconds": 8.62282935300027,
+        "start_step": 0,
+        "status": "PASS",
+        "stop_reason": "target",
+        "through": 100000001
+      }
+    },
+    {
+      "name": "trial3_w7",
+      "workers": 7,
+      "result": {
+        "cache": {
+          "cache_bytes": 24009072,
+          "evictions": 0,
+          "hits": 106,
+          "misses": 10,
+          "peak_bytes": 24009072,
+          "read_bytes": 3094632
+        },
+        "end_step": 20,
+        "events": 5761455,
+        "fn": 0,
+        "fp": 0,
+        "mode": "indexed",
+        "new_decisions": 100000000,
+        "orphan_quarantined": 0,
+        "peak_rss_kib": 231544,
+        "per_second": 12178204.719910292,
+        "restore_seconds": 0.015558346996840555,
+        "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/trial3_w7",
+        "rows": [
+          {
+            "banks": 4.960200021741912e-05,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011565731998416595,
+            "durable_write": 0.022944115997233894,
+            "first": 2,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.019167913000273984,
+            "rng": 0.013103163997584488,
+            "seconds": 0.4245903510018252,
+            "step": 0,
+            "transitions": 0.3577496270008851
+          },
+          {
+            "banks": 0.012441415994544514,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 1,
+              "read_bytes": 341202
+            },
+            "compression": 0.011027273001673166,
+            "durable_write": 0.017881977000797633,
+            "first": 5000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014892731996951625,
+            "rng": 0.006357571997796185,
+            "seconds": 0.41048119199695066,
+            "step": 1,
+            "transitions": 0.3478749709975091
+          },
+          {
+            "banks": 0.011536837002495304,
+            "cache": {
+              "evictions": 0,
+              "hits": 2,
+              "misses": 1,
+              "read_bytes": 320327
+            },
+            "compression": 0.010873256993363611,
+            "durable_write": 0.019391336994885933,
+            "first": 10000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014248908999434207,
+            "rng": 0.006434584996895865,
+            "seconds": 0.4113086259967531,
+            "step": 2,
+            "transitions": 0.3488188720002654
+          },
+          {
+            "banks": 0.00750040100683691,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010937086000922136,
+            "durable_write": 0.013721750998229254,
+            "first": 15000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01513589399837656,
+            "rng": 0.006277713997405954,
+            "seconds": 0.4024131770056556,
+            "step": 3,
+            "transitions": 0.3488366949968622
+          },
+          {
+            "banks": 0.011580248996324372,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 1,
+              "read_bytes": 313773
+            },
+            "compression": 0.010932377001154236,
+            "durable_write": 0.00724949599680258,
+            "first": 20000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013731528997595888,
+            "rng": 0.006272623999393545,
+            "seconds": 0.3990939610011992,
+            "step": 4,
+            "transitions": 0.34932400900288485
+          },
+          {
+            "banks": 0.00798051200399641,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010710716000176035,
+            "durable_write": 0.013906063002650626,
+            "first": 25000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013812178003718145,
+            "rng": 0.009033996000653133,
+            "seconds": 0.40559804499935126,
+            "step": 5,
+            "transitions": 0.3501502419967437
+          },
+          {
+            "banks": 0.011723163996066432,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 1,
+              "read_bytes": 309521
+            },
+            "compression": 0.010640555999998469,
+            "durable_write": 0.013249575000372715,
+            "first": 30000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015234976999636274,
+            "rng": 0.006468227002187632,
+            "seconds": 0.4070132199994987,
+            "step": 6,
+            "transitions": 0.3496927130036056
+          },
+          {
+            "banks": 0.007998184999451041,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010574163003184367,
+            "durable_write": 0.0069746860026498325,
+            "first": 35000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013818669998727273,
+            "rng": 0.006547243996465113,
+            "seconds": 0.39370521499949973,
+            "step": 7,
+            "transitions": 0.3477893020026386
+          },
+          {
+            "banks": 0.011699531001795549,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 1,
+              "read_bytes": 306433
+            },
+            "compression": 0.01084321199596161,
+            "durable_write": 0.008238950998929795,
+            "first": 40000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014513048001390416,
+            "rng": 0.006355737998092081,
+            "seconds": 0.40177633699931903,
+            "step": 8,
+            "transitions": 0.3501219389945618
+          },
+          {
+            "banks": 0.008003044000361115,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010586696000245865,
+            "durable_write": 0.015520927001489326,
+            "first": 45000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013913858005253132,
+            "rng": 0.006180131997098215,
+            "seconds": 0.40469259599922225,
+            "step": 9,
+            "transitions": 0.35048336899490096
+          },
+          {
+            "banks": 0.011675055000523571,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 1,
+              "read_bytes": 303981
+            },
+            "compression": 0.010493622998183127,
+            "durable_write": 0.016519720003998373,
+            "first": 50000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013918215001467615,
+            "rng": 0.009260696002456825,
+            "seconds": 0.412768223999592,
+            "step": 10,
+            "transitions": 0.35089566399983596
+          },
+          {
+            "banks": 0.008287080003356095,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010623674999806099,
+            "durable_write": 0.01202923199889483,
+            "first": 55000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013948191000963561,
+            "rng": 0.009300921003159601,
+            "seconds": 0.4051033180003287,
+            "step": 11,
+            "transitions": 0.35090946999844164
+          },
+          {
+            "banks": 0.011870467002154328,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 302060
+            },
+            "compression": 0.01070264100417262,
+            "durable_write": 0.021025357003964018,
+            "first": 60000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014633942002546974,
+            "rng": 0.00618975000543287,
+            "seconds": 0.4239762619981775,
+            "step": 12,
+            "transitions": 0.35954846299864585
+          },
+          {
+            "banks": 0.007985572003235575,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010467725005582906,
+            "durable_write": 0.02057967099972302,
+            "first": 65000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01397549099783646,
+            "rng": 0.006513271000585519,
+            "seconds": 0.4099649439958739,
+            "step": 13,
+            "transitions": 0.3504389970039483
+          },
+          {
+            "banks": 0.0115870720037492,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 300460
+            },
+            "compression": 0.010599239998555277,
+            "durable_write": 0.010816220994456671,
+            "first": 70000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014861684998322744,
+            "rng": 0.006190763000631705,
+            "seconds": 0.4049111610002001,
+            "step": 14,
+            "transitions": 0.35085160299786367
+          },
+          {
+            "banks": 0.008237137997639365,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010605100003886037,
+            "durable_write": 0.019979488002718426,
+            "first": 75000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014036023996595759,
+            "rng": 0.0062204869973356836,
+            "seconds": 0.40985123400605517,
+            "step": 15,
+            "transitions": 0.3507682079944061
+          },
+          {
+            "banks": 0.011892367001564708,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 1,
+              "read_bytes": 299026
+            },
+            "compression": 0.010515083995414898,
+            "durable_write": 0.0199337430021842,
+            "first": 80000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014703392000228632,
+            "rng": 0.006300114997429773,
+            "seconds": 0.41433148400392383,
+            "step": 16,
+            "transitions": 0.3509822650012211
+          },
+          {
+            "banks": 0.008227099999203347,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010532034000789281,
+            "durable_write": 0.021583902998827398,
+            "first": 85000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014061410998692736,
+            "rng": 0.006482794000476133,
+            "seconds": 0.41207660200598184,
+            "step": 17,
+            "transitions": 0.3511848400012241
+          },
+          {
+            "banks": 0.012061139997967985,
+            "cache": {
+              "evictions": 0,
+              "hits": 9,
+              "misses": 1,
+              "read_bytes": 297849
+            },
+            "compression": 0.01058937000198057,
+            "durable_write": 0.024227946996688843,
+            "first": 90000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014713210002810229,
+            "rng": 0.007143108996388037,
+            "seconds": 0.4197465969991754,
+            "step": 18,
+            "transitions": 0.35100744199735345
+          },
+          {
+            "banks": 0.008088741997198667,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010495807000552304,
+            "durable_write": 0.025573283004632685,
+            "first": 95000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014056791995244566,
+            "rng": 0.006328727999061812,
+            "seconds": 0.41565027000615373,
+            "step": 19,
+            "transitions": 0.3511024979961803
+          }
+        ],
+        "seconds": 8.2113909480031,
+        "start_step": 0,
+        "status": "PASS",
+        "stop_reason": "target",
+        "through": 100000001
+      }
+    },
+    {
+      "name": "trial4_w4",
+      "workers": 4,
+      "result": {
+        "cache": {
+          "cache_bytes": 24009072,
+          "evictions": 0,
+          "hits": 106,
+          "misses": 10,
+          "peak_bytes": 24009072,
+          "read_bytes": 3094640
+        },
+        "end_step": 20,
+        "events": 5761455,
+        "fn": 0,
+        "fp": 0,
+        "mode": "indexed",
+        "new_decisions": 100000000,
+        "orphan_quarantined": 0,
+        "peak_rss_kib": 233524,
+        "per_second": 12053786.089440137,
+        "restore_seconds": 0.011155290005262941,
+        "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/trial4_w4",
+        "rows": [
+          {
+            "banks": 2.6699999580159783e-05,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.01163979899865808,
+            "durable_write": 0.008387797002797015,
+            "first": 2,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.019128860003547743,
+            "rng": 0.0181155399986892,
+            "seconds": 0.41551954799797386,
+            "step": 0,
+            "transitions": 0.3582158309945953
+          },
+          {
+            "banks": 0.012109761002648156,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 1,
+              "read_bytes": 341202
+            },
+            "compression": 0.011008617999323178,
+            "durable_write": 0.01708077100192895,
+            "first": 5000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01498518400330795,
+            "rng": 0.009413810999831185,
+            "seconds": 0.4158971680008108,
+            "step": 1,
+            "transitions": 0.35129395299736643
+          },
+          {
+            "banks": 0.011621274999924935,
+            "cache": {
+              "evictions": 0,
+              "hits": 2,
+              "misses": 1,
+              "read_bytes": 320330
+            },
+            "compression": 0.011010431000613607,
+            "durable_write": 0.026003491002484225,
+            "first": 10000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014282190000812989,
+            "rng": 0.0103496459996677,
+            "seconds": 0.422966300000553,
+            "step": 2,
+            "transitions": 0.349694417003775
+          },
+          {
+            "banks": 0.007740376997389831,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011029045999748632,
+            "durable_write": 0.024844081002811436,
+            "first": 15000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015104135003639385,
+            "rng": 0.009877561002213042,
+            "seconds": 0.4211684960027924,
+            "step": 3,
+            "transitions": 0.3525689880043501
+          },
+          {
+            "banks": 0.011746096999559086,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 1,
+              "read_bytes": 313774
+            },
+            "compression": 0.010907249998126645,
+            "durable_write": 0.016023399999539834,
+            "first": 20000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013651118999405298,
+            "rng": 0.00933463399996981,
+            "seconds": 0.4118357850020402,
+            "step": 4,
+            "transitions": 0.3501689080003416
+          },
+          {
+            "banks": 0.007698387998971157,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010744689003331587,
+            "durable_write": 0.016781507001724094,
+            "first": 25000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01368568400357617,
+            "rng": 0.009299338002165314,
+            "seconds": 0.40891724199900636,
+            "step": 5,
+            "transitions": 0.35070438999537146
+          },
+          {
+            "banks": 0.011698297996190377,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 1,
+              "read_bytes": 309521
+            },
+            "compression": 0.010659922001650557,
+            "durable_write": 0.016788379005447496,
+            "first": 30000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015119722993404139,
+            "rng": 0.009209320996887982,
+            "seconds": 0.41721508300543064,
+            "step": 6,
+            "transitions": 0.35373435999645153
+          },
+          {
+            "banks": 0.007728364995273296,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010621631001413334,
+            "durable_write": 0.022511361996294,
+            "first": 35000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013768447999609634,
+            "rng": 0.009443454997381195,
+            "seconds": 0.4174166660013725,
+            "step": 7,
+            "transitions": 0.35333904700382845
+          },
+          {
+            "banks": 0.011865407999721356,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 1,
+              "read_bytes": 306434
+            },
+            "compression": 0.010811011998157483,
+            "durable_write": 0.020622901000024285,
+            "first": 40000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014487230000668205,
+            "rng": 0.009189024000079371,
+            "seconds": 0.42094549300236395,
+            "step": 8,
+            "transitions": 0.35396524999669055
+          },
+          {
+            "banks": 0.007831145005184226,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.0105762870007311,
+            "durable_write": 0.02522865400533192,
+            "first": 45000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013850809998984914,
+            "rng": 0.009727992997795809,
+            "seconds": 0.4218121300000348,
+            "step": 9,
+            "transitions": 0.35459284300304716
+          },
+          {
+            "banks": 0.011867410998092964,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 1,
+              "read_bytes": 303982
+            },
+            "compression": 0.01072814900544472,
+            "durable_write": 0.01647229200170841,
+            "first": 50000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014514501002850011,
+            "rng": 0.009444638002605643,
+            "seconds": 0.41748505399300484,
+            "step": 10,
+            "transitions": 0.35445319399877917
+          },
+          {
+            "banks": 0.008021959001780488,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010818786999152508,
+            "durable_write": 0.02055071699578548,
+            "first": 55000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013872930998331867,
+            "rng": 0.009444236995477695,
+            "seconds": 0.4176801060020807,
+            "step": 11,
+            "transitions": 0.35496714700275334
+          },
+          {
+            "banks": 0.011573746000067331,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 302060
+            },
+            "compression": 0.010795103000418749,
+            "durable_write": 0.022119536995887756,
+            "first": 60000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013923104001150932,
+            "rng": 0.009377783993841149,
+            "seconds": 0.4223283269966487,
+            "step": 12,
+            "transitions": 0.3545340839991695
+          },
+          {
+            "banks": 0.007953663000080269,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010462997001013719,
+            "durable_write": 0.011205223003344145,
+            "first": 65000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01398423800128512,
+            "rng": 0.009678982001787517,
+            "seconds": 0.40795909599546576,
+            "step": 13,
+            "transitions": 0.3546699049984454
+          },
+          {
+            "banks": 0.011736268999811728,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 300461
+            },
+            "compression": 0.010586876000161283,
+            "durable_write": 0.005076145003840793,
+            "first": 70000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015362373000243679,
+            "rng": 0.009241100000508595,
+            "seconds": 0.40625591600110056,
+            "step": 14,
+            "transitions": 0.3542491450061789
+          },
+          {
+            "banks": 0.008330380995175801,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.01074882700049784,
+            "durable_write": 0.01954267800465459,
+            "first": 75000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01412782399711432,
+            "rng": 0.00948578400129918,
+            "seconds": 0.41718075999961,
+            "step": 15,
+            "transitions": 0.35494152899627807
+          },
+          {
+            "banks": 0.012128845999541227,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 1,
+              "read_bytes": 299025
+            },
+            "compression": 0.010670370997104328,
+            "durable_write": 0.00833911699737655,
+            "first": 80000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014746081003977451,
+            "rng": 0.009747709998919163,
+            "seconds": 0.4080415889984579,
+            "step": 16,
+            "transitions": 0.35240581700054463
+          },
+          {
+            "banks": 0.008174681999662425,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010385943998699076,
+            "durable_write": 0.011467860997072421,
+            "first": 85000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014056592000997625,
+            "rng": 0.009434047999093309,
+            "seconds": 0.4060220230021514,
+            "step": 17,
+            "transitions": 0.352499581000302
+          },
+          {
+            "banks": 0.011870998001541011,
+            "cache": {
+              "evictions": 0,
+              "hits": 9,
+              "misses": 1,
+              "read_bytes": 297851
+            },
+            "compression": 0.010514973000681493,
+            "durable_write": 0.007072045998938847,
+            "first": 90000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014748715999303386,
+            "rng": 0.00930218400026206,
+            "seconds": 0.40622264499688754,
+            "step": 18,
+            "transitions": 0.3527108119960758
+          },
+          {
+            "banks": 0.008423222992860246,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010690467999665998,
+            "durable_write": 0.007510910996643361,
+            "first": 95000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014119227998889983,
+            "rng": 0.009492427001532633,
+            "seconds": 0.40290894899953855,
+            "step": 19,
+            "transitions": 0.3526697060005972
+          }
+        ],
+        "seconds": 8.296148551002261,
+        "start_step": 0,
+        "status": "PASS",
+        "stop_reason": "target",
+        "through": 100000001
+      }
+    },
+    {
+      "name": "trial5_w1",
+      "workers": 1,
+      "result": {
+        "cache": {
+          "cache_bytes": 24009072,
+          "evictions": 0,
+          "hits": 106,
+          "misses": 10,
+          "peak_bytes": 24009072,
+          "read_bytes": 3094640
+        },
+        "end_step": 20,
+        "events": 5761455,
+        "fn": 0,
+        "fp": 0,
+        "mode": "indexed",
+        "new_decisions": 100000000,
+        "orphan_quarantined": 0,
+        "peak_rss_kib": 229112,
+        "per_second": 11078122.89831439,
+        "restore_seconds": 0.004870183001912665,
+        "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/trial5_w1",
+        "rows": [
+          {
+            "banks": 1.7733000277075917e-05,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011607779997575562,
+            "durable_write": 0.01896896300604567,
+            "first": 2,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.019459112001641188,
+            "rng": 0.06591902500076685,
+            "seconds": 0.48567693599761697,
+            "step": 0,
+            "transitions": 0.3696968679942074
+          },
+          {
+            "banks": 0.01179143999615917,
+            "cache": {
+              "evictions": 0,
+              "hits": 0,
+              "misses": 1,
+              "read_bytes": 341202
+            },
+            "compression": 0.011088938001194037,
+            "durable_write": 0.008281419999548234,
+            "first": 5000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015595978002238553,
+            "rng": 0.0337342799975886,
+            "seconds": 0.4405026669992367,
+            "step": 1,
+            "transitions": 0.3600066139988485
+          },
+          {
+            "banks": 0.011551094998139888,
+            "cache": {
+              "evictions": 0,
+              "hits": 2,
+              "misses": 1,
+              "read_bytes": 320328
+            },
+            "compression": 0.011016544005542528,
+            "durable_write": 0.011181018999195658,
+            "first": 10000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013613789997179992,
+            "rng": 0.03362391499831574,
+            "seconds": 0.441796607003198,
+            "step": 2,
+            "transitions": 0.3608064979998744
+          },
+          {
+            "banks": 0.0075815920063178055,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.011083396995672956,
+            "durable_write": 0.014517326002533082,
+            "first": 15000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01362772700667847,
+            "rng": 0.033514701994135976,
+            "seconds": 0.4415501210023649,
+            "step": 3,
+            "transitions": 0.3612220189970685
+          },
+          {
+            "banks": 0.011630843000602908,
+            "cache": {
+              "evictions": 0,
+              "hits": 3,
+              "misses": 1,
+              "read_bytes": 313773
+            },
+            "compression": 0.011015079995559063,
+            "durable_write": 0.015692916997068096,
+            "first": 20000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01516804299899377,
+            "rng": 0.03381589099444682,
+            "seconds": 0.4489200600000913,
+            "step": 4,
+            "transitions": 0.36159328700159676
+          },
+          {
+            "banks": 0.007902877994638402,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010726475004048552,
+            "durable_write": 0.01874631000100635,
+            "first": 25000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013772695005172864,
+            "rng": 0.033738818994606845,
+            "seconds": 0.44677895899803843,
+            "step": 5,
+            "transitions": 0.36188745399704203
+          },
+          {
+            "banks": 0.011711492996255402,
+            "cache": {
+              "evictions": 0,
+              "hits": 4,
+              "misses": 1,
+              "read_bytes": 309521
+            },
+            "compression": 0.010829806997207925,
+            "durable_write": 0.0077591809967998415,
+            "first": 30000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.015225930997985415,
+            "rng": 0.033485567997558974,
+            "seconds": 0.4405769250006415,
+            "step": 6,
+            "transitions": 0.3615612490029889
+          },
+          {
+            "banks": 0.008018152002478018,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010634323996782769,
+            "durable_write": 0.021394773000793066,
+            "first": 35000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013804163994791452,
+            "rng": 0.033883866999531165,
+            "seconds": 0.4500301490043057,
+            "step": 7,
+            "transitions": 0.36229088199615944
+          },
+          {
+            "banks": 0.011351043998729438,
+            "cache": {
+              "evictions": 0,
+              "hits": 5,
+              "misses": 1,
+              "read_bytes": 306436
+            },
+            "compression": 0.01084159899619408,
+            "durable_write": 0.011542619002284482,
+            "first": 40000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014651736004452687,
+            "rng": 0.033450413997343276,
+            "seconds": 0.44368290599959437,
+            "step": 8,
+            "transitions": 0.3618420589991729
+          },
+          {
+            "banks": 0.008695277996594086,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.0106725150035345,
+            "durable_write": 0.02433225200365996,
+            "first": 45000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013935347000369802,
+            "rng": 0.033686632006720174,
+            "seconds": 0.45412367199605796,
+            "step": 9,
+            "transitions": 0.36279703000036534
+          },
+          {
+            "banks": 0.011540756000613328,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 1,
+              "read_bytes": 303984
+            },
+            "compression": 0.010753555994597264,
+            "durable_write": 0.01912871999957133,
+            "first": 50000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014658186999440659,
+            "rng": 0.03342859300028067,
+            "seconds": 0.4524160139990272,
+            "step": 10,
+            "transitions": 0.36290216600173153
+          },
+          {
+            "banks": 0.007842667000659276,
+            "cache": {
+              "evictions": 0,
+              "hits": 6,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010676783000235446,
+            "durable_write": 0.018730821000644937,
+            "first": 55000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.013971084001241252,
+            "rng": 0.03353915800107643,
+            "seconds": 0.44769396699848585,
+            "step": 11,
+            "transitions": 0.36292838500230573
+          },
+          {
+            "banks": 0.011936690003494732,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 302057
+            },
+            "compression": 0.010730833004345186,
+            "durable_write": 0.018751159994280897,
+            "first": 60000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01393966500472743,
+            "rng": 0.033552253000380006,
+            "seconds": 0.45176954600174213,
+            "step": 12,
+            "transitions": 0.3628538260018104
+          },
+          {
+            "banks": 0.008195290000003297,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010463698003150057,
+            "durable_write": 0.021312550001312047,
+            "first": 65000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014061451001907699,
+            "rng": 0.033824907994130626,
+            "seconds": 0.4506853649945697,
+            "step": 13,
+            "transitions": 0.3628229590030969
+          },
+          {
+            "banks": 0.011982374999206513,
+            "cache": {
+              "evictions": 0,
+              "hits": 7,
+              "misses": 1,
+              "read_bytes": 300461
+            },
+            "compression": 0.010770996996143367,
+            "durable_write": 0.016451171002699994,
+            "first": 70000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01480823600286385,
+            "rng": 0.033721386003890075,
+            "seconds": 0.4505326910002623,
+            "step": 14,
+            "transitions": 0.36279537799418904
+          },
+          {
+            "banks": 0.00825675499800127,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010577278000710066,
+            "durable_write": 0.024301524004840758,
+            "first": 75000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014053677004994825,
+            "rng": 0.03921399400132941,
+            "seconds": 0.4657917849981459,
+            "step": 15,
+            "transitions": 0.369384160003392
+          },
+          {
+            "banks": 0.012005879005300812,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 1,
+              "read_bytes": 299027
+            },
+            "compression": 0.010635937003826257,
+            "durable_write": 0.015354679002484772,
+            "first": 80000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014101556000241544,
+            "rng": 0.034969281005032826,
+            "seconds": 0.45304666500305757,
+            "step": 16,
+            "transitions": 0.3659744549950119
+          },
+          {
+            "banks": 0.00843964399973629,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010463055994478054,
+            "durable_write": 0.014516946001094766,
+            "first": 85000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01479825799469836,
+            "rng": 0.03354064100130927,
+            "seconds": 0.44750454599852674,
+            "step": 17,
+            "transitions": 0.36574168300285237
+          },
+          {
+            "banks": 0.012159031997725833,
+            "cache": {
+              "evictions": 0,
+              "hits": 9,
+              "misses": 1,
+              "read_bytes": 297851
+            },
+            "compression": 0.010420298000099137,
+            "durable_write": 0.017003879002004396,
+            "first": 90000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.014220135999494232,
+            "rng": 0.033840666998003144,
+            "seconds": 0.45348621100129094,
+            "step": 18,
+            "transitions": 0.36583761099609546
+          },
+          {
+            "banks": 0.008095905999653041,
+            "cache": {
+              "evictions": 0,
+              "hits": 8,
+              "misses": 0,
+              "read_bytes": 0
+            },
+            "compression": 0.010420888997032307,
+            "durable_write": 0.014422702006413601,
+            "first": 95000002,
+            "fn": 0,
+            "fp": 0,
+            "history_and_truth": 0.01411900800303556,
+            "rng": 0.03359111499594292,
+            "seconds": 0.44640851299482165,
+            "step": 19,
+            "transitions": 0.36575422599707963
+          }
+        ],
+        "seconds": 9.02680001999397,
+        "start_step": 0,
+        "status": "PASS",
+        "stop_reason": "target",
+        "through": 100000001
+      }
+    }
+  ],
+  "restart": [
+    {
+      "cache": {
+        "cache_bytes": 10164856,
+        "evictions": 0,
+        "hits": 16,
+        "misses": 4,
+        "peak_bytes": 10164856,
+        "read_bytes": 1284826
+      },
+      "end_step": 7,
+      "events": 2146775,
+      "fn": 0,
+      "fp": 0,
+      "mode": "indexed",
+      "new_decisions": 35000000,
+      "orphan_quarantined": 0,
+      "peak_rss_kib": 219860,
+      "per_second": 11525202.094861811,
+      "restore_seconds": 0.005101973001728766,
+      "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/restart",
+      "rows": [
+        {
+          "banks": 2.2541004000231624e-05,
+          "cache": {
+            "evictions": 0,
+            "hits": 0,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.01161136700102361,
+          "durable_write": 0.013395786998444237,
+          "first": 2,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.019367632994544692,
+          "rng": 0.01825683200149797,
+          "seconds": 0.43812114199681673,
+          "step": 0,
+          "transitions": 0.3754604300047504
+        },
+        {
+          "banks": 0.012009744998067617,
+          "cache": {
+            "evictions": 0,
+            "hits": 0,
+            "misses": 1,
+            "read_bytes": 341202
+          },
+          "compression": 0.011001395003404468,
+          "durable_write": 0.018610448998515494,
+          "first": 5000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.01486975999432616,
+          "rng": 0.009920691001752857,
+          "seconds": 0.4323857439958374,
+          "step": 1,
+          "transitions": 0.3659686039973167
+        },
+        {
+          "banks": 0.011799084997619502,
+          "cache": {
+            "evictions": 0,
+            "hits": 2,
+            "misses": 1,
+            "read_bytes": 320328
+          },
+          "compression": 0.010952053999062628,
+          "durable_write": 0.016503259997989517,
+          "first": 10000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.014428060996579006,
+          "rng": 0.009527121001156047,
+          "seconds": 0.42758642199623864,
+          "step": 2,
+          "transitions": 0.3643735250007012
+        },
+        {
+          "banks": 0.007793345001118723,
+          "cache": {
+            "evictions": 0,
+            "hits": 3,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.011250256997300312,
+          "durable_write": 0.025476833994616754,
+          "first": 15000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.015225650000502355,
+          "rng": 0.009217986997100525,
+          "seconds": 0.43626950799807673,
+          "step": 3,
+          "transitions": 0.3673003139992943
+        },
+        {
+          "banks": 0.011666378995869309,
+          "cache": {
+            "evictions": 0,
+            "hits": 3,
+            "misses": 1,
+            "read_bytes": 313774
+          },
+          "compression": 0.010903654001594987,
+          "durable_write": 0.022493530996143818,
+          "first": 20000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.013770731995464303,
+          "rng": 0.00939656899572583,
+          "seconds": 0.436317796993535,
+          "step": 4,
+          "transitions": 0.36808201399981044
+        },
+        {
+          "banks": 0.008121883998683188,
+          "cache": {
+            "evictions": 0,
+            "hits": 4,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.010713170995586552,
+          "durable_write": 0.019298996005090885,
+          "first": 25000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.013789286000246648,
+          "rng": 0.009265093998692464,
+          "seconds": 0.42926521700428566,
+          "step": 5,
+          "transitions": 0.3680715859954944
+        },
+        {
+          "banks": 0.011951376996876206,
+          "cache": {
+            "evictions": 0,
+            "hits": 4,
+            "misses": 1,
+            "read_bytes": 309522
+          },
+          "compression": 0.010708583002269734,
+          "durable_write": 0.01947027300047921,
+          "first": 30000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.01526777799881529,
+          "rng": 0.009242393003660254,
+          "seconds": 0.43519502500566887,
+          "step": 6,
+          "transitions": 0.36854958099866053
+        }
+      ],
+      "seconds": 3.036823104004725,
+      "start_step": 0,
+      "status": "PASS",
+      "stop_reason": "target",
+      "through": 35000001
+    },
+    {
+      "cache": {
+        "cache_bytes": 0,
+        "evictions": 0,
+        "hits": 0,
+        "misses": 0,
+        "peak_bytes": 0,
+        "read_bytes": 0
+      },
+      "end_step": 7,
+      "events": 2146775,
+      "fn": 0,
+      "fp": 0,
+      "mode": "indexed",
+      "new_decisions": 0,
+      "orphan_quarantined": 0,
+      "peak_rss_kib": 72548,
+      "per_second": 0.0,
+      "restore_seconds": 0.005749864001700189,
+      "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/restart",
+      "rows": [],
+      "seconds": 1.888500264612958e-05,
+      "start_step": 7,
+      "status": "PASS",
+      "stop_reason": "requested",
+      "through": 35000001
+    },
+    {
+      "cache": {
+        "cache_bytes": 24009072,
+        "evictions": 0,
+        "hits": 86,
+        "misses": 10,
+        "peak_bytes": 24009072,
+        "read_bytes": 3094638
+      },
+      "end_step": 20,
+      "events": 5761455,
+      "fn": 0,
+      "fp": 0,
+      "mode": "indexed",
+      "new_decisions": 65000000,
+      "orphan_quarantined": 0,
+      "peak_rss_kib": 233152,
+      "per_second": 11903058.958534248,
+      "restore_seconds": 0.005769301002146676,
+      "root": "/home/lilhelper/SAM_Research_Project/GEN4/prime_u5_local1/pilot/restart",
+      "rows": [
+        {
+          "banks": 0.027217222996114288,
+          "cache": {
+            "evictions": 0,
+            "hits": 1,
+            "misses": 4,
+            "read_bytes": 1284826
+          },
+          "compression": 0.010623394999129232,
+          "durable_write": 0.018431767006404698,
+          "first": 35000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.019187439000234008,
+          "rng": 0.01838738500373438,
+          "seconds": 0.4487731490007718,
+          "step": 7,
+          "transitions": 0.3549186789969099
+        },
+        {
+          "banks": 0.011851552000734955,
+          "cache": {
+            "evictions": 0,
+            "hits": 5,
+            "misses": 1,
+            "read_bytes": 306433
+          },
+          "compression": 0.010610400000587106,
+          "durable_write": 0.017409751999366563,
+          "first": 40000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.01605168300011428,
+          "rng": 0.009682759002316743,
+          "seconds": 0.4219174479949288,
+          "step": 8,
+          "transitions": 0.35630588300409727
+        },
+        {
+          "banks": 0.008075869001913816,
+          "cache": {
+            "evictions": 0,
+            "hits": 6,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.010496880000573583,
+          "durable_write": 0.008154213996022008,
+          "first": 45000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.013903537997975945,
+          "rng": 0.00942191499780165,
+          "seconds": 0.4063558840061887,
+          "step": 9,
+          "transitions": 0.35629953099851264
+        },
+        {
+          "banks": 0.011987334000878036,
+          "cache": {
+            "evictions": 0,
+            "hits": 6,
+            "misses": 1,
+            "read_bytes": 303983
+          },
+          "compression": 0.010781848002807237,
+          "durable_write": 0.006964548003452364,
+          "first": 50000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.014617932996770833,
+          "rng": 0.009429580000869464,
+          "seconds": 0.40792293100093957,
+          "step": 10,
+          "transitions": 0.3541386029974092
+        },
+        {
+          "banks": 0.007875346993387211,
+          "cache": {
+            "evictions": 0,
+            "hits": 6,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.010463547994731925,
+          "durable_write": 0.01755547200446017,
+          "first": 55000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.01390398899820866,
+          "rng": 0.009209391995682381,
+          "seconds": 0.41606190699531,
+          "step": 11,
+          "transitions": 0.3570496709944564
+        },
+        {
+          "banks": 0.011636171999271028,
+          "cache": {
+            "evictions": 0,
+            "hits": 7,
+            "misses": 1,
+            "read_bytes": 302059
+          },
+          "compression": 0.010531193998758681,
+          "durable_write": 0.011085580998042133,
+          "first": 60000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.014681741005915683,
+          "rng": 0.009296121999796014,
+          "seconds": 0.41376049799873726,
+          "step": 12,
+          "transitions": 0.35652571100217756
+        },
+        {
+          "banks": 0.008032237994484603,
+          "cache": {
+            "evictions": 0,
+            "hits": 7,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.010468265994859394,
+          "durable_write": 0.02084046399977524,
+          "first": 65000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.013993254993692972,
+          "rng": 0.00912847099971259,
+          "seconds": 0.42053469300299184,
+          "step": 13,
+          "transitions": 0.3580678110010922
+        },
+        {
+          "banks": 0.011638727999525145,
+          "cache": {
+            "evictions": 0,
+            "hits": 7,
+            "misses": 1,
+            "read_bytes": 300460
+          },
+          "compression": 0.011326608000672422,
+          "durable_write": 0.007198151004558895,
+          "first": 70000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.015668512001866475,
+          "rng": 0.009963219999917783,
+          "seconds": 0.4220996259973617,
+          "step": 14,
+          "transitions": 0.36630108099780045
+        },
+        {
+          "banks": 0.008854282998072449,
+          "cache": {
+            "evictions": 0,
+            "hits": 8,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.011280152000836097,
+          "durable_write": 0.007178384003054816,
+          "first": 75000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.014312576000520494,
+          "rng": 0.00966154000343522,
+          "seconds": 0.4192986109992489,
+          "step": 15,
+          "transitions": 0.36800690599920927
+        },
+        {
+          "banks": 0.012014954998448957,
+          "cache": {
+            "evictions": 0,
+            "hits": 8,
+            "misses": 1,
+            "read_bytes": 299026
+          },
+          "compression": 0.011042652004107367,
+          "durable_write": 0.01127906100009568,
+          "first": 80000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.014154634001897648,
+          "rng": 0.009654025998315774,
+          "seconds": 0.42609440500382334,
+          "step": 16,
+          "transitions": 0.3679450710042147
+        },
+        {
+          "banks": 0.00868369600357255,
+          "cache": {
+            "evictions": 0,
+            "hits": 8,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.010967563001031522,
+          "durable_write": 0.00835896499484079,
+          "first": 85000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.014088181000261102,
+          "rng": 0.009422666997124907,
+          "seconds": 0.4110691690002568,
+          "step": 17,
+          "transitions": 0.3595443800004432
+        },
+        {
+          "banks": 0.01194762000523042,
+          "cache": {
+            "evictions": 0,
+            "hits": 9,
+            "misses": 1,
+            "read_bytes": 297851
+          },
+          "compression": 0.01100349899934372,
+          "durable_write": 0.007046048995107412,
+          "first": 90000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.015323362000344787,
+          "rng": 0.009507444003247656,
+          "seconds": 0.4148815669977921,
+          "step": 18,
+          "transitions": 0.3600482629990438
+        },
+        {
+          "banks": 0.00864914200064959,
+          "cache": {
+            "evictions": 0,
+            "hits": 8,
+            "misses": 0,
+            "read_bytes": 0
+          },
+          "compression": 0.010544388002017513,
+          "durable_write": 0.014729209993674885,
+          "first": 95000002,
+          "fn": 0,
+          "fp": 0,
+          "history_and_truth": 0.014119327999651432,
+          "rng": 0.00969977099885,
+          "seconds": 0.41919020999921486,
+          "step": 19,
+          "transitions": 0.3614444229970104
+        }
+      ],
+      "seconds": 5.460781150999537,
+      "start_step": 7,
+      "status": "PASS",
+      "stop_reason": "target",
+      "through": 100000001
+    }
+  ],
+  "elapsed_seconds": 61.1936667350019,
+  "code_sha256": {
+    "index.cpp": "69d23c4f995ffa7ba3e0fa59fe897af3f531adb8f8f128df147c5468d5357e0e",
+    "u5_cdf.npy": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "reference.cpp": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+    "u5_initial.npy": "66490bed64908617e79362dce54146335dd74c0258572839c5a502ff725f6b70",
+    "worker.py": "2c7d78a239d5cbd73953ba80ad9de9dd7e5a3d1f5dbbb1e8afc404cc6aa9923e",
+    "random_buffers.py": "868fa40d47441f2caabe06ca200fe2f534f73ea53159ddcd8516d81dd5888bf4",
+    "runner.py": "dff6105be4fa69a8fc94d09d75a736902b0a0e892824813908f997feace2e13a"
+  },
+  "custody": "Pilot raw data on T500; native controller/code/compact results local i9"
+}

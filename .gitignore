@@ -8,3 +8,5 @@ runs/
 *.so
 zenodo/*.log
 zenodo/reference.docx
+
+production/u5/*.so
