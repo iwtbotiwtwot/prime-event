@@ -118,3 +118,7 @@ The public hourly report records observed UTC/Chicago time, committed decisions
 and both error types. Missing reports during workstation/network outages are
 not fabricated. The run can continue on lilhelper while public reporting is
 offline. See [automation](automation.md) for controls and exact scheduling.
+
+The repository package version is 0.1.2. The existing Zenodo DOI and citation
+record identify the earlier archived 0.1.1 release; this update does not claim
+a new Zenodo deposit.
