@@ -1,16 +1,16 @@
 {
-  "observed_utc": "2026-10-02T08:00:04+00:00",
-  "chicago_time": "2026-10-02T03:00:04-05:00",
-  "checkpoint_utc": "2026-10-02T08:00:04+00:00",
+  "observed_utc": "2026-10-02T09:00:04+00:00",
+  "chicago_time": "2026-10-02T04:00:04-05:00",
+  "checkpoint_utc": "2026-10-02T09:00:04+00:00",
   "seed": 9370001,
-  "decisions": 164150000000,
-  "through": 164150000001,
+  "decisions": 201550000000,
+  "through": 201550000001,
   "false_events": 0,
   "missed_primes": 0,
   "total_errors": 0,
   "status": "RUNNING",
-  "recent_decisions_per_second": 10572624.383528166,
-  "throughput_observed_utc": "2026-10-02T08:00:04Z",
+  "recent_decisions_per_second": 10239102.382925982,
+  "throughput_observed_utc": "2026-10-02T09:00:04Z",
   "feedback": "raw; no repair or correction",
   "cdf_sha256": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210"
 }

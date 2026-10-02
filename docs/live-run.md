@@ -1,8 +1,8 @@
 # Live unrepaired u5 run — seed 9370001
 
-Observed **2026-10-02T03:00:04-05:00** (Chicago), **2026-10-02T08:00:04+00:00** (UTC).
+Observed **2026-10-02T04:00:04-05:00** (Chicago), **2026-10-02T09:00:04+00:00** (UTC).
 
-**164,150,000,000 decisions; 0 false events; 0 missed primes. Status: RUNNING.**
+**201,550,000,000 decisions; 0 false events; 0 missed primes. Status: RUNNING.**
 
 One raw trajectory from candidate 2. No repair, correction, learner or reference veto. Prime truth scores the emitted decisions only. Counts are read from a committed checkpoint; throughput has its own observation timestamp in the JSON. This is a live snapshot, not a completed campaign.
 
@@ -15,3 +15,4 @@ Scheduled publication runs on the workstation. Check the observation time: if th
 | 2026-10-02T00:32:51-05:00 | 72,535,000,000 | 0 | 0 | 0 | RUNNING |
 | 2026-10-02T02:00:04-05:00 | 125,925,000,000 | 0 | 0 | 0 | RUNNING |
 | 2026-10-02T03:00:04-05:00 | 164,150,000,000 | 0 | 0 | 0 | RUNNING |
+| 2026-10-02T04:00:04-05:00 | 201,550,000,000 | 0 | 0 | 0 | RUNNING |
