@@ -32,7 +32,8 @@ def main():
     assert (production/'data/STOP').exists()
     original_sha = hashlib.sha256((production/'data/CHECKPOINT.json').read_bytes()).hexdigest()
     original = load(production/'data')
-    assert original['fp'] == original['fn'] == 0
+    # Qualification preserves observed raw errors as well as zero-error runs.
+    # Mature comparison below requires exact cumulative FP/FN agreement.
     env = dict(os.environ, OPENBLAS_NUM_THREADS='1', PYTHONDONTWRITEBYTECODE='1')
 
     def command(target, chunks, seed=9369001, backend='gpu'):
@@ -51,9 +52,10 @@ def main():
         with log.open('w') as out:
             subprocess.run(cmd, env=env, stdout=out, stderr=subprocess.STDOUT, check=True)
 
-    def compare(left, right, start=0):
-        return json.loads(subprocess.check_output([sys.executable, str(HERE/'compare_journals.py'),
-                          str(left), str(right), '--start-chunk', str(start)], env=env, text=True))
+    def compare(left, right, start=0, end=None):
+        cmd=[sys.executable,str(HERE/'compare_journals.py'),str(left),str(right),'--start-chunk',str(start)]
+        if end is not None:cmd+=['--chunks',str(end)]
+        return json.loads(subprocess.check_output(cmd,env=env,text=True))
 
     fresh = root/'fresh'
     if not (fresh/'PILOT.json').exists():
@@ -87,6 +89,34 @@ def main():
     mature_comparison = compare(production, mature, start)
     print(json.dumps(dict(phase='MATURE_PREFIX', **mature_comparison)), flush=True)
 
+    observed_error = None
+    if original['fp']==1 and original['fn']==0:
+        # Replay the first observed raw false event, including its effect on
+        # hidden state and subsequent RNG draws. Historical error is retained.
+        first_error=json.loads(subprocess.check_output(['grep','-m','1','-E',
+            '"fp": [1-9]|"fn": [1-9]',str(production/'data/TIMINGS.jsonl')],text=True))
+        error_step=first_error['step'];error_start=max(4,error_step-32);error_end=min(end,error_step+168)
+        error_origin=copy.deepcopy(original);error_origin.pop('_journal',None)
+        error_origin['records']=error_origin['records'][:error_start]
+        with np.load(error_origin['records'][-1]['path'],allow_pickle=False) as stored:
+            before_error=json.loads(stored['metadata'].tobytes())
+        for key in ('status','base_rng','extra_rng','next_n'):error_origin[key]=before_error[key]
+        error_origin.update(fp=0,fn=0)
+        error_origin['config']['cache_mib']=4096
+        error_origin['config']['accelerator']=accelerator_identity(HERE,'gpu',True,args)
+        replay=root/'observed-error';(replay/'data').mkdir(parents=True)
+        atomic(replay/'data/CHECKPOINT.json',error_origin)
+        run(command(replay,error_end,original['config']['seed']),root/'observed-error.log')
+        actual_error=load(replay/'data');assert actual_error['fp']==1 and actual_error['fn']==0
+        with np.load(original['records'][error_end-1]['path'],allow_pickle=False) as stored:
+            expected_error=json.loads(stored['metadata'].tobytes())
+        for key in ('status','base_rng','extra_rng','next_n'):assert actual_error[key]==expected_error[key],key
+        observed_error=compare(production,replay,error_start,error_end)
+        with np.load(original['records'][error_step]['path'],allow_pickle=False) as stored:
+            original_errors=json.loads(stored['metadata'].tobytes())['errors']
+        observed_error.update(original_errors=original_errors,fp=1,fn=0)
+        print(json.dumps(dict(phase='OBSERVED_ERROR',**observed_error)),flush=True)
+
     fault, control = root/'interrupted', root/'cpu-control'
     with (root/'interrupted.log').open('w') as log:
         proc = subprocess.Popen(command(fault, 200), env=env, stdout=log,
@@ -119,6 +149,7 @@ def main():
     report = dict(status='PASS', source_files=accelerator_identity(HERE, 'gpu', True, args)['files'],
                   accelerator=accelerator_identity(HERE, 'gpu', True, args),
                   production_checkpoint_sha256=original_sha, production_checkpoint_unchanged=True,
+                  observed_error=observed_error,
                   frozen_prefix=frozen, mature_prefix=mature_comparison, recovery=recovery,
                   durable_chunks_at_kill=count, orphan_quarantined=True,
                   observed_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime()))

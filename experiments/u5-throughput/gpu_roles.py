@@ -58,14 +58,20 @@ def gpu_history_class(original,source,threads,workers,device=1,device_cache_byte
             try:
                 ids=np.empty(planner.history_size(plan),np.uint64)
                 planner.history_ids(plan,ids.ctypes.data)
-                before=self.counters();tick=time.perf_counter();arrays=self._arrays(ids)
+                keys=list(map(int,ids));needed=set(keys)
+                # Resident device records were already authenticated at upload.
+                # Load only new uploads and the tiny-period host search record.
+                load_ids=[j for j in keys if j not in self.device_cache]
+                if keys[0] not in load_ids:load_ids.insert(0,keys[0])
+                before=self.counters();tick=time.perf_counter()
+                arrays=dict(zip(load_ids,self._arrays(load_ids)))
                 getting=time.perf_counter()-tick
-                needed=set(map(int,ids));uploads=0
+                uploads=0
                 tick=time.perf_counter()
-                for j,array in zip(ids,arrays):
-                    j=int(j)
+                for j in keys:
                     if j in self.device_cache:
                         self.device_cache.move_to_end(j);continue
+                    array=arrays[j]
                     while self.device_bytes+array.nbytes>device_cache_bytes:
                         evict=next((key for key in self.device_cache if key not in needed),None)
                         if evict is None:raise MemoryError('Required history exceeds the device cache')
@@ -78,14 +84,16 @@ def gpu_history_class(original,source,threads,workers,device=1,device_cache_byte
                 upload_seconds=time.perf_counter()-tick
                 ranges=np.empty((planner.history_range_count(plan),4),np.uint64)
                 planner.history_ranges(plan,ranges.ctypes.data)
-                tiny=int(np.searchsorted(arrays[0],4094,side='right'))
+                tiny=int(np.searchsorted(arrays[keys[0]],4094,side='right'))
                 banks=np.empty(count,np.uint8);tick=time.perf_counter()
                 self.check(gpu.gh_apply(first,count,ranges.ctypes.data,len(ranges),tiny,banks.ctypes.data))
                 marking=time.perf_counter()-tick
                 after=self.counters()
                 self.last_stats=dict(records=len(ids),get_seconds=getting,
                     native_seconds=[planning,0,0,marking,0],cache_bytes=after['cache_bytes'],
+                    cache_limit_bytes=self.limit,configured_cache_limit_bytes=self.configured_limit,
                     misses=after['misses']-before['misses'],evictions=after['evictions']-before['evictions'],
+                    host_requested_records=len(load_ids),host_gpu_hits_skipped=len(keys)-len(load_ids),
                     gpu_upload_seconds=upload_seconds,gpu_uploads=uploads,
                     gpu_cache_bytes=self.device_bytes,gpu_cache_evictions=self.device_evictions,
                     gpu_mark_seconds=marking,range_count=len(ranges))

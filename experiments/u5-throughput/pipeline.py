@@ -76,7 +76,21 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096,milestone_steps=0):
     # A bounded queue limits in-flight decode buffers; authenticate every file.
     eligible=max(0,min(len(records),((first+r.W-1)//2-2)//r.W+1))
     budget=int(history.limit*0.95)
-    if sum(rec['count']*4 for rec in records[:eligible])<=budget:
+    if acc.history_gpu is not None:
+        # GPU hits no longer need decoded host copies. Warm the actual upload
+        # working set and near-future requests, without filling an old prefix.
+        needed=set(history.required_ids(first)) if len(records)<until else set()
+        used=sum(records[j]['count']*4 for j in needed)
+        for offset in range(1,min(64,until-len(records),len(records))):
+            for j in history.required_ids(first+offset*r.W):
+                size=records[j]['count']*4
+                if j not in needed and used+size<=budget:needed.add(j);used+=size
+        restore_ids=[];used=0
+        for j in sorted(needed):
+            size=records[j]['count']*4
+            if used+size<=budget:restore_ids.append(j);used+=size
+        restore_mode='gpu_upload_working_set'
+    elif sum(rec['count']*4 for rec in records[:eligible])<=budget:
         restore_ids=list(range(eligible));restore_mode='eligible_prefix'
     else:
         # Reserve active and near-future masks, then fill remaining space with
@@ -154,7 +168,11 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096,milestone_steps=0):
         blob=r.pack(meta,events);record['sha256']=r.sha(blob);compression=time.perf_counter()-t
         t=time.perf_counter();durable.add(record,blob,snapshot)
         return dict(compression=compression,durable_write=time.perf_counter()-t)
-    rows=list(initial);reason='target';future_write=None
+    # Complete timing records remain on disk; retain only a fixed diagnostic
+    # tail in RAM and in the session summary, including at orderly shutdown.
+    for row in initial:
+        with (root/'TIMINGS.jsonl').open('a') as f:f.write(json.dumps(row)+'\n')
+    rows=deque(initial,maxlen=1024);reason='target';future_write=None
     with ThreadPoolExecutor(max_workers=1) as prep,ThreadPoolExecutor(max_workers=1) as writer:
         slot=0;future=prep.submit(prepare,first,slot) if len(records)<until else None
         while len(records)<until:
@@ -205,7 +223,10 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096,milestone_steps=0):
     elapsed=time.perf_counter()-started;decisions=(len(records)-start_step)*r.W
     result=dict(status='PASS',stop_reason=reason,mode='pipeline',start_step=start_step,end_step=len(records),
         new_decisions=decisions,seconds=elapsed,per_second=decisions/elapsed,through=first-1,fp=fp,fn=fn,
-        events=int(status[1]),orphan_quarantined=orphan_count,rows=rows,cache=history.counters(),
+        events=int(status[1]),orphan_quarantined=orphan_count,rows=list(rows),cache=history.counters(),
+        timing_rows_total=len(records)-start_step,timing_rows_retained=len(rows),
+        timing_rows_scope='all' if len(records)-start_step<=len(rows) else 'tail',
+        timings_path=str(root/'TIMINGS.jsonl'),
         history_restore_seconds=restore_seconds,
         history_restore_mode=restore_mode,history_restored_chunks=len(restore_ids),
         peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)

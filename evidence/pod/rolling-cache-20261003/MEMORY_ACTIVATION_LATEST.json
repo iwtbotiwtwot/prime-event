@@ -1,0 +1,95 @@
+{
+  "directory": "/root/prime-u5-production/MEMORY_ACTIVATION_20261003T084348Z",
+  "requested_utc": "20261003T084348Z",
+  "before_progress": {
+    "decisions": 2338405000000,
+    "fn": 0,
+    "fp": 1,
+    "recent_per_second": 252980026.29734144,
+    "seed": 9370001,
+    "session_per_second": 265511950.28815487,
+    "status": "RUNNING",
+    "through": 2338405000001,
+    "updated_utc": "2026-10-03T08:43:48Z"
+  },
+  "status": "RESUMED",
+  "migration": {
+    "status": "MIGRATED",
+    "decisions": 2338420000000,
+    "fp": 1,
+    "fn": 0,
+    "accelerator": {
+      "backend": "gpu",
+      "pipeline": true,
+      "files": {
+        "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+        "accelerator.cu": "97be6e9fd47495ddcead5ed969c4c0e9ab8adff4572334f5a196e7d0d8e45313",
+        "accelerated.py": "988b3dacf2ea90dba190f36c309426eb195313024c616d0511514e3ba41df11a",
+        "pilot.py": "be561b88117910735dd3b665bfc3111183586436a386457da4ed308a874cd55a",
+        "pipeline.py": "8b76e028aa8611378eefa2bc21ce3c24fc1ed28409bff09afac7203e9d0072bb",
+        "native_history.cpp": "1f207c0271669a0930e2118379480376900370d507fd2da2119a1c53828226b9",
+        "native_history.py": "b7a744f64eb62ef39363918447b9fbe0a77423c9347d2f8685132fe69b21ebbd",
+        "journal.py": "846042cfd60ed7a08c08f752af7603ac82d2c01bf349ca9ad9f1f929643503d8",
+        "gpu_grade.cu": "9d231be53ecb6168341275a8cf41dae4d1bc2dcc54766556ab636fb63bd09c25",
+        "gpu_history.cu": "a9ab8747dc5bdf93cea59baa7dbba91480a927c12f839ac42e8a13bec73da644",
+        "history_exports.cpp": "7ff04d31a45e59caed2d64e0bd84f5a0503971fa9d0eb0932d2ca58c1c805221",
+        "gpu_roles.py": "86fa6e5a5c680aac75fd41b504e92c66d7bdcd6f08ab352d3527495c6afeb296",
+        "runtime_config.py": "f21a56d484e83572ba0ad970491c47c4fc060f3ec6649ae6a2bd893366fa2a04"
+      },
+      "proposal_gpu": 0,
+      "history_gpu": 1,
+      "grade_gpu": 2,
+      "gpu_cache_mib": 16384,
+      "cuda_arch": "sm_120"
+    }
+  },
+  "qualification": "/root/prime-u5-memory-qualification-20261003/INTEGRATION_QUALIFICATION.json",
+  "memory_qualification": {
+    "status": "PASS",
+    "complete_timing_rows_on_disk": 1200,
+    "retained_rows_in_memory_summary": 1024,
+    "mature_peak_rss_gib": 6.511531829833984,
+    "mature_cache_gib": 3.9992152601480484,
+    "mature_whole_session_m_per_second": 186.69540998778663,
+    "mature_restore_seconds": 1.3717134819598868,
+    "original_errors": [
+      {
+        "kind": "FP",
+        "n": 2274828165298
+      }
+    ]
+  },
+  "resumed_utc": "2026-10-03T08:51:54+00:00",
+  "command": [
+    "/tmp/prime-u5-venv/bin/python",
+    "/tmp/prime-u5-throughput/experiments/u5-throughput/campaign.py",
+    "--root",
+    "/root/prime-u5-production",
+    "--mirror",
+    "/root/prime-u5-backup",
+    "--seed",
+    "9370001",
+    "--cache-mib",
+    "16384",
+    "--threads",
+    "8",
+    "--workers",
+    "8",
+    "--history-threads",
+    "12",
+    "--proposal-gpu",
+    "0",
+    "--history-gpu",
+    "1",
+    "--grade-gpu",
+    "2",
+    "--gpu-cache-mib",
+    "16384",
+    "--cuda-arch",
+    "sm_120"
+  ],
+  "campaign_pid": 81841,
+  "memory_guard_pid": 84156,
+  "host_cache_gib": 16,
+  "memory_guard_compatibility_mode": "verified_no_swap_fallback"
+}

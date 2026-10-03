@@ -21,9 +21,10 @@ order and scores errors. CPUs retain ordered state consumption and the rolling
 hash, exact PCG64 streams, authenticated history decoding, independent reference
 generation, compression and the sole durable writer. There are eight RNG/decode
 workers, eight accelerator CPU threads, and twelve history-planning threads.
-The bounded host history cache is **192 GiB** (`196608 MiB`). This provides room
-for history growth beyond the former 96 GiB cache; active journals remain needed
-and the working set can eventually exceed any finite cache.
+The bounded host history cache is now **16 GiB** (`16384 MiB`), replacing the
+earlier 192 GiB allowance. GPU-resident authenticated records are reused without
+decoding duplicate host copies. The host cache holds recently needed uploads
+and the tiny-period search record; immutable event journals remain on disk.
 
 The [GPU role qualification and activation record](pod-gpu-roles.md) documents
 the comparison, restart check and resumed-production measurement. Frozen tables,
@@ -139,12 +140,18 @@ continued committing with FP=0, FN=0. The receipt is
 The [retained reclaim receipt](../evidence/pod/memory-20261003/MEMORY_RECLAIM_20261003T081203Z.json)
 records memory categories, errors and continued committed progress before/after.
 
-`scripts/pod_memory_guard.py --watch 30` now checks available container headroom.
-Below **32 GiB**, it requests at most **16 GiB** of file-cache reclaim per check,
-aiming for **48 GiB** headroom and budgeting at least **8 GiB** of clean unmapped
-file cache. It uses the container's
+`scripts/pod_memory_guard.py --watch 30` checks container headroom and file cache.
+Below **32 GiB** headroom or above **48 GiB** file cache, it requests at most
+**16 GiB** of file-cache reclaim per check, aiming for **48 GiB** headroom and
+**32 GiB** file cache, while budgeting at least **8 GiB** of clean unmapped cache.
+It uses the container's
 [`memory.reclaim` interface](https://docs.kernel.org/admin-guide/cgroup-v2.html#memory)
-with `swappiness=0`; it does not lower the memory limit or apply `memory.high`
+with `swappiness=0` where supported. This pod's older kernel rejects that optional
+flag, so the guard uses the plain reclaim interface only after verifying there
+is no swap route (a zero cgroup swap limit or no active host swap). The successful
+08:12 one-time reclaim also used that compatibility path. Unsupported requests
+are retained as errors if a no-swap condition cannot be verified. The guard does
+not lower the memory limit or apply `memory.high`
 throttling. Kernel reclaim amounts can differ from the request, and ongoing
 allocations can reduce the headroom observed afterward. The guard retains
 application buffers, decoded history, GPU state and all journal files. It does
@@ -152,9 +159,8 @@ not change pinned numerical sources, and it exits when the campaign ends.
 Status and reclaim receipts are retained in `MEMORY_GUARD.json`; guard events
 appear in `memory-guard.log`. File cache can grow again between checks.
 
-The decoded host-history cache remains capped at **192 GiB** and automatically
-evicts/reloads authenticated records when full. This cap covers decoded payload,
-not all process overhead. Evictions can affect throughput as history grows.
+The initial file-cache reclaim left the earlier **192 GiB** decoded-history
+allowance in place. The rolling-cache deployment below replaces that allowance.
 Flushing file cache does not make the live journal storage footprint bounded.
 
 After guard activation, **08:18:24–08:19:09 UTC**, the same worker committed
@@ -166,6 +172,86 @@ payload shortly before this measurement was **135.62 GiB**, with about
 not an unlimited-runtime guarantee. At activation the guard correctly requested
 no further reclaim because headroom was adequate.
 [Post-reclaim production measurement](../evidence/pod/memory-20261003/MEMORY_GUARD_THROUGHPUT_20261003.json).
+
+## Rolling RAM history and bounded diagnostics
+
+Production paused cleanly at **2,338,420,000,000 decisions**, FP=1, FN=0, for the
+qualified rolling-cache deployment. The previous code and scheduling state are
+saved under `/root/prime-u5-production/MEMORY_ACTIVATION_20261003T084348Z`.
+Migration retains durable HEAD, all actual event records, hidden state, seed,
+PCG64 streams and error counts; it changes implementation identity and cache
+scheduling. The detached controller resumed with **16 GiB host cache** and the
+same **16 GiB GPU cache**, three GPU roles and CPU worker allocation.
+
+GPU history now reads host offsets only for records requiring a device upload
+and for the small-period host search. Resident device payloads were authenticated
+on upload and remain immutable. The GPU eviction order and complete required
+record set are retained. Restart preloads the current upload working set and
+64-window lookahead, rather than filling RAM with an older history prefix.
+
+The host cache uses LRU eviction and can shrink below its 16 GiB configured cap
+when container anonymous/kernel memory grows. Every 128 preparation calls it
+charges non-cache overhead first and reserves up to **48 GiB** for buffers and
+checkpoint work. CPU history uses the same allowance rule. Evictions discard
+decoded copies only; future requests authenticate and decode the retained journal.
+
+All new timing records stream to `TIMINGS.jsonl`. Only the last **1,024** remain
+in RAM and in a session's `rows` summary. Summaries explicitly record total and
+retained row counts, `timing_rows_scope`, and the complete timing-file path.
+Event journals, hashes, RNG state and cumulative errors are retained in full.
+The journal descriptor catalog still grows; cache budgeting accounts for its
+memory. If anonymous plus kernel memory reaches the **24 GiB checkpoint reserve**,
+the independent memory guard requests STOP for an orderly checkpoint pause.
+It does not silently resume that pause or delete history. Storage continues to
+grow under the existing archive policy.
+
+The workstation's u5 runner uses a **4 GiB** decoded-history cache, demonstrating
+that a full event history does not require a full decoded RAM copy. A rolling
+cache may contain very old events that are needed again: a fixed cutoff that
+deletes all older event history would change the scientific bank masks.
+
+Qualification retained the frozen 100M prefix (160 comparisons), the final
+**6B decisions** of the paused trajectory (15,600 metadata comparisons), and
+forced process-kill/restart with an injected orphan (2,600 comparisons). The
+1,200-chunk mature replay retained all 1,200 timing rows on disk and only 1,024
+in its summary. With a **4 GiB** host cache it used **6.512 GiB peak process RAM**,
+restored its upload working set in **1.372 seconds**, and averaged **186.695M/s**
+including setup, restoration and finalization. These are retained replays, not
+new independent accuracy exposure.
+[Runtime qualification](../evidence/pod/rolling-cache-20261003/INTEGRATION_QUALIFICATION.json)
+and [memory/retention checks](../evidence/pod/rolling-cache-20261003/MEMORY_QUALIFICATION_ADDITIONAL.json).
+
+The first production false event was **2,274,828,165,298**, recorded before this
+deployment. Its 1B surrounding replay matches 2,600 metadata comparisons,
+including the error, subsequent hidden state and RNG streams. It remains an
+observed raw false event; no repair, correction, learner or oracle veto is used.
+The cumulative count at activation is FP=1, FN=0.
+
+The second false event was **2,379,059,006,438**, after activation. Independent
+CPU proposal, history and grading replays around **each** error reproduce the
+production result, hidden state and RNG streams: **1B decisions and 2,600
+metadata comparisons per replay**. The first replay ends FP=1/FN=0 and the
+second retains the preceding error and ends FP=2/FN=0. These checks found no
+decision change attributable to GPU execution, rolling cache or restart.
+[First CPU replay](../evidence/pod/rolling-cache-20261003/CPU_OBSERVED_ERROR_QUALIFICATION.json)
+and [second CPU replay](../evidence/pod/rolling-cache-20261003/SECOND_CPU_OBSERVED_ERROR_QUALIFICATION.json).
+
+A floating matrix evaluation of the unchanged frozen CDF assigns a positive
+probability, approximately **7.5–8.1e-13**, to three even readouts for the
+phases of these two even composites in nonzero history banks. This is a
+conditional table diagnostic, not a certified error-rate bound or independent
+accuracy exposure. The raw model can therefore accept an even composite;
+the two recorded errors are preserved.
+[Frozen-table diagnostic](../evidence/pod/rolling-cache-20261003/GATE_COMPOSITE_ACCEPTANCE.json).
+
+At **09:13:37–09:14:37 UTC**, production committed **14.6B decisions in
+60.00208 seconds = 243.325M/s**, with FP=2/FN=0 throughout. The four 15-second
+intervals were **233.3–253.3M/s**. End container memory was **67.87 GiB**,
+including **26.04 GiB anonymous RAM** and **40.07 GiB file cache**; all OOM
+and limit-event counters remained zero. A T500 backup transfer ran concurrently.
+The 16 GiB host cache remains bounded while file cache varies with I/O and guard
+reclamation. This observation is not a guarantee for every future endpoint.
+[Live measurement](../evidence/pod/rolling-cache-20261003/ROLLING_CACHE_THROUGHPUT_20261003.json).
 
 The existing progress command now separates application RAM, file cache and
 headroom. Restart only the viewer to display the added values:
@@ -190,7 +276,7 @@ Current campaign command (do not run a second writer against an active root):
 nohup env OPENBLAS_NUM_THREADS=1 /tmp/prime-u5-venv/bin/python \
   /tmp/prime-u5-throughput/experiments/u5-throughput/campaign.py \
   --root /root/prime-u5-production --mirror /root/prime-u5-backup \
-  --seed 9370001 --cache-mib 196608 \
+  --seed 9370001 --cache-mib 16384 \
   --threads 8 --workers 8 --history-threads 12 \
   --proposal-gpu 0 --history-gpu 1 --grade-gpu 2 \
   --gpu-cache-mib 16384 --cuda-arch sm_120 \

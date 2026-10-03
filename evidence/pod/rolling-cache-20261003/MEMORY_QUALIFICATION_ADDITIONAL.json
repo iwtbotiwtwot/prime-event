@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "complete_timing_rows_on_disk": 1200,
+  "retained_rows_in_memory_summary": 1024,
+  "mature_peak_rss_gib": 6.511531829833984,
+  "mature_cache_gib": 3.9992152601480484,
+  "mature_whole_session_m_per_second": 186.69540998778663,
+  "mature_restore_seconds": 1.3717134819598868,
+  "original_errors": [
+    {
+      "kind": "FP",
+      "n": 2274828165298
+    }
+  ]
+}

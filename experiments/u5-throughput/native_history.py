@@ -5,6 +5,14 @@ from pathlib import Path
 import time
 import numpy as np
 
+GIB=1024**3
+
+def cache_allowance(configured, cached, anonymous, kernel, limit):
+    """Charge non-cache application memory before budgeting decoded history."""
+    reserve=min(48*GIB,max(2*GIB,limit//5))
+    overhead=max(0,anonymous+kernel-cached)
+    return max(0,min(configured,limit-reserve-overhead))
+
 def bind(original, source, threads, decode_workers=8):
     lib=C.CDLL(str(source/'history_native.so'));u=C.c_uint64;v=C.c_void_p
     lib.history_plan.argtypes=[u,u,u];lib.history_plan.restype=v
@@ -18,6 +26,22 @@ def bind(original, source, threads, decode_workers=8):
         def __init__(self,*args,**kwargs):
             super().__init__(*args,**kwargs)
             self._loader=None;self.last_stats={}
+            self.configured_limit=self.limit;self._budget_calls=0
+            self.rebudget()
+        def rebudget(self):
+            try:
+                cgroup=Path('/sys/fs/cgroup')
+                limit=int((cgroup/'memory.max').read_text())
+                stats=dict((k,int(v)) for k,v in
+                           (line.split() for line in (cgroup/'memory.stat').read_text().splitlines()))
+            except (OSError,ValueError):return
+            self.limit=cache_allowance(self.configured_limit,self.bytes,stats['anon'],stats['kernel'],limit)
+            while self.cache and self.bytes>self.limit:
+                _,old=self.cache.popitem(last=False);self.bytes-=old.nbytes;self.evictions+=1
+        def counters(self):
+            values=super().counters()
+            values.update(cache_limit_bytes=self.limit,configured_cache_limit_bytes=self.configured_limit)
+            return values
         def close(self):
             if self._loader is not None:
                 self._loader.shutdown();self._loader=None
@@ -53,6 +77,8 @@ def bind(original, source, threads, decode_workers=8):
                 self.cache[j]=compact;self.bytes+=compact.nbytes-absolute.nbytes
             return compact
         def _arrays(self,ids):
+            self._budget_calls+=1
+            if self._budget_calls%128==0:self.rebudget()
             ids=[int(j) for j in ids]
             if not (unpack and sha) or not all('path' in self.records[j] for j in ids):
                 return [self.get(j) for j in ids]
@@ -97,6 +123,7 @@ def bind(original, source, threads, decode_workers=8):
                 after=self.counters()
                 self.last_stats=dict(records=len(ids),get_seconds=get_seconds,
                     native_seconds=phases.tolist(),cache_bytes=after['cache_bytes'],
+                    cache_limit_bytes=self.limit,configured_cache_limit_bytes=self.configured_limit,
                     misses=after['misses']-before['misses'],evictions=after['evictions']-before['evictions'])
                 return banks
             finally:lib.history_free(plan)

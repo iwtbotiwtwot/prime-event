@@ -1,0 +1,49 @@
+{
+  "kind": "independent_frozen_table_diagnostic",
+  "cdf_sha256": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+  "definition": "Probability of three even readouts at a fixed phase/bank over initial states; floating matrix evaluation",
+  "rows": [
+    {
+      "n": 2274828165298,
+      "phase": 1,
+      "bank_bits": 1,
+      "min_over_initial_states": 7.839874384781939e-13,
+      "max_over_initial_states": 8.058110400252722e-13
+    },
+    {
+      "n": 2274828165298,
+      "phase": 1,
+      "bank_bits": 2,
+      "min_over_initial_states": 7.839874384805514e-13,
+      "max_over_initial_states": 8.058110400273566e-13
+    },
+    {
+      "n": 2274828165298,
+      "phase": 1,
+      "bank_bits": 3,
+      "min_over_initial_states": 7.48421664704627e-13,
+      "max_over_initial_states": 7.484320540192176e-13
+    },
+    {
+      "n": 2379059006438,
+      "phase": 21,
+      "bank_bits": 1,
+      "min_over_initial_states": 7.68982483845794e-13,
+      "max_over_initial_states": 7.814204359999613e-13
+    },
+    {
+      "n": 2379059006438,
+      "phase": 21,
+      "bank_bits": 2,
+      "min_over_initial_states": 7.689824838487574e-13,
+      "max_over_initial_states": 7.814204360029314e-13
+    },
+    {
+      "n": 2379059006438,
+      "phase": 21,
+      "bank_bits": 3,
+      "min_over_initial_states": 7.484125794069384e-13,
+      "max_over_initial_states": 7.484169626245627e-13
+    }
+  ]
+}
