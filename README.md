@@ -16,24 +16,28 @@ feeds back unchanged, with no repair or correction.
 [Machine-readable hourly data](evidence/live/hourly.csv) ·
 [Exact source hashes](production/u5/SOURCE.json).
 
+**The separate three-GPU pod run stopped at exactly 8,000,000,000,000 decisions,
+with 3 false events and zero missed primes.** Its final 100B averaged
+**155.41M/s**. [Final pod result, errors and archive custody](docs/pod-eight-trillion.md).
+
 [GPU/CPU throughput pilot: methodology, predictions and measured results](docs/throughput-pilot.md).
 The accelerator is qualified separately against the frozen u5 trajectory; these
-bounded pod pilots do not replace or migrate the active workstation run.
-The subsequent authorized **[pod run reports every 100B decisions](docs/pod-run.md)**;
+bounded pod pilots retain their separate qualification records alongside the
+local CPU trajectory.
+The subsequent authorized **[pod run retains reports every 100B decisions](docs/pod-run.md)**;
 [production controls and retention](docs/pod-production.md) describe its separate
 seed-9370001 execution.
 
-The pod trajectory now uses a transferred checkpoint on a three-GPU Blackwell
+The pod trajectory used a transferred checkpoint on a three-GPU Blackwell
 host, with separate proposal, history and grading roles and a bounded 16 GiB
 host history cache.
 [Updated setup, qualification and resumed throughput](docs/pod-gpu-roles.md).
 
-The local page now records its intentional stop; pod reports remain dated
-observations of that separate execution. The latest
+The local and pod pages record their separate intentional stops. The latest
 source uses **128 states, u=5, Gamma=512 and three readings**. It is separate
 from the earlier u4 ensembles and 8-state GPU runs below. Frozen source tables,
-C++ kernels and a 100M replay checker are included; the moving raw production
-journal is retained on T500 rather than GitHub.
+C++ kernels and a 100M replay checker are included; the raw production
+journals are retained separately from GitHub.
 
 ## Headline results: raw feedback through one billion
 
@@ -91,6 +95,7 @@ The following compact table separates raw feedback from reference-assisted repai
 | 9360003 GPU | 172.470 | raw | 0.2783 |
 | **9365001 sole GPU*** | **9.110** | **no correction** | **0.4391** |
 | **9370001 u5 CPU (stopped)** | **1,039.515** | **no correction** | **0** |
+| **9370001 u5 pod (stopped)** | **8,000.000** | **no correction** | **0.000375** |
 
 *9365001 is the retained **October 1, 19:43:31 UTC early snapshot**: **3 false events + 1 missed prime = 4 errors** through **9,110,028,287**. This is not its final endpoint.
 

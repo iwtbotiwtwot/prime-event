@@ -42,3 +42,11 @@ history-index block hashes and final-journal verification. The full original
 checkpoint, all 207,903 event journals, timing log and session receipts remain
 on T500; they are not bundled in Git. The pod is a separate execution of the
 same seed, so overlapping decisions are not additional independent seed exposure.
+
+The [pod u5 result](pod-eight-trillion.md) stopped at exactly 8T decisions,
+with 3 raw false events and no missed primes. Its complete history comprises
+1,600,000 journals across four incremental compressed batches. The first two
+were previously verified on T500 and uploaded by the owner; the finalization
+transferred the new batches and a separate critical metadata/source archive.
+The final receipt, all 80 milestone records and archive custody are published
+as compact evidence. The bulk journals are retained separately, not in Git.

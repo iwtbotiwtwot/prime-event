@@ -1,5 +1,12 @@
 # Three GPU roles and resumed production
 
+**Final status: the owner stopped the pod at 8T decisions, FP=3 / FN=0,
+on 2026-10-03 at 16:49:18 UTC.** The final 100B averaged 155.41M/s.
+[Final checkpoint and archived data](pod-eight-trillion.md). The deployment
+measurements below are historical; the later memory qualification reduced the
+host history cache from 192 GiB to 16 GiB as described in
+[production controls](pod-production.md).
+
 Production resumed on **2026-10-03 at 07:36:16 UTC**, on
 **216.81.151.70:12771**, continuing seed **9370001** from
 **1,264,250,000,000 decisions**, FP=0, FN=0. The measured running rate was

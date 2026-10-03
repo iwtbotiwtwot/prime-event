@@ -1,0 +1,290 @@
+{
+  "activation": {
+    "activated_utc": "2026-10-03T16:29:49+00:00",
+    "archive_plan": "Incremental batches after 000002 only; owner says batches 1 and 2 already uploaded.",
+    "campaign_pid": 129969,
+    "config": {
+      "backend": "gpu",
+      "cache_mib": 16384,
+      "cuda_arch": "sm_120",
+      "gpu_cache_mib": 16384,
+      "grade_gpu": 2,
+      "history_gpu": 1,
+      "history_threads": 12,
+      "milestone": 100000000000,
+      "proposal_gpu": 0,
+      "seed": 9370001,
+      "threads": 8,
+      "workers": 8
+    },
+    "controller_sha256": "ff34ff96cc77ca79a88bf02a9abab3e2973531bd90ca7197480c12d8dc459a5b",
+    "max_milestones": 80,
+    "pause_base_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 330551981949850760947011616870119260071,
+        "state": 312653676697943146425188515127420277311
+      },
+      "uinteger": 0
+    },
+    "pause_decisions": 7819915000000,
+    "pause_extra_rng": {
+      "bit_generator": "PCG64",
+      "has_uint32": 0,
+      "state": {
+        "inc": 243100038998964179299413621648472709335,
+        "state": 16775777281998847771875405929576841336
+      },
+      "uinteger": 0
+    },
+    "pause_fn": 0,
+    "pause_fp": 3,
+    "pause_head": {
+      "offset": 339077446,
+      "sequence": 1563983,
+      "sha256": "505d7cba5f9d9b414649dcb0303050872c7db8efa0cf16f9a5ee458d3f1a094e"
+    },
+    "pause_terminal_status": [
+      111,
+      272946416150,
+      17237694798439908220
+    ],
+    "resume_command": [
+      "/tmp/prime-u5-venv/bin/python",
+      "/tmp/prime-u5-throughput/experiments/u5-throughput/campaign.py",
+      "--root",
+      "/root/prime-u5-production",
+      "--mirror",
+      "/root/prime-u5-backup",
+      "--seed",
+      "9370001",
+      "--milestone",
+      "100000000000",
+      "--max-milestones",
+      "80",
+      "--cache-mib",
+      "16384",
+      "--threads",
+      "8",
+      "--workers",
+      "8",
+      "--history-threads",
+      "12",
+      "--proposal-gpu",
+      "0",
+      "--history-gpu",
+      "1",
+      "--grade-gpu",
+      "2",
+      "--gpu-cache-mib",
+      "16384",
+      "--cuda-arch",
+      "sm_120"
+    ],
+    "schema": "prime-event-pod-target-activation-v1",
+    "target_decisions": 8000000000000
+  },
+  "archive_scope": "New journals after batch 000002 only. Owner says batches 000001/000002 already uploaded; they were previously verified on T500.",
+  "base_rng": {
+    "bit_generator": "PCG64",
+    "has_uint32": 0,
+    "state": {
+      "inc": 330551981949850760947011616870119260071,
+      "state": 61951147685171284300326479725754188927
+    },
+    "uinteger": 0
+  },
+  "checkpoint_bytes": 306872474,
+  "checkpoint_sha256": "960a105e4acd6738edf9059b139f492d94193a4ee420ff44c7f2efaca22ec331",
+  "config": {
+    "accelerator": {
+      "backend": "gpu",
+      "cuda_arch": "sm_120",
+      "files": {
+        "accelerated.py": "988b3dacf2ea90dba190f36c309426eb195313024c616d0511514e3ba41df11a",
+        "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+        "accelerator.cu": "97be6e9fd47495ddcead5ed969c4c0e9ab8adff4572334f5a196e7d0d8e45313",
+        "gpu_grade.cu": "9d231be53ecb6168341275a8cf41dae4d1bc2dcc54766556ab636fb63bd09c25",
+        "gpu_history.cu": "a9ab8747dc5bdf93cea59baa7dbba91480a927c12f839ac42e8a13bec73da644",
+        "gpu_roles.py": "86fa6e5a5c680aac75fd41b504e92c66d7bdcd6f08ab352d3527495c6afeb296",
+        "history_exports.cpp": "7ff04d31a45e59caed2d64e0bd84f5a0503971fa9d0eb0932d2ca58c1c805221",
+        "journal.py": "846042cfd60ed7a08c08f752af7603ac82d2c01bf349ca9ad9f1f929643503d8",
+        "native_history.cpp": "1f207c0271669a0930e2118379480376900370d507fd2da2119a1c53828226b9",
+        "native_history.py": "b7a744f64eb62ef39363918447b9fbe0a77423c9347d2f8685132fe69b21ebbd",
+        "pilot.py": "be561b88117910735dd3b665bfc3111183586436a386457da4ed308a874cd55a",
+        "pipeline.py": "8b76e028aa8611378eefa2bc21ce3c24fc1ed28409bff09afac7203e9d0072bb",
+        "runtime_config.py": "f21a56d484e83572ba0ad970491c47c4fc060f3ec6649ae6a2bd893366fa2a04"
+      },
+      "gpu_cache_mib": 16384,
+      "grade_gpu": 2,
+      "history_gpu": 1,
+      "pipeline": true,
+      "proposal_gpu": 0
+    },
+    "backend": "cpu",
+    "cache_mib": 16384,
+    "cdf_sha256": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "chunk": 5000000,
+    "extra_seed": 10370001,
+    "gpu_batch": 262144,
+    "index_sha256": "69d23c4f995ffa7ba3e0fa59fe897af3f531adb8f8f128df147c5468d5357e0e",
+    "initial_sha256": "66490bed64908617e79362dce54146335dd74c0258572839c5a502ff725f6b70",
+    "kernel_sha256": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+    "mode": "indexed",
+    "numpy": "1.26.4",
+    "seed": 9370001
+  },
+  "controller_reason": "test_milestone_limit",
+  "current_decisions_per_second": 0,
+  "decisions": 8000000000000,
+  "durable_head": {
+    "offset": 347035452,
+    "sequence": 1600000,
+    "sha256": "c533a3323d86ea5502092c7a9f3fa8aa7cff74b21ef95b27b7f6e27d3e8c3252"
+  },
+  "emitted_events": 279010070814,
+  "extra_rng": {
+    "bit_generator": "PCG64",
+    "has_uint32": 0,
+    "state": {
+      "inc": 243100038998964179299413621648472709335,
+      "state": 1015724899146426695046969694169211640
+    },
+    "uinteger": 0
+  },
+  "feedback": "raw; no repair, correction, learner or reference veto",
+  "final_500M_decisions_per_second": 175310989.48642296,
+  "final_500M_seconds": 2.8520744846900925,
+  "fn": 0,
+  "fp": 3,
+  "last_chunk": {
+    "count": 168693,
+    "first": 7999995000002,
+    "path": "/root/prime-u5-production/data/chunk_1599999.npz",
+    "rank": 279009902121,
+    "sha256": "120d41e3ce001e4a36a4b34105a1ba2cd4cb90a3476907e8ecc532900a1db94e"
+  },
+  "last_milestone": {
+    "checkpoint_path": "/root/prime-u5-production/data/MILESTONE_008000000000000.checkpoint.json",
+    "checkpoint_sha256": "b2f0f0c363963b3758a832650d6e13f74c78259d6b09bbd8bec0002b0c1270ed",
+    "cumulative_per_second": 138784260.3479693,
+    "cumulative_seconds": 57643.42426109314,
+    "decisions": 8000000000000,
+    "errors": 3,
+    "feedback": "raw; no repair or correction",
+    "fn": 0,
+    "fp": 3,
+    "interval_fn": 0,
+    "interval_fp": 0,
+    "interval_per_second": 155410939.19176215,
+    "interval_seconds": 643.4553482532501,
+    "milestone": 80,
+    "observed_utc": "2026-10-03T16:49:16Z",
+    "seed": 9370001,
+    "through": 8000000000001,
+    "unix": 1791046156.9726968,
+    "worker_pid": 129970
+  },
+  "next_n": 8000000000002,
+  "observed_errors": [
+    {
+      "journal_sha256": "7fb7783b200f49121e76fe8c2d8124326884212035a93fa32ea8276c2a9cf038",
+      "kind": "FP",
+      "n": 2274828165298,
+      "step": 454965
+    },
+    {
+      "journal_sha256": "fb57a5f85ad987b0ccf1b62663823e953be3b16740c62a6b7d236a0fb5dc1095",
+      "kind": "FP",
+      "n": 2379059006438,
+      "step": 475811
+    },
+    {
+      "journal_sha256": "1c89e9558419009e2a401e4175fef73822fade9112e6d4481129ea9055de432c",
+      "kind": "FP",
+      "n": 2687315963345,
+      "step": 537463
+    }
+  ],
+  "observed_utc": "2026-10-03T16:49:50+00:00",
+  "progress": {
+    "fn": 0,
+    "fp": 3,
+    "per_second": 155090587.09053656,
+    "reason": "target",
+    "status": "STOPPED",
+    "through": 8000000000001,
+    "updated_utc": "2026-10-03T16:49:18Z"
+  },
+  "record_count": 1600000,
+  "runner_exited": true,
+  "scheduling_config": {
+    "backend": "gpu",
+    "cache_mib": 16384,
+    "cuda_arch": "sm_120",
+    "gpu_cache_mib": 16384,
+    "grade_gpu": 2,
+    "history_gpu": 1,
+    "history_threads": 12,
+    "milestone": 100000000000,
+    "proposal_gpu": 0,
+    "seed": 9370001,
+    "threads": 8,
+    "workers": 8
+  },
+  "schema": "prime-event-pod-eight-trillion-final-v1",
+  "seed": 9370001,
+  "source_files": {
+    "accelerated.py": "988b3dacf2ea90dba190f36c309426eb195313024c616d0511514e3ba41df11a",
+    "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+    "accelerator.cu": "97be6e9fd47495ddcead5ed969c4c0e9ab8adff4572334f5a196e7d0d8e45313",
+    "accelerator.so": "4c7fa93db84c104e31aa62988f93458f67b215aceb29bca91ac52dabee31e2c5",
+    "accelerator_gpu.so": "48b9f66cc979b8724af651a1f8dbcbecef2f547e5d785961f6200bf9f59927c5",
+    "gpu_grade.cu": "9d231be53ecb6168341275a8cf41dae4d1bc2dcc54766556ab636fb63bd09c25",
+    "gpu_grade.so": "8eff3a1a944c1b321e32c47b9cfa0f7abdb593023dc7901a9389cd3a33a37623",
+    "gpu_history.cu": "a9ab8747dc5bdf93cea59baa7dbba91480a927c12f839ac42e8a13bec73da644",
+    "gpu_history.so": "a52e8c8dad87a874f348edae1507218bf3aaf3ce3967d7c581b8208028ed7fe6",
+    "gpu_roles.py": "86fa6e5a5c680aac75fd41b504e92c66d7bdcd6f08ab352d3527495c6afeb296",
+    "history_exports.cpp": "7ff04d31a45e59caed2d64e0bd84f5a0503971fa9d0eb0932d2ca58c1c805221",
+    "history_gpu_plan.cpp": "b53be98e8ed6dadd059a8c87ad1ae29d181bcd121b0b21abb50737bc1a997885",
+    "history_gpu_plan.so": "fd5620d8791d5ece14225a65cd552e1b684f4cecb97a8ed6592da3ab096d89c3",
+    "history_native.so": "800f01dd8afe7e53813e6463ff2c86dbb4aeac2b1ffdf715ba1bf3da5b8af859",
+    "index.cpp": "69d23c4f995ffa7ba3e0fa59fe897af3f531adb8f8f128df147c5468d5357e0e",
+    "index.so": "2204d653e62190d20a1061c5c25d1d26f510b6b9737223fd618d713547b52781",
+    "journal.py": "846042cfd60ed7a08c08f752af7603ac82d2c01bf349ca9ad9f1f929643503d8",
+    "native_history.cpp": "1f207c0271669a0930e2118379480376900370d507fd2da2119a1c53828226b9",
+    "native_history.py": "b7a744f64eb62ef39363918447b9fbe0a77423c9347d2f8685132fe69b21ebbd",
+    "pilot.py": "be561b88117910735dd3b665bfc3111183586436a386457da4ed308a874cd55a",
+    "pilot_runner.py": "648273651aee7f372176bd9b8a2c383eef5295e093e2f110f86f3420353e63bd",
+    "pipeline.py": "8b76e028aa8611378eefa2bc21ce3c24fc1ed28409bff09afac7203e9d0072bb",
+    "random_buffers.py": "868fa40d47441f2caabe06ca200fe2f534f73ea53159ddcd8516d81dd5888bf4",
+    "reference.cpp": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+    "reference.so": "b00c4311af8ef6c060ea085dd9464eefbe89da4d24d1f83c3ada4ab7c2247062",
+    "runner.py": "dff6105be4fa69a8fc94d09d75a736902b0a0e892824813908f997feace2e13a",
+    "runtime_config.py": "f21a56d484e83572ba0ad970491c47c4fc060f3ec6649ae6a2bd893366fa2a04",
+    "u5_cdf.npy": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "u5_initial.npy": "66490bed64908617e79362dce54146335dd74c0258572839c5a502ff725f6b70"
+  },
+  "status": "STOPPED",
+  "stop_file_present": true,
+  "stop_reason": "owner-requested 8T milestone limit",
+  "stopped_utc": "2026-10-03T16:49:18Z",
+  "terminal_status": [
+    103,
+    279010070814,
+    14026607908322633844
+  ],
+  "through": 8000000000001,
+  "total_errors": 3,
+  "validation": {
+    "all_record_indices_and_ranks": true,
+    "durable_journal_chain": true,
+    "last_journal_and_decoded_periods_sha256": true,
+    "observed_error_journals_sha256": true,
+    "pinned_source_files_sha256": true,
+    "status": "PASS",
+    "terminal_state_and_both_rngs": true
+  },
+  "worker_reason": "target"
+}

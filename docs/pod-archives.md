@@ -1,5 +1,25 @@
 # Verified 100 GiB archive rotation
 
+## Final 8T archive closure
+
+Production stopped at exactly **8T decisions**, FP=3/FN=0, on October 3, 2026.
+The owner had already uploaded journal batches 1 and 2. Finalization resumed and
+verified batch 3, forced a below-threshold final batch 4 through chunk 1,599,999,
+and created a separate critical metadata/source archive. Only those new archives
+were downloaded to T500. All member checks passed and receipts were made durable.
+The archive ledger ends at **1,600,000 chunks** with no gaps.
+
+The T500 folder contains batches `000003`, `000004`,
+`u5_seed9370001_8T_critical.tar.zst`, expected/verified sidecars and
+`RESTORE_8T.json`. Preserve the two earlier uploads as part of this chain.
+The critical archive retains original absolute `root/` and `tmp/` paths,
+the final checkpoint and HEAD/COMMITS, timings, source and error evidence.
+It contains no bulk event journals. Pod publication and automatic-backup timers
+are disabled. [Final result and restoration](pod-eight-trillion.md) ·
+[Custody receipt](../evidence/pod/eight-trillion-20261003/ARCHIVES.json).
+
+## Production rotation history
+
 This storage policy is separate from the **100 billion decision reports**.
 Every five minutes, the backup service checks newly committed journal bytes since
 the last verified archive. At **100 GiB (107,374,182,400 bytes)** it captures a

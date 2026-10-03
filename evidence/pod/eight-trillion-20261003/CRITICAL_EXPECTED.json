@@ -1,0 +1,11 @@
+{
+  "status": "PREPARED",
+  "batch_id": "8T-critical",
+  "path": "/root/prime-u5-backup/archives/u5_seed9370001_8T_critical.tar.zst",
+  "bytes": 764995965,
+  "sha256": "f55c21d237791a6c4426453cceb5595bddc3bc198c8786b3b92e96ad384dd255",
+  "manifest_sha256": "5226f7d71c552c9244830fa0222d94282ec4d0e1423c51da508825c9d8092a2a",
+  "through_decisions": 8000000000000,
+  "members_expected": 412,
+  "scope": "Final original checkpoint, HEAD/COMMITS, timings, error evidence, runtime and source. Event journals are in batches 1 through 4; batches 1/2 were already uploaded by the owner."
+}

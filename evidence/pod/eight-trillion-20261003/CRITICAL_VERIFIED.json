@@ -1,0 +1,13 @@
+{
+  "status": "VERIFIED",
+  "verified_utc": "2026-10-03T17:06:22+00:00",
+  "batch_id": "8T-critical",
+  "sha256": "f55c21d237791a6c4426453cceb5595bddc3bc198c8786b3b92e96ad384dd255",
+  "bytes": 764995965,
+  "manifest_sha256": "5226f7d71c552c9244830fa0222d94282ec4d0e1423c51da508825c9d8092a2a",
+  "members_verified": 412,
+  "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_8T_critical.tar.zst",
+  "through_decisions": 8000000000000,
+  "verification_host": "lilhelper@10.77.0.2",
+  "verification_source_sha256": "cc42351a91b8187b665b018c3dda38d116132806838e1abae2393daba4d1ba2f"
+}

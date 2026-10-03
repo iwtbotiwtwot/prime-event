@@ -1,5 +1,11 @@
 # Continuous pod run and 100B reports
 
+**Final status: intentionally stopped at exactly 8,000,000,000,000 decisions
+on 2026-10-03 at 16:49:18 UTC (11:49:18 Chicago), with FP=3 / FN=0.**
+The final 100B averaged 155.41M/s. The STOP file is present; the controller and
+worker have exited. [Final result and archive custody](pod-eight-trillion.md).
+The deployment and operating history below document how this endpoint was reached.
+
 Authorized October 2, 2026 Chicago. The pod trajectory started **seed 9370001
 at candidate 2 with empty history**, using the frozen raw u5 source. It is a
 separate execution of the workstation seed, not an independent-seed accuracy
@@ -249,7 +255,8 @@ the independent memory guard requests STOP for an orderly checkpoint pause.
 It does not silently resume that pause or delete history. Storage continues to
 grow under the existing archive policy.
 
-The workstation's u5 runner uses a **4 GiB** decoded-history cache, demonstrating
+The workstation's stopped u5 runner used an **8 GiB** runtime decoded-history
+cache (its original checkpoint identity retains `cache_mib: 4096`), demonstrating
 that a full event history does not require a full decoded RAM copy. A rolling
 cache may contain very old events that are needed again: a fixed cutoff that
 deletes all older event history would change the scientific bank masks.

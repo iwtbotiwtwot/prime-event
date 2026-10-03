@@ -1,14 +1,18 @@
-# Pod u5 run — reports every 100 billion decisions
+# Final pod u5 run — reports every 100 billion decisions
 
-Seed **9370001**, started **2026-10-03T00:48:33+00:00** at candidate 2 with empty history. Campaign status at this report: **RUNNING**.
+Seed **9370001**, started **2026-10-03T00:48:33+00:00** at candidate 2 with empty history. Campaign status at this report: **STOPPED**.
 
-This is a separate execution of the same seed as the workstation run, not additional independent seed exposure. The workstation trajectory is unchanged. All feedback is raw: no repair, learner or reference veto. Counts below come from committed checkpoints.
+The owner requested a clean stop at **8,000,000,000,000 decisions**. Production stopped at that exact endpoint on **2026-10-03 at 16:49:18 UTC**, with **FP=3 / FN=0**. [Final checkpoint, verification and archived data](pod-eight-trillion.md).
 
-Reports are generated at exactly 100B, 200B, 300B, and onward. Interval throughput divides the latest 100B committed decisions by elapsed wall time; cumulative throughput includes setup, restarts and pauses since launch. A workstation timer publishes newly retained pod reports every minute when connectivity is available. Delayed publication does not change the recorded milestone time.
+This is a separate execution of the same seed as the workstation run, not additional independent seed exposure. The local run stopped separately at 1.039515T. All feedback is raw: no repair, learner or reference veto. Counts below come from committed checkpoints.
 
-[Methodology and pilot predictions](throughput-pilot.md) · [Production controls and T500 backups](pod-production.md) · [GPU roles and current running throughput](pod-gpu-roles.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)
+Reports were generated at exactly 100B, 200B, 300B, and onward through 8T. Interval throughput divides the latest 100B committed decisions by elapsed wall time; cumulative throughput includes setup, restarts and pauses since launch. The final 100B averaged **155.41M/s** and the complete campaign averaged **138.78M/s**, including those pauses. Publication and backup timers are now disabled, preserving the final result.
+
+[Methodology and pilot predictions](throughput-pilot.md) · [Production controls and T500 backups](pod-production.md) · [GPU roles and activation measurements](pod-gpu-roles.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)
 
 The 1.2T–1.3T interval includes the migration pause. The separate running-throughput measurement in the GPU role report excludes history restoration and that pause.
+
+The 7.8T–7.9T interval includes the clean checkpoint pause and relaunch used to impose the exact owner-requested 8T limit. Current throughput is zero because production is stopped.
 
 | Milestone | Observed UTC | False events | Missed primes | Total errors | Interval M/s | Cumulative M/s |
 |---:|---|---:|---:|---:|---:|---:|
@@ -91,5 +95,6 @@ The 1.2T–1.3T interval includes the migration pause. The separate running-thro
 | 7700B | 2026-10-03T16:15:03Z | 3 | 0 | 3 | 173.33 | 138.51 |
 | 7800B | 2026-10-03T16:26:09Z | 3 | 0 | 3 | 150.32 | 138.65 |
 | 7900B | 2026-10-03T16:38:33Z | 3 | 0 | 3 | 134.33 | 138.60 |
+| 8000B | 2026-10-03T16:49:16Z | 3 | 0 | 3 | 155.41 | 138.78 |
 
-Latest sampled progress when this page was published: **7,904,305,000,000 decisions**, FP **3**, FN **0**, observed **2026-10-03T16:39:00Z**. This is a dated sample, not a continuously refreshed counter.
+Latest sampled progress when this page was published: **8,000,000,000,000 decisions**, FP **3**, FN **0**, observed **2026-10-03T16:49:18Z**. This is a dated sample, not a continuously refreshed counter.

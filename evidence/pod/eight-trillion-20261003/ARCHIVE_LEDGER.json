@@ -1,0 +1,73 @@
+{
+  "batches": [
+    {
+      "active_history_retained": true,
+      "batch_id": 1,
+      "bytes": 106865581001,
+      "cleaned_utc": "2026-10-03T09:37:46+00:00",
+      "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_batch_000001.tar.zst",
+      "end_chunk": 504621,
+      "first_chunk": 0,
+      "journal_bytes": 109209983188,
+      "manifest_sha256": "35b9d1caaff690d05f2bf67580707f8202c18ba3f5a4cc77ecebb2c000e1fae6",
+      "path": "/root/prime-u5-backup/archives/u5_seed9370001_batch_000001.tar.zst",
+      "removed_redundant_chunks": 0,
+      "sha256": "ed34af27019dcd0ffcbcae6400f629560f3d5589122c11204f5b8c17ba6d9d86",
+      "status": "CLEANED",
+      "through_decisions": 2523105000000,
+      "verified_utc": "2026-10-03T09:35:13+00:00"
+    },
+    {
+      "active_history_retained": true,
+      "batch_id": 2,
+      "bytes": 105471394889,
+      "cleaned_utc": "2026-10-03T12:43:23+00:00",
+      "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_batch_000002.tar.zst",
+      "end_chunk": 1021162,
+      "first_chunk": 504621,
+      "journal_bytes": 107698684553,
+      "manifest_sha256": "659103532fda0f92e2480061408be1f51a074603529835a7cff87ccfeeeb2a5b",
+      "path": "/root/prime-u5-backup/archives/u5_seed9370001_batch_000002.tar.zst",
+      "removed_redundant_chunks": 0,
+      "sha256": "11288d1aa6c7c03807774e7b9898c3191849877f82e0d6ed555c7ce81e53b20b",
+      "status": "CLEANED",
+      "through_decisions": 5105810000000,
+      "verified_utc": "2026-10-03T12:42:13+00:00"
+    },
+    {
+      "active_history_retained": true,
+      "batch_id": 3,
+      "bytes": 106390398864,
+      "cleaned_utc": "2026-10-03T16:48:29+00:00",
+      "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_batch_000003.tar.zst",
+      "end_chunk": 1549710,
+      "first_chunk": 1021162,
+      "journal_bytes": 108695847981,
+      "manifest_sha256": "1720935e1b766e2c5d891a59e74b8f812c3a4d44178d41723cf4a11ea8b7f936",
+      "path": "/root/prime-u5-backup/archives/u5_seed9370001_batch_000003.tar.zst",
+      "removed_redundant_chunks": 0,
+      "sha256": "5dc33072d6a19aff494c8cf9fe4d1f2d39a90e5082826485be9d8b871bdfb745",
+      "status": "CLEANED",
+      "through_decisions": 7748550000000,
+      "verified_utc": "2026-10-03T16:47:13+00:00"
+    },
+    {
+      "active_history_retained": true,
+      "batch_id": 4,
+      "bytes": 10142291907,
+      "cleaned_utc": "2026-10-03T16:53:21+00:00",
+      "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_batch_000004.tar.zst",
+      "end_chunk": 1600000,
+      "first_chunk": 1549710,
+      "journal_bytes": 10286215128,
+      "manifest_sha256": "50254810e4e925a9a2271535f304e07819c5d0c531401cc641cd93d3b0e269a7",
+      "path": "/root/prime-u5-backup/archives/u5_seed9370001_batch_000004.tar.zst",
+      "removed_redundant_chunks": 0,
+      "sha256": "b549ce7ec7388d324b7555c77842cc44a929ad7c1b4599757f513d9d646ee382",
+      "status": "CLEANED",
+      "through_decisions": 8000000000000,
+      "verified_utc": "2026-10-03T16:53:14+00:00"
+    }
+  ],
+  "next_chunk": 1600000
+}

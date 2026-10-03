@@ -1,0 +1,36 @@
+{
+  "status": "VERIFIED_AND_CLEANED",
+  "source_root": "/root/prime-u5-production",
+  "archive": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_batch_000004.tar.zst",
+  "receipt": {
+    "status": "VERIFIED",
+    "verified_utc": "2026-10-03T16:53:14+00:00",
+    "batch_id": 4,
+    "sha256": "b549ce7ec7388d324b7555c77842cc44a929ad7c1b4599757f513d9d646ee382",
+    "bytes": 10142291907,
+    "manifest_sha256": "50254810e4e925a9a2271535f304e07819c5d0c531401cc641cd93d3b0e269a7",
+    "members_verified": 50315,
+    "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_batch_000004.tar.zst",
+    "through_decisions": 8000000000000,
+    "verification_host": "lilhelper@10.77.0.2",
+    "verification_source_sha256": "cc42351a91b8187b665b018c3dda38d116132806838e1abae2393daba4d1ba2f"
+  },
+  "container": {
+    "batch_id": 4,
+    "bytes": 10142291907,
+    "end_chunk": 1600000,
+    "first_chunk": 1549710,
+    "journal_bytes": 10286215128,
+    "manifest_sha256": "50254810e4e925a9a2271535f304e07819c5d0c531401cc641cd93d3b0e269a7",
+    "path": "/root/prime-u5-backup/archives/u5_seed9370001_batch_000004.tar.zst",
+    "sha256": "b549ce7ec7388d324b7555c77842cc44a929ad7c1b4599757f513d9d646ee382",
+    "status": "CLEANED",
+    "through_decisions": 8000000000000,
+    "verified_utc": "2026-10-03T16:53:14+00:00",
+    "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives/u5_seed9370001_batch_000004.tar.zst",
+    "removed_redundant_chunks": 0,
+    "active_history_retained": true,
+    "cleaned_utc": "2026-10-03T16:53:21+00:00"
+  },
+  "drive_action": "User uploads, verifies, then removes the T500 archive. Keep sidecar receipts."
+}
