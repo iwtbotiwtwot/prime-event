@@ -76,5 +76,6 @@ The 1.2T–1.3T interval includes the migration pause. The separate running-thro
 | 6200B | 2026-10-03T13:53:45Z | 3 | 0 | 3 | 186.45 | 131.60 |
 | 6300B | 2026-10-03T14:02:40Z | 3 | 0 | 3 | 187.16 | 132.22 |
 | 6400B | 2026-10-03T14:11:34Z | 3 | 0 | 3 | 187.01 | 132.83 |
+| 6500B | 2026-10-03T14:20:37Z | 3 | 0 | 3 | 184.26 | 133.40 |
 
-Latest sampled progress when this page was published: **6,405,710,000,000 decisions**, FP **3**, FN **0**, observed **2026-10-03T14:12:04Z**. This is a dated sample, not a continuously refreshed counter.
+Latest sampled progress when this page was published: **6,505,210,000,000 decisions**, FP **3**, FN **0**, observed **2026-10-03T14:21:04Z**. This is a dated sample, not a continuously refreshed counter.
