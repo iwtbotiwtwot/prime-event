@@ -79,20 +79,44 @@
       "seed": 9370001,
       "through": 400000000001,
       "unix": 1790997184.062642
+    },
+    {
+      "checkpoint_path": "/root/prime-u5-production/data/MILESTONE_000500000000000.checkpoint.json",
+      "checkpoint_sha256": "24a6e58fdfc2342926b7f5b5a4e312645c35b712665fe93ade7699e3b205d1a6",
+      "cumulative_per_second": 50557182.34024181,
+      "cumulative_seconds": 9889.79165482521,
+      "decisions": 500000000000,
+      "errors": 0,
+      "feedback": "raw; no repair or correction",
+      "fn": 0,
+      "fp": 0,
+      "interval_fn": 0,
+      "interval_fp": 0,
+      "interval_per_second": 82015787.40747891,
+      "interval_seconds": 1219.2774484157562,
+      "milestone": 5,
+      "observed_utc": "2026-10-03T03:33:23Z",
+      "seed": 9370001,
+      "through": 500000000001,
+      "unix": 1790998403.3400905,
+      "worker_pid": 76736
     }
   ],
   "launch_or_latest_observation": {
+    "decisions": 504780000000,
     "fn": 0,
     "fp": 0,
-    "per_second": 58818491.245555095,
-    "reason": "target",
-    "status": "STOPPED",
-    "through": 400000000001,
-    "updated_utc": "2026-10-03T03:12:54Z"
+    "recent_per_second": 109367157.3602063,
+    "seed": 9370001,
+    "session_per_second": 98634127.60872476,
+    "status": "RUNNING",
+    "through": 504780000001,
+    "updated_utc": "2026-10-03T03:34:05Z"
   },
   "config": {
     "backend": "gpu",
     "cache_mib": 65536,
+    "history_threads": 12,
     "milestone": 100000000000,
     "seed": 9370001,
     "threads": 8,
@@ -101,7 +125,7 @@
   "backup": {
     "status": "ARCHIVE_ROTATION",
     "threshold_bytes": 107374182400,
-    "updated_utc": "2026-10-03T03:13:04+00:00",
+    "updated_utc": "2026-10-03T03:33:23+00:00",
     "working_history_retained": true
   },
   "t500_backup": {
@@ -145,7 +169,7 @@
   },
   "archive_rotation": {
     "status": "WAITING",
-    "unarchived_journal_bytes": 17758806569,
+    "unarchived_journal_bytes": 21642517670,
     "threshold_bytes": 107374182400,
     "next_chunk": 0,
     "source_root": "/root/prime-u5-production",
