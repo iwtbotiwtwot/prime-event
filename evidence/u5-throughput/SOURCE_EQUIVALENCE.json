@@ -1,0 +1,7 @@
+{
+  "change": "Clarify only the pipeline module docstring after measurement; all executable AST nodes are identical.",
+  "benchmarked_sha256": "61db9fd94924f89ff2e1ad14d9ff04e2a79ce0202323a5c580d7d7213fabb9a2",
+  "repository_sha256": "5a1cd4bc2382905a5d4784311c51c22584b2a04699f48d7241292c0960602ad9",
+  "executable_ast_identical": true,
+  "exact_benchmarked_source": "benchmarked-pipeline.py"
+}

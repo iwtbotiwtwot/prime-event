@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "stop_checkpoint_unchanged": true,
+  "orphan_quarantined": 1,
+  "restart_reference_checks": 160,
+  "slow_fsync_reference_checks": 160,
+  "cpu_and_gpu_each": {
+    "boundary_certifications": 335744,
+    "sequential_decisions": 105000,
+    "fallback_readings": 93804,
+    "changed_banks": 31268,
+    "parallel_history_and_grade_cases": 3
+  },
+  "existing_repository_tests": 3,
+  "historical_evidence_trajectories": 288,
+  "production_started": false
+}

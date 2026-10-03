@@ -1,0 +1,10 @@
+{
+  "verified_utc": "2026-10-03T00:26:15.469181+00:00",
+  "sha256": "9b4b6260237d812c50592c71206f1cf82b9f31e5fcb42ee5f6de87be9550c103",
+  "bytes": 578461110,
+  "local_path": "/home/sam/prime-event/runs/pod-pilot-20261003/prime-u5-qualified-20261003.tar.gz",
+  "pod_path": "/workspace/prime-u5-qualified-20261003.tar.gz",
+  "contents": "Frozen reference through 2B; five timed GPU journals; restart/slow-writer/current-seed journals; exact benchmark sources; compact validation records.",
+  "included_in_git": false,
+  "local_and_pod_bytes_verified": true
+}

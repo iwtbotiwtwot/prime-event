@@ -1,0 +1,67 @@
+{
+  "recorded_utc": "2026-10-03T00:21:25.103210+00:00",
+  "accepted_minimum_decisions_per_second": 95000000,
+  "original_target": 100000000,
+  "trials": [
+    {
+      "new_decisions": 1000000000,
+      "seconds": 10.046047870069742,
+      "per_second": 99541631.98637612,
+      "peak_rss_kib": 958172,
+      "fp": 0,
+      "fn": 0,
+      "through": 1000000001,
+      "name": "release-gpu-1"
+    },
+    {
+      "new_decisions": 1000000000,
+      "seconds": 10.082256251946092,
+      "per_second": 99184148.37025973,
+      "peak_rss_kib": 961720,
+      "fp": 0,
+      "fn": 0,
+      "through": 1000000001,
+      "name": "release-gpu-2"
+    },
+    {
+      "new_decisions": 1000000000,
+      "seconds": 10.243068691343069,
+      "per_second": 97626993.44632435,
+      "peak_rss_kib": 962500,
+      "fp": 0,
+      "fn": 0,
+      "through": 1000000001,
+      "name": "release-gpu-3"
+    },
+    {
+      "new_decisions": 2000000000,
+      "seconds": 20.389021256938577,
+      "per_second": 98092006.22219083,
+      "peak_rss_kib": 1405316,
+      "fp": 0,
+      "fn": 0,
+      "through": 2000000001,
+      "name": "release-gpu-long-1"
+    },
+    {
+      "new_decisions": 2000000000,
+      "seconds": 19.780365590006113,
+      "per_second": 101110365.77658026,
+      "peak_rss_kib": 1410656,
+      "fp": 0,
+      "fn": 0,
+      "through": 2000000001,
+      "name": "release-gpu-long-2"
+    }
+  ],
+  "median_per_second": 99184148.37025973,
+  "min_per_second": 97626993.44632435,
+  "max_per_second": 101110365.77658026,
+  "pooled_per_second": 99233408.2268072,
+  "baseline_first_billion_per_second": 6940357.692907636,
+  "median_speedup": 14.290927464965701,
+  "unique_qualification_trajectory_decisions": 2000000000,
+  "repeated_timed_decisions": 7000000000,
+  "production_started": false,
+  "source_equivalence": "SOURCE_EQUIVALENCE.json; only pipeline module docstring clarified after measurement"
+}

@@ -93,6 +93,10 @@ or updates source state. Every gate emission feeds back unchanged.
 
 ## Implementation, performance and preservation
 
+An isolated [GPU/CPU throughput pilot](throughput-pilot.md) adds exact speculative
+transitions, parallel preparation and bounded RAM buffers. Its measurements and
+validation are separate from the active production implementation described here.
+
 Production runs on AMD Ryzen 9 8945HS, CPU affinity 1–7, four RNG workers,
 NumPy 1.26.4 and g++ `-O3 -std=c++17 -shared -fPIC`. There is no GPU execution.
 A bounded 4 GiB decoded-history LRU grows on demand. RAM buffers collect each

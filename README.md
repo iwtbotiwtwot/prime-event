@@ -12,6 +12,10 @@ candidate 2 with empty history; every emitted event feeds back unchanged.
 [Machine-readable hourly data](evidence/live/hourly.csv) ·
 [Exact source hashes](production/u5/SOURCE.json).
 
+[GPU/CPU throughput pilot: methodology, predictions and measured results](docs/throughput-pilot.md).
+The accelerator is qualified separately against the frozen u5 trajectory; these
+bounded pod pilots do not replace or migrate the active workstation run.
+
 The live page is a dated observation, not a completed-run total. The latest
 source uses **128 states, u=5, Gamma=512 and three readings**. It is separate
 from the earlier u4 ensembles and 8-state GPU runs below. Frozen source tables,

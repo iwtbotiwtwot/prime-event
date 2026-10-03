@@ -1,0 +1,31 @@
+{
+  "calculated_utc": "2026-10-03T00:09:52.842845+00:00",
+  "cdf_sha256": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+  "method": "Three correlated readings using frozen float64 transition tables; all phases and incoming states; conditional gate probabilities, not unconditional closed-loop error rates.",
+  "bounds": [
+    {
+      "bank": 0,
+      "event": "miss given no return",
+      "min": 2.245870156514229e-12,
+      "max": 2.2499779817053422e-12
+    },
+    {
+      "bank": 1,
+      "event": "emit given return",
+      "min": 7.629476388070272e-13,
+      "max": 8.058110400252722e-13
+    },
+    {
+      "bank": 2,
+      "event": "emit given return",
+      "min": 7.629476388095178e-13,
+      "max": 8.058110400273565e-13
+    },
+    {
+      "bank": 3,
+      "event": "emit given return",
+      "min": 7.484097790061995e-13,
+      "max": 7.484320540192176e-13
+    }
+  ]
+}

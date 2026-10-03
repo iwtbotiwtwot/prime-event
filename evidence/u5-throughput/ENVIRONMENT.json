@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-03T00:19:37.614134+00:00",
+  "kernel": "6.8.0-111-generic",
+  "python": "3.12.3",
+  "numpy": "1.26.4",
+  "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04) 13.3.0",
+  "cuda_compiler": "nvcc: NVIDIA (R) Cuda compiler driver\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Feb_21_20:23:50_PST_2025\nCuda compilation tools, release 12.8, V12.8.93\nBuild cuda_12.8.r12.8/compiler.35583870_0\n",
+  "gpu": "NVIDIA GeForce RTX 3090, 24576 MiB, 580.159.03",
+  "cpu_model": "AMD EPYC 7H12 64-Core Processor",
+  "cpu_quota": "3113000 100000",
+  "memory_limit_bytes": 124999999488,
+  "benchmark_cpu_affinity": "64-95",
+  "source_repo_base": "031d858",
+  "timing_scope": "Complete bounded loop, from empty actual history through final durable checkpoint. Excludes one-time build, source materialization and accelerator/CUDA initialization."
+}
