@@ -116,6 +116,20 @@ journalctl --user -u prime-event-pod-report.service -n 30
 cat ~/.local/state/prime-event-pod/latest.json
 ```
 
+Live progress in the pod web terminal:
+
+```bash
+python3 /tmp/prime-u5-throughput/scripts/pod_progress.py --watch 2
+```
+
+This shows committed decisions, FP/FN, throughput in **M decisions/s**, and
+container memory. The latest commit-group rate appears immediately; an observed
+rolling rate builds over 30 seconds, smoothing checkpoint/flush variation.
+Ctrl+C stops the viewer while production continues. `--json` emits numeric
+`throughput_m_per_second` and `measured_throughput_m_per_second` values; omit
+`--watch` for a single sample. These running rates exclude the restoration
+period, which has its own progress display.
+
 Current campaign command (do not run a second writer against an active root):
 
 ```bash
