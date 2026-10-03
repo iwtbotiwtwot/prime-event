@@ -13,4 +13,4 @@ Reports are generated at exactly 100B, 200B, 300B, and onward. Interval throughp
 
 The first 100B report is pending.
 
-Latest sampled progress when this page was published: **2,900,000,000 decisions**, FP **0**, FN **0**, observed **2026-10-03T00:49:05Z**. This is a dated sample, not a continuously refreshed counter.
+Latest sampled progress when this page was published: **13,100,000,000 decisions**, FP **0**, FN **0**, observed **2026-10-03T00:51:14Z**. This is a dated sample, not a continuously refreshed counter.
