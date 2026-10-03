@@ -34,3 +34,11 @@ The ongoing follower data is reported as a timestamped snapshot, with raw errors
 reference-assisted repairs and model predictions separated. It is not merged
 into the64-seed matched or16-seed fresh experiments. No running trace is copied
 as though it were a completed frozen dataset.
+
+The [local raw u5 result](local-trillion.md) was intentionally stopped after
+1,039,515,000,000 decisions on October 3, 2026. Its compact final receipt includes
+the checkpoint hash, source hashes, terminal state, both RNG states, authenticated
+history-index block hashes and final-journal verification. The full original
+checkpoint, all 207,903 event journals, timing log and session receipts remain
+on T500; they are not bundled in Git. The pod is a separate execution of the
+same seed, so overlapping decisions are not additional independent seed exposure.

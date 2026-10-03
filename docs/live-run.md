@@ -1,14 +1,16 @@
-# Live unrepaired u5 run — seed 9370001
+# Final local unrepaired u5 run — seed 9370001
 
-Observed **2026-10-03T00:00:02-05:00** (Chicago), **2026-10-03T05:00:02+00:00** (UTC).
+Observed **2026-10-03T08:20:15-05:00** (Chicago), **2026-10-03T13:20:15+00:00** (UTC).
 
-**822,945,000,000 decisions; 0 false events; 0 missed primes. Status: RUNNING.**
+**1,039,515,000,000 decisions; 0 false events; 0 missed primes. Status: STOPPED.**
 
-One raw trajectory from candidate 2. No repair, correction, learner or reference veto. Prime truth scores the emitted decisions only. Counts are read from a committed checkpoint; throughput has its own observation timestamp in the JSON. This is a live snapshot, not a completed campaign.
+The owner requested a clean stop at **2026-10-03T13:15:20Z (08:15:20 Chicago)**. One raw trajectory from candidate 2, with no repair, correction, learner or reference veto. Prime truth scores the emitted decisions only. Counts come from the final committed checkpoint.
+
+The final 500M decisions ran at **7.153M/s**; the final session averaged **7.266M/s**. Current throughput is **0** because production is stopped. [Final result, checkpoint verification and retained history](local-trillion.md).
 
 [Reproduce this method](latest-u5.md) · [Complete hourly CSV](../evidence/live/hourly.csv) · [Latest JSON](../evidence/live/latest.json)
 
-Scheduled publication runs on the workstation. Check the observation time: if the workstation, mount or network is unavailable, this page remains a dated snapshot. Missing hours are not backfilled. The runner has no overall end date; checkpoint-preserving daily renewals stop on user request, low storage or failure.
+Continuation and hourly publication are disabled, preserving this final local endpoint. The full checkpoint and raw history remain on T500. The table contains actual observations only; missing hours are not backfilled.
 
 | Chicago observation | Decisions | False events | Missed primes | Total errors | Status |
 |---|---:|---:|---:|---:|---|
@@ -32,3 +34,4 @@ Scheduled publication runs on the workstation. Check the observation time: if th
 | 2026-10-02T18:00:04-05:00 | 654,780,000,000 | 0 | 0 | 0 | RUNNING |
 | 2026-10-02T22:00:04-05:00 | 768,160,000,000 | 0 | 0 | 0 | RUNNING |
 | 2026-10-03T00:00:02-05:00 | 822,945,000,000 | 0 | 0 | 0 | RUNNING |
+| 2026-10-03T08:20:15-05:00 | 1,039,515,000,000 | 0 | 0 | 0 | STOPPED |

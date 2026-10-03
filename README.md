@@ -5,9 +5,13 @@ Sean Brady: originator and conceptual director. OpenAI ChatGPT and Codex: AI res
 
 ## Latest run, data and reproduction
 
-**The current balanced u5 run is fully unrepaired.** Seed **9370001** starts at
-candidate 2 with empty history; every emitted event feeds back unchanged.
-[Hourly live results: time, decisions and errors](docs/live-run.md) ·
+**The local balanced u5 run stopped at 1,039,515,000,000 decisions with zero
+false events and zero missed primes.** The owner requested the clean stop on
+October 3, 2026, at 13:15:20 UTC. The final 500M decisions ran at **7.15M/s**.
+[Final result, checkpoint validation and retained data](docs/local-trillion.md).
+Seed **9370001** starts at candidate 2 with empty history; every emitted event
+feeds back unchanged, with no repair or correction.
+[Final local observation and hourly history](docs/live-run.md) ·
 [Latest reproducible CPU implementation and methodology](docs/latest-u5.md) ·
 [Machine-readable hourly data](evidence/live/hourly.csv) ·
 [Exact source hashes](production/u5/SOURCE.json).
@@ -20,10 +24,12 @@ The subsequent authorized **[pod run reports every 100B decisions](docs/pod-run.
 seed-9370001 execution.
 
 The pod trajectory now uses a transferred checkpoint on a three-GPU Blackwell
-host, with separate proposal, history and grading roles and a 192 GiB RAM cache.
+host, with separate proposal, history and grading roles and a bounded 16 GiB
+host history cache.
 [Updated setup, qualification and resumed throughput](docs/pod-gpu-roles.md).
 
-The live page is a dated observation, not a completed-run total. The latest
+The local page now records its intentional stop; pod reports remain dated
+observations of that separate execution. The latest
 source uses **128 states, u=5, Gamma=512 and three readings**. It is separate
 from the earlier u4 ensembles and 8-state GPU runs below. Frozen source tables,
 C++ kernels and a 100M replay checker are included; the moving raw production
@@ -84,7 +90,7 @@ The following compact table separates raw feedback from reference-assisted repai
 | 9360002 GPU | 172.470 | checked repair | 0.3595 |
 | 9360003 GPU | 172.470 | raw | 0.2783 |
 | **9365001 sole GPU*** | **9.110** | **no correction** | **0.4391** |
-| **9370001 u5 CPU (active)** | [Dated live endpoint](docs/live-run.md) | **no correction** | [Current counts](evidence/live/latest.json) |
+| **9370001 u5 CPU (stopped)** | **1,039.515** | **no correction** | **0** |
 
 *9365001 is the retained **October 1, 19:43:31 UTC early snapshot**: **3 false events + 1 missed prime = 4 errors** through **9,110,028,287**. This is not its final endpoint.
 

@@ -4,6 +4,12 @@ The owner authorized continued execution of seed9370001 until stopped and
 hourly public status updates on 2026-10-02. These are ordinary user-systemd
 services; neither depends on an active chat session.
 
+The local run was **intentionally stopped on 2026-10-03 at 13:15:20 UTC**,
+after **1,039,515,000,000 decisions**, with **FP 0 / FN 0**. Its STOP file
+remains present, the lilhelper continuation timer is disabled, and the
+workstation hourly publication timer is disabled. The final checkpoint and
+all history remain on T500. [Final result and verification](local-trillion.md).
+
 ## Same-seed continuation (lilhelper)
 
 `prime-u5-continuation.timer` checks each minute when its oneshot service is
@@ -20,7 +26,11 @@ STOP file and that the prior managed unit has exited. A failed renewal creates
 owner stop or storage stop is not silently relaunched. Reboot after an unclean
 stop therefore needs operator recovery. No old data are automatically deleted.
 
-Controller: `GEN4/prime_u5_continuous1/continue_u5.py` on lilhelper.
+Installed controller: `GEN4/prime_u5_resources1/continue_u5.py` on lilhelper,
+using `GEN4/prime_u5_resources1/runner.py` and its authenticated format-2
+history index. The current invocation keeps checkpoint identity
+`--cache-mib 4096` and separately sets `--runtime-cache-mib 8192`.
+Controller logs remain in `GEN4/prime_u5_continuous1/CONTINUATION.log`.
 Production root: `GEN4/prime_u5_local1/production_seed9370001` under
 `/home/lilhelper/SAM_Research_Project` (the T500 mount).
 
@@ -53,6 +63,10 @@ The publisher updates exactly:
 - `evidence/live/latest.json`
 - `evidence/live/hourly.csv`
 - `docs/live-run.md`
+
+The final observation was captured after the owner stop. Hourly publication
+is now disabled so those files retain the stopped endpoint and observed
+history. Pod reporting and T500 backup scheduling remain separate services.
 
 It requires a clean `main` checkout, pulls only a fast-forward, then commits
 and pushes the observed counts. Network errors or conflicting local edits

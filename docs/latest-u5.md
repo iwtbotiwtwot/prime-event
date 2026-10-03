@@ -1,6 +1,11 @@
 # Latest reproducible method: balanced u5, fully raw feedback
 
-[Live hourly results](live-run.md) · [Frozen source](../production/u5/SOURCE.json)
+[Final local result](local-trillion.md) · [Hourly observation history](live-run.md) ·
+[Frozen source](../production/u5/SOURCE.json)
+
+The local seed-9370001 run was intentionally stopped on **2026-10-03 at
+13:15:20 UTC**, after **1,039,515,000,000 decisions**, with **zero false events
+and zero missed primes**. Its checkpoint and full history are preserved on T500.
 
 This is the current **128-state** source used by seed **9370001**, beginning
 with empty event history at candidate 2. It is distinct from the earlier
@@ -48,7 +53,11 @@ journal paths: keep the root fixed; moving an active dataset is not supported.
 The frozen `.npy.gz` files are SHA-256 verified before materialization. They pin
 the exact historical float64 CDF bytes, which can otherwise depend on numerical
 library rounding. `runner.py`, random buffer code and both C++ sources are
-byte-identical to the production source. Published compact evidence includes
+byte-identical to the original production source. The stopped local run used
+the resource-bounded runtime in `GEN4/prime_u5_resources1`, with a format-2
+history index and a separate runtime cache setting. Its CDF, initial distribution,
+random buffer code and both C++ kernels match the frozen source; the final
+receipt records the installed runtime's hashes. Published compact evidence includes
 the 100M reference, local pilot results and its independent verification.
 The moving full raw production journal remains on T500; it is not bundled here.
 
@@ -95,11 +104,14 @@ or updates source state. Every gate emission feeds back unchanged.
 
 An isolated [GPU/CPU throughput pilot](throughput-pilot.md) adds exact speculative
 transitions, parallel preparation and bounded RAM buffers. Its measurements and
-validation are separate from the active production implementation described here.
+validation are separate from the local CPU implementation described here.
 
 Production runs on AMD Ryzen 9 8945HS, CPU affinity 1–7, four RNG workers,
 NumPy 1.26.4 and g++ `-O3 -std=c++17 -shared -fPIC`. There is no GPU execution.
-A bounded 4 GiB decoded-history LRU grows on demand. RAM buffers collect each
+A bounded decoded-history LRU grows on demand. The initial budget was 4 GiB;
+the final local session used an 8 GiB runtime cache and peaked at 8.96 GiB RSS.
+The frozen checkpoint configuration retains `cache_mib: 4096`; its runtime
+cache budget is a separate operational setting. RAM buffers collect each
 5M window. Compressed event gaps and state/RNG/error metadata are fsynced first;
 the checkpoint is then atomically committed. There is no per-event disk write.
 A writer lock rejects duplicate writers. Uncommitted future chunks are
@@ -112,9 +124,11 @@ Six repeated trials and one restart execute 700M positions but cover only one
 accuracy exposure. The integration separately checked a 200M prefix and
 85M→200M recovery, retaining identical emitted histories.
 
-Current production continues without an overall deadline through automatically
-renewed, resource-managed daily sessions. A clean time-budget stop resumes the
-**same checkpoint and seed**. STOP, low storage, or a failure does not renew.
+Production used automatically renewed, resource-managed daily sessions. A clean
+time-budget stop resumed the **same checkpoint and seed**. The owner stop after
+passing one trillion decisions leaves STOP present and continuation disabled.
+Restart requires an explicit operator action. STOP, low storage, or a failure
+does not renew.
 The 20 GiB disk reserve remains active; finite storage is not an indefinite
 retention guarantee. No automatic pruning of scientific data is enabled.
 
