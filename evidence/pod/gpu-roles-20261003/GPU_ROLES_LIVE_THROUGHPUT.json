@@ -1,0 +1,336 @@
+{
+  "status": "PASS",
+  "measurement": "durable HEAD sequence delta over monotonic elapsed time",
+  "seconds": 120.0002011610195,
+  "new_decisions": 35750000000,
+  "per_second": 297916167.2573339,
+  "fp": 0,
+  "fn": 0,
+  "validated_decisions": 1306900000000,
+  "config": {
+    "accelerator": {
+      "backend": "gpu",
+      "cuda_arch": "sm_120",
+      "files": {
+        "accelerated.py": "988b3dacf2ea90dba190f36c309426eb195313024c616d0511514e3ba41df11a",
+        "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+        "accelerator.cu": "97be6e9fd47495ddcead5ed969c4c0e9ab8adff4572334f5a196e7d0d8e45313",
+        "gpu_grade.cu": "9d231be53ecb6168341275a8cf41dae4d1bc2dcc54766556ab636fb63bd09c25",
+        "gpu_history.cu": "a9ab8747dc5bdf93cea59baa7dbba91480a927c12f839ac42e8a13bec73da644",
+        "gpu_roles.py": "5997e58be6965436fc42e29bffffe618b02e67d0a42ecf435de73a7165e55e22",
+        "history_exports.cpp": "7ff04d31a45e59caed2d64e0bd84f5a0503971fa9d0eb0932d2ca58c1c805221",
+        "journal.py": "846042cfd60ed7a08c08f752af7603ac82d2c01bf349ca9ad9f1f929643503d8",
+        "native_history.cpp": "1f207c0271669a0930e2118379480376900370d507fd2da2119a1c53828226b9",
+        "native_history.py": "1d4071a95564ce7d1418a4328a39d7f1431341cfcd40e4c47bed686e66b79ddc",
+        "pilot.py": "be561b88117910735dd3b665bfc3111183586436a386457da4ed308a874cd55a",
+        "pipeline.py": "ae24f525dd4a503b85d62323d4b9330f79d53914b6b097ca2729e67e095d58f1",
+        "runtime_config.py": "f21a56d484e83572ba0ad970491c47c4fc060f3ec6649ae6a2bd893366fa2a04"
+      },
+      "gpu_cache_mib": 16384,
+      "grade_gpu": 2,
+      "history_gpu": 1,
+      "pipeline": true,
+      "proposal_gpu": 0
+    },
+    "backend": "cpu",
+    "cache_mib": 196608,
+    "cdf_sha256": "6f998bc9c3b06d81332cc28cb9d9ff2cc818a00ebeabf19fd6def125c8092210",
+    "chunk": 5000000,
+    "extra_seed": 10370001,
+    "gpu_batch": 262144,
+    "index_sha256": "69d23c4f995ffa7ba3e0fa59fe897af3f531adb8f8f128df147c5468d5357e0e",
+    "initial_sha256": "66490bed64908617e79362dce54146335dd74c0258572839c5a502ff725f6b70",
+    "kernel_sha256": "86aa10583a15cf0365035cd887f5a67ef55820b35663d2df4ea7cd5240c582b7",
+    "mode": "indexed",
+    "numpy": "1.26.4",
+    "seed": 9370001
+  },
+  "source_files": {
+    "accelerated.py": "988b3dacf2ea90dba190f36c309426eb195313024c616d0511514e3ba41df11a",
+    "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+    "accelerator.cu": "97be6e9fd47495ddcead5ed969c4c0e9ab8adff4572334f5a196e7d0d8e45313",
+    "gpu_grade.cu": "9d231be53ecb6168341275a8cf41dae4d1bc2dcc54766556ab636fb63bd09c25",
+    "gpu_history.cu": "a9ab8747dc5bdf93cea59baa7dbba91480a927c12f839ac42e8a13bec73da644",
+    "gpu_roles.py": "5997e58be6965436fc42e29bffffe618b02e67d0a42ecf435de73a7165e55e22",
+    "history_exports.cpp": "7ff04d31a45e59caed2d64e0bd84f5a0503971fa9d0eb0932d2ca58c1c805221",
+    "journal.py": "846042cfd60ed7a08c08f752af7603ac82d2c01bf349ca9ad9f1f929643503d8",
+    "native_history.cpp": "1f207c0271669a0930e2118379480376900370d507fd2da2119a1c53828226b9",
+    "native_history.py": "1d4071a95564ce7d1418a4328a39d7f1431341cfcd40e4c47bed686e66b79ddc",
+    "pilot.py": "be561b88117910735dd3b665bfc3111183586436a386457da4ed308a874cd55a",
+    "pipeline.py": "ae24f525dd4a503b85d62323d4b9330f79d53914b6b097ca2729e67e095d58f1",
+    "runtime_config.py": "f21a56d484e83572ba0ad970491c47c4fc060f3ec6649ae6a2bd893366fa2a04"
+  },
+  "samples": [
+    {
+      "observed_utc": "2026-10-03T07:38:18.432215+00:00",
+      "monotonic": 900624.928705852,
+      "head": {
+        "offset": 51044447,
+        "sequence": 254210,
+        "sha256": "bc6b930fa102bfcf2d35cd1325f3f1dc1e87dfa0f0c43e240fdb5273e3fed368"
+      },
+      "decisions": 1271050000000,
+      "progress": {
+        "decisions": 1271050000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 312201610.3619066,
+        "seed": 9370001,
+        "session_per_second": 58069956.694667034,
+        "status": "RUNNING",
+        "through": 1271050000001,
+        "updated_utc": "2026-10-03T07:38:18Z"
+      },
+      "controller_pid": 59193,
+      "worker_pid": 59194,
+      "memory_current_bytes": 166041829376,
+      "memory_limit_bytes": 281999998976,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_stat": {
+        "usage_usec": 4141616986,
+        "user_usec": 3787773534,
+        "system_usec": 353843451,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 19604,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "gpu": "0, 411 MiB, 32 %\n1, 8371 MiB, 10 %\n2, 367 MiB, 2 %"
+    },
+    {
+      "observed_utc": "2026-10-03T07:38:48.470314+00:00",
+      "monotonic": 900654.966760368,
+      "head": {
+        "offset": 51433034,
+        "sequence": 255990,
+        "sha256": "d0e3af91ed3de2f09a5afca6e344aaf0c2f1c895a97d7f2bc49f618a72a6acf1"
+      },
+      "decisions": 1279950000000,
+      "progress": {
+        "decisions": 1279950000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 295692495.78689545,
+        "seed": 9370001,
+        "session_per_second": 107309154.87872072,
+        "status": "RUNNING",
+        "through": 1279950000001,
+        "updated_utc": "2026-10-03T07:38:48Z"
+      },
+      "controller_pid": 59193,
+      "worker_pid": 59194,
+      "memory_current_bytes": 167143636992,
+      "memory_limit_bytes": 281999998976,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_stat": {
+        "usage_usec": 4311887079,
+        "user_usec": 3954294408,
+        "system_usec": 357592670,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 19905,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "gpu": "0, 411 MiB, 28 %\n1, 16003 MiB, 10 %\n2, 367 MiB, 2 %",
+      "interval_per_second": 296290826.53379285
+    },
+    {
+      "observed_utc": "2026-10-03T07:39:18.514537+00:00",
+      "monotonic": 900685.010895432,
+      "head": {
+        "offset": 51826004,
+        "sequence": 257790,
+        "sha256": "77d6a2cabb09aafc512eae590954d9cbeed979f8311481de073fe300d60ac5fc"
+      },
+      "decisions": 1288950000000,
+      "progress": {
+        "decisions": 1288950000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 315888428.5695459,
+        "seed": 9370001,
+        "session_per_second": 140231901.08707353,
+        "status": "RUNNING",
+        "through": 1288950000001,
+        "updated_utc": "2026-10-03T07:39:18Z"
+      },
+      "controller_pid": 59193,
+      "worker_pid": 59194,
+      "memory_current_bytes": 168300605440,
+      "memory_limit_bytes": 281999998976,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_stat": {
+        "usage_usec": 4482077875,
+        "user_usec": 4120871707,
+        "system_usec": 361206167,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 20205,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "gpu": "0, 411 MiB, 30 %\n1, 21719 MiB, 10 %\n2, 367 MiB, 2 %",
+      "interval_per_second": 299559297.7074324
+    },
+    {
+      "observed_utc": "2026-10-03T07:39:48.562780+00:00",
+      "monotonic": 900715.059230392,
+      "head": {
+        "offset": 52218979,
+        "sequence": 259590,
+        "sha256": "48e5286a676e4f666f7bcc9216f8b311a6d8ba43091088b9cd66696fb9bce219"
+      },
+      "decisions": 1297950000000,
+      "progress": {
+        "decisions": 1297950000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 310283471.58986205,
+        "seed": 9370001,
+        "session_per_second": 163729215.82945415,
+        "status": "RUNNING",
+        "through": 1297950000001,
+        "updated_utc": "2026-10-03T07:39:48Z"
+      },
+      "controller_pid": 59193,
+      "worker_pid": 59194,
+      "memory_current_bytes": 169410490368,
+      "memory_limit_bytes": 281999998976,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_stat": {
+        "usage_usec": 4645556584,
+        "user_usec": 4281081016,
+        "system_usec": 364475568,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 20506,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "gpu": "0, 411 MiB, 30 %\n1, 21719 MiB, 11 %\n2, 367 MiB, 2 %",
+      "interval_per_second": 299517427.90332484
+    },
+    {
+      "observed_utc": "2026-10-03T07:40:18.432473+00:00",
+      "monotonic": 900744.928907013,
+      "head": {
+        "offset": 52605663,
+        "sequence": 261360,
+        "sha256": "31413f7529fe7f6c9436cf8da85893b67ca878e4ec246aebb27e5b48e805fb9b"
+      },
+      "decisions": 1306800000000,
+      "progress": {
+        "decisions": 1306800000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 264492428.17288706,
+        "seed": 9370001,
+        "session_per_second": 180546780.3435882,
+        "status": "RUNNING",
+        "through": 1306800000001,
+        "updated_utc": "2026-10-03T07:40:18Z"
+      },
+      "controller_pid": 59193,
+      "worker_pid": 59194,
+      "memory_current_bytes": 170586742784,
+      "memory_limit_bytes": 281999998976,
+      "memory_events": {
+        "low": 0,
+        "high": 0,
+        "max": 0,
+        "oom": 0,
+        "oom_kill": 0,
+        "oom_group_kill": 0
+      },
+      "cpu_stat": {
+        "usage_usec": 4803185706,
+        "user_usec": 4435590772,
+        "system_usec": 367594933,
+        "core_sched.force_idle_usec": 0,
+        "nr_periods": 20804,
+        "nr_throttled": 0,
+        "throttled_usec": 0,
+        "nr_bursts": 0,
+        "burst_usec": 0
+      },
+      "gpu": "0, 411 MiB, 29 %\n1, 21721 MiB, 7 %\n2, 367 MiB, 2 %",
+      "interval_per_second": 296287104.5535036
+    }
+  ],
+  "min_interval_per_second": 296287104.5535036,
+  "max_interval_per_second": 299559297.7074324,
+  "cpu_throttled_delta": 0,
+  "memory_event_deltas": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "recent_timing_rows": 147,
+  "latest_bank_details": {
+    "records": 1022,
+    "get_seconds": 0.001130139920860529,
+    "native_seconds": [
+      0.0020639400463551283,
+      0,
+      0,
+      0.0019584050169214606,
+      0
+    ],
+    "cache_bytes": 99893516024,
+    "misses": 0,
+    "evictions": 0,
+    "gpu_upload_seconds": 0.0009172450518235564,
+    "gpu_uploads": 1,
+    "gpu_cache_bytes": 17179676640,
+    "gpu_cache_evictions": 13752,
+    "gpu_mark_seconds": 0.0019584050169214606,
+    "range_count": 65340
+  },
+  "recent_stage_mean_ms": {
+    "banks": 8.301827818991578,
+    "rng": 6.183012071078275,
+    "proposal": 4.926357476902353,
+    "sieve": 6.421077413623836,
+    "consume": 14.495310623065702,
+    "grade": 1.2171817214868101,
+    "compression": 10.281215046475433,
+    "durable_write": 0.6730215042690132
+  }
+}

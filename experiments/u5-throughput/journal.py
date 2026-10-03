@@ -44,8 +44,9 @@ def load(root):
     return cp
 
 class Writer:
-    def __init__(self,root,cp,progress=None):
+    def __init__(self,root,cp,progress=None,milestone_steps=0,milestone=None):
         self.root=Path(root);self.cp=cp;self.progress=progress
+        self.milestone_steps=milestone_steps;self.milestone=milestone
         self.position=cp.get('_journal',dict(offset=0,sha256=ZERO,sequence=len(cp['records'])))
         self.pending=[];self.bytes=0;self.last=time.monotonic();self.snapshot_sequence=len(cp['records'])
         path=self.root/'COMMITS.jsonl'
@@ -57,7 +58,8 @@ class Writer:
         # Keep early feedback dependencies durable; later at most 20 pending
         # chunks cannot return before the current preparation window ends.
         sequence=len(self.cp['records'])+len(self.pending)
-        if sequence<64 or len(self.pending)>=20 or self.bytes>=128*1024**2 or time.monotonic()-self.last>=1:
+        boundary=self.milestone_steps and sequence%self.milestone_steps==0
+        if boundary or sequence<64 or len(self.pending)>=20 or self.bytes>=128*1024**2 or time.monotonic()-self.last>=1:
             self.flush()
     def flush(self):
         if not self.pending:return
@@ -75,6 +77,9 @@ class Writer:
         self.cp['records'].extend(records);self.cp.update(state);self.cp['_journal']=self.position
         self.pending=[];self.bytes=0;self.last=time.monotonic()
         if self.progress:self.progress(self.cp)
-        if len(self.cp['records'])-self.snapshot_sequence>=1000:self.snapshot()
+        if self.milestone_steps and len(self.cp['records'])%self.milestone_steps==0:
+            self.snapshot()
+            if self.milestone:self.milestone(self.cp)
+        elif len(self.cp['records'])-self.snapshot_sequence>=1000:self.snapshot()
     def snapshot(self):
         self.flush();atomic(self.root/'CHECKPOINT.json',self.cp);self.snapshot_sequence=len(self.cp['records'])

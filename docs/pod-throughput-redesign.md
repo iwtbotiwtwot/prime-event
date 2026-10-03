@@ -1,5 +1,10 @@
 # Incremental checkpoint and native history redesign
 
+This page records the first deployment. The subsequent qualified planner/cache
+improvements and three-GPU production setup are documented in
+[GPU roles and resumed production](pod-gpu-roles.md); current commands and
+resource limits are in [production controls](pod-production.md).
+
 Implementation date: 2026-10-03 UTC. This implements the changes motivated by the
 [production timing analysis](pod-throughput-analysis.md). The production migration
 boundary is **112,875,000,000 decisions**, seed **9370001**, FP=0, FN=0.

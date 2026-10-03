@@ -6,7 +6,9 @@ This is a separate execution of the same seed as the workstation run, not additi
 
 Reports are generated at exactly 100B, 200B, 300B, and onward. Interval throughput divides the latest 100B committed decisions by elapsed wall time; cumulative throughput includes setup, restarts and pauses since launch. A workstation timer publishes newly retained pod reports every minute when connectivity is available. Delayed publication does not change the recorded milestone time.
 
-[Methodology and pilot predictions](throughput-pilot.md) · [Production controls and T500 backups](pod-production.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)
+[Methodology and pilot predictions](throughput-pilot.md) · [Production controls and T500 backups](pod-production.md) · [GPU roles and current running throughput](pod-gpu-roles.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)
+
+The 1.2T–1.3T interval includes the migration pause. The separate running-throughput measurement in the GPU role report excludes history restoration and that pause.
 
 | Milestone | Observed UTC | False events | Missed primes | Total errors | Interval M/s | Cumulative M/s |
 |---:|---|---:|---:|---:|---:|---:|
@@ -20,5 +22,9 @@ Reports are generated at exactly 100B, 200B, 300B, and onward. Interval throughp
 | 800B | 2026-10-03T04:21:04Z | 0 | 0 | 0 | 97.92 | 62.74 |
 | 900B | 2026-10-03T04:39:11Z | 0 | 0 | 0 | 92.02 | 65.04 |
 | 1000B | 2026-10-03T04:59:24Z | 0 | 0 | 0 | 82.42 | 66.44 |
+| 1100B | 2026-10-03T05:21:08Z | 0 | 0 | 0 | 76.73 | 67.26 |
+| 1200B | 2026-10-03T05:35:22Z | 0 | 0 | 0 | 117.07 | 69.73 |
+| 1300B | 2026-10-03T07:39:55Z | 0 | 0 | 0 | 13.38 | 52.67 |
+| 1400B | 2026-10-03T07:45:34Z | 0 | 0 | 0 | 295.13 | 55.95 |
 
-Latest sampled progress when this page was published: **1,008,020,000,000 decisions**, FP **0**, FN **0**, observed **2026-10-03T05:01:05Z**. This is a dated sample, not a continuously refreshed counter.
+Latest sampled progress when this page was published: **1,406,100,000,000 decisions**, FP **0**, FN **0**, observed **2026-10-03T07:45:55Z**. This is a dated sample, not a continuously refreshed counter.

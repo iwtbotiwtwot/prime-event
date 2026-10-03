@@ -1,0 +1,95 @@
+{
+  "status": "PASS",
+  "production_resumed": false,
+  "checkpoint_sha256": "e5ea1d2b8d113d8e0387c413b42827fb37dc6d29a8b51390720c5ae0fffa31a6",
+  "seed": 9370001,
+  "replayed_decisions_per_variant": 15000000000,
+  "history_prewarm_seconds": 93.27848410594743,
+  "history_prewarm_bytes": 96764301760,
+  "cache_comparison": "All variants start with the full eligible history through the replay end in RAM.",
+  "variants": {
+    "baseline": {
+      "processing_per_second": 255482997.55809125,
+      "processing_seconds": 58.712321928935125,
+      "steady_per_second": 260420113.0880844,
+      "new_decisions": 15000000000,
+      "exact_chunks_verified": 3000,
+      "fp": 0,
+      "fn": 0,
+      "state_rng_hashes_events_and_order_match": true,
+      "stage_mean_ms": {
+        "seconds": 19.199745905604466,
+        "banks": 10.0143226228947,
+        "rng": 7.311159192357917,
+        "proposal": 5.090075960804431,
+        "sieve": 5.210980090172646,
+        "consume": 14.73326483604536,
+        "grade": 4.010868354344967,
+        "compression": 10.800048708011133,
+        "durable_write": 0.348813299560051
+      },
+      "history_misses": 0,
+      "peak_rss_kib": 95654152,
+      "gain_percent": 0.0
+    },
+    "grade_only": {
+      "processing_per_second": 292870613.5423018,
+      "processing_seconds": 51.21715633594431,
+      "steady_per_second": 300054377.5387422,
+      "new_decisions": 15000000000,
+      "exact_chunks_verified": 3000,
+      "fp": 0,
+      "fn": 0,
+      "state_rng_hashes_events_and_order_match": true,
+      "stage_mean_ms": {
+        "seconds": 16.663646239770035,
+        "banks": 9.14711597382651,
+        "rng": 7.232075330260134,
+        "proposal": 5.115495888890724,
+        "sieve": 4.753839338160548,
+        "consume": 14.692802764782115,
+        "grade": 1.3809505104782638,
+        "compression": 11.109529962453275,
+        "durable_write": 0.36602305312093497
+      },
+      "history_misses": 0,
+      "peak_rss_kib": 96021328,
+      "gain_percent": 14.634091638802449
+    },
+    "history_and_grade": {
+      "processing_per_second": 303005324.4537866,
+      "processing_seconds": 49.50408058683388,
+      "steady_per_second": 310215637.2929407,
+      "new_decisions": 15000000000,
+      "exact_chunks_verified": 3000,
+      "fp": 0,
+      "fn": 0,
+      "state_rng_hashes_events_and_order_match": true,
+      "stage_mean_ms": {
+        "seconds": 16.11782063480712,
+        "banks": 6.859902828944394,
+        "rng": 7.145510172051365,
+        "proposal": 5.0442460571601355,
+        "sieve": 6.88316260119963,
+        "consume": 14.216208851949714,
+        "grade": 1.244309391650195,
+        "compression": 10.045733191607821,
+        "durable_write": 0.3753264602572607
+      },
+      "history_misses": 0,
+      "peak_rss_kib": 96275044,
+      "gpu_history": {
+        "cache_bytes": 12216051644,
+        "uploads": 15096,
+        "evictions": 0,
+        "mean_uploads_per_chunk": 4.697635135135135,
+        "mean_mark_ms": 1.9538821227773018
+      },
+      "gain_percent": 18.600974370081058
+    }
+  },
+  "production_checkpoint_unchanged": true,
+  "production_stop_retained": true,
+  "cpu_stat": "usage_usec 3423933472\nuser_usec 3126411790\nsystem_usec 297521681\ncore_sched.force_idle_usec 0\nnr_periods 17548\nnr_throttled 0\nthrottled_usec 0\nnr_bursts 0\nburst_usec 0",
+  "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0"
+}

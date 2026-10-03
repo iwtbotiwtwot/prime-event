@@ -10,6 +10,7 @@ import shlex
 import shutil
 import subprocess
 import tempfile
+from pod_t500_backup import SSH,HOST
 
 ROOT=Path(__file__).resolve().parents[1]
 FILES=['evidence/pod/milestones.json','evidence/pod/milestones.csv','docs/pod-run.md']
@@ -18,7 +19,7 @@ def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--publish',action='store_true');p.add_argument('--force',action='store_true');a=p.parse_args()
     lock=open(Path(tempfile.gettempdir())/'prime-event-hourly-status.lock','a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     remote="import json,pathlib; p=pathlib.Path('/root/prime-u5-production'); names=['CAMPAIGN.json','REPORTS.json','data/PROGRESS.json','BACKUP.json']; print(json.dumps({n:json.loads((p/n).read_text()) if (p/n).exists() else None for n in names}))"
-    raw=subprocess.check_output(['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','-p','40109','-i',str(Path.home()/'.ssh/id_ed25519'),'root@213.192.2.120','python -c '+shlex.quote(remote)],text=True,timeout=45)
+    raw=subprocess.check_output(SSH+[HOST,'python -c '+shlex.quote(remote)],text=True,timeout=45)
     observed=json.loads(raw);campaign=observed['CAMPAIGN.json'];assert campaign['config']['seed']==9370001
     reports=observed['REPORTS.json'];progress=observed['data/PROGRESS.json'] or {}
     state_dir=Path.home()/'.local/state/prime-event-pod';state_dir.mkdir(parents=True,exist_ok=True)
@@ -46,7 +47,8 @@ def main():
     lines=['# Pod u5 run — reports every 100 billion decisions','',f"Seed **9370001**, started **{campaign['started_utc']}** at candidate 2 with empty history. Campaign status at this report: **{campaign['status']}**.",'',
         'This is a separate execution of the same seed as the workstation run, not additional independent seed exposure. The workstation trajectory is unchanged. All feedback is raw: no repair, learner or reference veto. Counts below come from committed checkpoints.', '',
         'Reports are generated at exactly 100B, 200B, 300B, and onward. Interval throughput divides the latest 100B committed decisions by elapsed wall time; cumulative throughput includes setup, restarts and pauses since launch. A workstation timer publishes newly retained pod reports every minute when connectivity is available. Delayed publication does not change the recorded milestone time.', '',
-        '[Methodology and pilot predictions](throughput-pilot.md) · [Production controls and T500 backups](pod-production.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)', '',
+        '[Methodology and pilot predictions](throughput-pilot.md) · [Production controls and T500 backups](pod-production.md) · [GPU roles and current running throughput](pod-gpu-roles.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)', '',
+        'The 1.2T–1.3T interval includes the migration pause. The separate running-throughput measurement in the GPU role report excludes history restoration and that pause.', '',
         '| Milestone | Observed UTC | False events | Missed primes | Total errors | Interval M/s | Cumulative M/s |',
         '|---:|---|---:|---:|---:|---:|---:|']
     for r in reports:lines.append(f"| {r['decisions']//1000000000}B | {r['observed_utc']} | {r['fp']} | {r['fn']} | {r['errors']} | {r['interval_per_second']/1e6:.2f} | {r['cumulative_per_second']/1e6:.2f} |")

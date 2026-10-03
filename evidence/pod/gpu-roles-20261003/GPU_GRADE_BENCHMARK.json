@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "small_boundary_cases": 24,
+  "full_window_cases": 2,
+  "intentional_errors_detected": 10,
+  "counts_events_errors_order_exact": true,
+  "timings": {
+    "cpu": {
+      "median_ms": 3.4878345322795212,
+      "p90_ms": 3.509826958179474
+    },
+    "gpu2": {
+      "median_ms": 0.5978035042062402,
+      "p90_ms": 0.6402559811249375
+    }
+  },
+  "production_resumed": false,
+  "stage_speedup": 5.834416338710906
+}

@@ -14,8 +14,10 @@ import tempfile
 
 MOUNT=Path('/home/sam/mnt/lilhelper-t500')
 DEFAULT=MOUNT/'POD_BACKUPS/prime-event/u5_seed9370001_20261003'
-SSH=['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','-p','40109','-i',str(Path.home()/'.ssh/id_ed25519')]
-HOST='root@213.192.2.120'
+SSH=['ssh','-o','BatchMode=yes','-o','ConnectTimeout=15','-o','StrictHostKeyChecking=yes',
+     '-p',os.environ.get('PRIME_EVENT_POD_PORT','12771'),
+     '-i',os.environ.get('PRIME_EVENT_POD_IDENTITY',str(Path.home()/'.ssh/id_ed25519_runpod'))]
+HOST=os.environ.get('PRIME_EVENT_POD_HOST','root@216.81.151.70')
 def atomic(path,blob):
     path.parent.mkdir(parents=True,exist_ok=True);temp=path.with_suffix(path.suffix+'.tmp')
     with temp.open('wb') as f:f.write(blob);f.flush();os.fsync(f.fileno())

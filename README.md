@@ -19,6 +19,10 @@ The subsequent authorized **[pod run reports every 100B decisions](docs/pod-run.
 [production controls and retention](docs/pod-production.md) describe its separate
 seed-9370001 execution.
 
+The pod trajectory now uses a transferred checkpoint on a three-GPU Blackwell
+host, with separate proposal, history and grading roles and a 192 GiB RAM cache.
+[Updated setup, qualification and resumed throughput](docs/pod-gpu-roles.md).
+
 The live page is a dated observation, not a completed-run total. The latest
 source uses **128 states, u=5, Gamma=512 and three readings**. It is separate
 from the earlier u4 ensembles and 8-state GPU runs below. Frozen source tables,

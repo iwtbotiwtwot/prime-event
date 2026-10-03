@@ -34,3 +34,12 @@ extern "C" int gpu_propose(uint64_t first,uint64_t count,const double* base,cons
  proposals<<<(count+255)/256,256>>>(first,count,drow,dlow,dhigh,dlut,dbase,dextra,dbanks,dout);
  CHECK(cudaGetLastError());CHECK(cudaMemcpy(out,dout,count*4,cudaMemcpyDeviceToHost));return 0;
 }
+extern "C" int gpu_pin(void* address,uint64_t bytes) {
+ CHECK(cudaHostRegister(address,bytes,cudaHostRegisterPortable));return 0;
+}
+extern "C" int gpu_unpin(void* address) {
+ CHECK(cudaHostUnregister(address));return 0;
+}
+extern "C" int gpu_select(int device) {
+ CHECK(cudaSetDevice(device));return 0;
+}

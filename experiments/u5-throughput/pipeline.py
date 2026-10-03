@@ -10,7 +10,6 @@ import copy
 import fcntl
 import json
 import os
-import queue
 from pathlib import Path
 import resource
 import shutil
@@ -21,13 +20,24 @@ from random_buffers import RandomBuffers
 from journal import Writer, load
 from native_history import bind
 
-def run(r,acc,root,until,workers,seconds,cache_mib=4096):
+def run(r,acc,root,until,workers,seconds,cache_mib=4096,milestone_steps=0):
     root.mkdir(parents=True,exist_ok=True)
     started=time.perf_counter();initial=[]
     cp_path=root/'CHECKPOINT.json'
+    publish=getattr(r,'milestone_commit',None)
+    def publish_bootstrap(obj):
+        cumulative_fp=cumulative_fn=0
+        for j,record in enumerate(obj['records']):
+            meta,_=r.unpack(Path(record['path']).read_bytes())
+            cumulative_fp+=meta['fp'];cumulative_fn+=meta['fn']
+            if (j+1)%milestone_steps==0:
+                publish(dict(config=obj['config'],records=list(obj['records'][:j+1]),status=meta['status'],
+                    base_rng=meta['base_rng'],extra_rng=meta['extra_rng'],next_n=meta['next_n'],
+                    fp=cumulative_fp,fn=cumulative_fn))
     if not cp_path.exists() or len(json.loads(cp_path.read_text())['records'])<2:
         bootstrap=r.run(root,min(2,until),'indexed',cache_mib)
         initial=bootstrap['rows']
+        if publish and milestone_steps:publish_bootstrap(load(root))
         if bootstrap['stop_reason']!='target' or until<=2:return bootstrap
     lock=(root/'WRITER.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     cp=load(root);config=cp['config']
@@ -52,34 +62,70 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
             os.replace(path,q/path.name);orphan_count+=1
     base=np.random.default_rng();extra=np.random.default_rng()
     base.bit_generator.state=cp['base_rng'];extra.bit_generator.state=cp['extra_rng']
-    history=bind(r.History,r.P,acc.threads)(records,cache_mib*1024**2,acc)
+    if publish and milestone_steps:
+        if not initial and len(records)%milestone_steps==0:publish(cp)
+    if acc.history_gpu is None:
+        history=bind(r.History,r.P,acc.history_threads,workers)(records,cache_mib*1024**2,acc)
+    else:
+        from gpu_roles import gpu_history_class
+        history=gpu_history_class(r.History,r.P,acc.history_threads,workers,
+            device=acc.history_gpu,device_cache_bytes=acc.gpu_cache_mib*1024**2)(records,cache_mib*1024**2,acc)
+        acc.role_cleanups.append(history.release_device)
     restore_start=time.perf_counter()
     # Use otherwise idle RAM to avoid serial decompression misses after restart.
     # A bounded queue limits in-flight decode buffers; authenticate every file.
-    if sum(rec['count']*8 for rec in records)<=history.limit*0.8:
+    eligible=max(0,min(len(records),((first+r.W-1)//2-2)//r.W+1))
+    budget=int(history.limit*0.95)
+    if sum(rec['count']*4 for rec in records[:eligible])<=budget:
+        restore_ids=list(range(eligible));restore_mode='eligible_prefix'
+    else:
+        # Reserve active and near-future masks, then fill remaining space with
+        # older eligible history. Crossing the cache budget never disables
+        # preloading or turns a useful large cache into a tiny lookahead cache.
+        # All ids refer to immutable committed history; no truth data enters it.
+        needed=set(history.required_ids(first)) if len(records)<until else set()
+        used=sum(records[j]['count']*4 for j in needed)
+        for offset in range(1,min(64,until-len(records),len(records))):
+            for j in history.required_ids(first+offset*r.W):
+                size=records[j]['count']*4
+                if j not in needed and used+size<=budget:needed.add(j);used+=size
+        for j in range(eligible):
+            size=records[j]['count']*4
+            if j in needed:continue
+            if used+size>budget:break
+            needed.add(j);used+=size
+        restore_ids=[];used=0
+        for j in sorted(needed):
+            size=records[j]['count']*4
+            if used+size<=budget:restore_ids.append(j);used+=size
+        restore_mode='bounded_prefix_and_lookahead'
+    if restore_ids:
         def decode(j):
             rec=records[j];raw=Path(rec['path']).read_bytes()
             if r.sha(raw)!=rec['sha256']:raise ValueError('History digest mismatch')
             meta,events=r.unpack(raw)
             if len(events)!=rec['count'] or meta['first']!=rec['first']:raise ValueError('History record mismatch')
-            return j,events,len(raw)
+            return j,history.compact(j,events),len(raw)
         def restore_progress(done):
             r.atomic(root/'PROGRESS.json',dict(status='RESTORING',seed=config['seed'],
                 decisions=first-2,through=first-1,fp=fp,fn=fn,restored_chunks=done,
-                total_chunks=len(records),updated_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())))
+                total_chunks=len(restore_ids),restore_mode=restore_mode,
+                updated_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())))
         restore_progress(0)
         with ThreadPoolExecutor(max_workers=workers) as loader:
             jobs=deque();next_job=0
-            while next_job<len(records) or jobs:
-                while next_job<len(records) and len(jobs)<2*workers:
-                    jobs.append(loader.submit(decode,next_job));next_job+=1
+            done=0
+            while next_job<len(restore_ids) or jobs:
+                while next_job<len(restore_ids) and len(jobs)<2*workers:
+                    jobs.append(loader.submit(decode,restore_ids[next_job]));next_job+=1
                 j,events,nbytes=jobs.popleft().result()
                 history.cache[j]=events;history.bytes+=events.nbytes;history.read_bytes+=nbytes;history.misses+=1
-                if (j+1)%1000==0:restore_progress(j+1)
+                done+=1
+                if done%1000==0:restore_progress(done)
         history.peak=history.bytes
     restore_seconds=time.perf_counter()-restore_start
-    durable=Writer(root,{**cp,'records':list(records)},getattr(r,'report_commit',None))
-    recent_events=queue.SimpleQueue()
+    durable=Writer(root,{**cp,'records':list(records)},getattr(r,'report_commit',None),
+        milestone_steps,publish)
     buffers=[RandomBuffers(workers),RandomBuffers(workers)]
     proposal_buffers=[np.empty(r.W,np.uint32),np.empty(r.W,np.uint32)]
     pending=[]
@@ -88,24 +134,20 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
     def timed(fn,*args):
         start=time.perf_counter();value=fn(*args);return value,time.perf_counter()-start
     def prepare(first,slot):
-        # Transfer immutable, compact actual-event arrays to the preparer's LRU.
-        # A single preparer owns the cache; the decision thread only queues data.
-        while not recent_events.empty():
-            j,events=recent_events.get_nowait()
-            while history.cache and history.bytes+events.nbytes>history.limit:
-                _,old=history.cache.popitem(last=False);history.bytes-=old.nbytes;history.evictions+=1
-            if events.nbytes<=history.limit:
-                history.cache[j]=events;history.bytes+=events.nbytes;history.peak=max(history.peak,history.bytes)
+        # Freshly emitted periods cannot return in this next window. Keep the
+        # LRU for eligible history; authenticated files retain the fresh events.
         bank_future=side.submit(timed,history.banks,first)
         truth_future=side.submit(timed,acc.truth,first)
         t=time.perf_counter();u,v=buffers[slot].draw(base,extra,r.W);rt=time.perf_counter()-t
         br,er=copy.deepcopy(base.bit_generator.state),copy.deepcopy(extra.bit_generator.state)
-        banks,bt=bank_future.result()
+        banks,bt=bank_future.result();bank_details=dict(history.last_stats)
         out=proposal_buffers[slot];t=time.perf_counter()
-        if acc.backend=='gpu':acc.check(acc.gpu.gpu_propose(first,r.W,u.ctypes.data,v.ctypes.data,banks.ctypes.data,out.ctypes.data))
+        if acc.backend=='gpu':
+            acc.pin(u);acc.pin(v);acc.pin(out)
+            acc.check(acc.gpu.gpu_propose(first,r.W,u.ctypes.data,v.ctypes.data,banks.ctypes.data,out.ctypes.data))
         else:acc.lib.propose(first,r.W,*[x.ctypes.data for x in [acc.row,acc.low,acc.high,acc.lut,u,v,banks,out]],acc.threads)
         pt=time.perf_counter()-t;truth,st=truth_future.result()
-        return banks,u,v,out,truth,br,er,dict(banks=bt,rng=rt,proposal=pt,sieve=st)
+        return banks,u,v,out,truth,br,er,dict(banks=bt,rng=rt,proposal=pt,sieve=st,bank_details=bank_details)
     def commit(step,meta,events,snapshot,record,previous_hash,bank_hash,emission_hash):
         t=time.perf_counter();meta.update(period_sha256=r.digest(events),bank_sha256=r.digest(bank_hash),
             emission_sha256=r.digest(emission_hash),previous_sha256=previous_hash)
@@ -148,7 +190,6 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
                 base_rng=br,extra_rng=er,period_count=len(events),errors=errors,fp=fpi,fn=fni)
             record=dict(first=first,count=len(events),rank=int(status[1])-len(events),path=str(root/f'chunk_{step:05d}.npz'))
             records.append(record);first+=r.W
-            recent_events.put((step,events.copy()))
             snapshot=dict(status=status.tolist(),base_rng=br,extra_rng=er,next_n=first,fp=fp,fn=fn)
             previous_hash=records[-2]['sha256'] if step else None
             future_write=writer.submit(commit,step,meta,events,snapshot,record,previous_hash,banks,np.packbits(emit,bitorder='little'))
@@ -160,11 +201,13 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
     durable.snapshot()
     for b in buffers:b.close()
     side.shutdown()
+    history.close()
     elapsed=time.perf_counter()-started;decisions=(len(records)-start_step)*r.W
     result=dict(status='PASS',stop_reason=reason,mode='pipeline',start_step=start_step,end_step=len(records),
         new_decisions=decisions,seconds=elapsed,per_second=decisions/elapsed,through=first-1,fp=fp,fn=fn,
         events=int(status[1]),orphan_quarantined=orphan_count,rows=rows,cache=history.counters(),
         history_restore_seconds=restore_seconds,
+        history_restore_mode=restore_mode,history_restored_chunks=len(restore_ids),
         peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
     r.atomic(root/f'RUN_{start_step:05d}_{len(records):05d}.json',result)
     r.atomic(root/'PROGRESS.json',dict(status='STOPPED',reason=reason,through=first-1,fp=fp,fn=fn,

@@ -1,18 +1,33 @@
 # Continuous pod run and 100B reports
 
-Authorized October 2, 2026 Chicago. The RTX 3090 pod starts **seed 9370001
-at candidate 2 with empty history**, using the same frozen raw u5 source.
-This is a separate execution of the workstation seed, not a migration and not
-an independent-seed accuracy experiment. The workstation run is unchanged.
+Authorized October 2, 2026 Chicago. The pod trajectory started **seed 9370001
+at candidate 2 with empty history**, using the frozen raw u5 source. It is a
+separate execution of the workstation seed, not an independent-seed accuracy
+experiment. On October 3 its paused state at **1,264,250,000,000 decisions**
+was transferred intact to the replacement pod at **216.81.151.70:12771**.
+All 252,850 committed chunks were authenticated; the old pod is no longer
+required. The workstation trajectory remains separate.
 
-The production configuration is GPU speculative proposals, CPU consumption and
-scoring, affinity 64–95, eight preparation threads and eight RNG workers. The
-bounded history cache is **64 GiB**, increased from the pilot's 4 GiB to retain
-more actual-event history within the pod's approximately 116 GiB RAM allowance.
-Source tables, RNG streams and decision rules are unchanged. The cache setting,
-committed-progress observer, and milestone/backup controller were requalified
-against the frozen 100M reference before launch; the test exercised two 50M
-milestones, restart between them, and authenticated persistent-volume copies.
+The replacement has three **RTX PRO 4500 Blackwell Server Edition** GPUs,
+about 31.86 GiB VRAM each, dual EPYC 9335 CPUs, a **40.8 CPU** cgroup quota,
+and a **262.63 GiB** memory limit (282 GB decimal). These measured limits
+govern scheduling despite the advertised 48 CPU allocation. CUDA 12.8 builds
+for **sm_120**. Default CPU affinity is used on this host; the previous
+64–95 mask selects SMT siblings here and is not reused.
+
+GPU 0 generates speculative proposals; GPU 1 marks bank masks from authenticated
+actual-event history with a **16 GiB** device cache; GPU 2 extracts events in
+order and scores errors. CPUs retain ordered state consumption and the rolling
+hash, exact PCG64 streams, authenticated history decoding, independent reference
+generation, compression and the sole durable writer. There are eight RNG/decode
+workers, eight accelerator CPU threads, and twelve history-planning threads.
+The bounded host history cache is **192 GiB** (`196608 MiB`). This provides room
+for history growth beyond the former 96 GiB cache; active journals remain needed
+and the working set can eventually exceed any finite cache.
+
+The [GPU role qualification and activation record](pod-gpu-roles.md) documents
+the comparison, restart check and resumed-production measurement. Frozen tables,
+decision rules, random streams, raw event history and error semantics are retained.
 
 The [incremental checkpoint/native history redesign](pod-throughput-redesign.md)
 continues this trajectory from 112.875B. Live durable state is now resolved from
@@ -101,11 +116,28 @@ journalctl --user -u prime-event-pod-report.service -n 30
 cat ~/.local/state/prime-event-pod/latest.json
 ```
 
-Fresh campaign command (do not run a second writer against an active root):
+Current campaign command (do not run a second writer against an active root):
 
 ```bash
-taskset -c 64-95 /tmp/prime-u5-venv/bin/python \
+nohup env OPENBLAS_NUM_THREADS=1 /tmp/prime-u5-venv/bin/python \
   /tmp/prime-u5-throughput/experiments/u5-throughput/campaign.py \
   --root /root/prime-u5-production --mirror /root/prime-u5-backup \
-  --seed 9370001 --cache-mib 65536
+  --seed 9370001 --cache-mib 196608 \
+  --threads 8 --workers 8 --history-threads 12 \
+  --proposal-gpu 0 --history-gpu 1 --grade-gpu 2 \
+  --gpu-cache-mib 16384 --cuda-arch sm_120 \
+  </dev/null >>/root/prime-u5-production/campaign.log 2>&1 &
 ```
+
+The controller is launched with a detached session, redirected logs, and closed
+stdin. It survives disconnecting or restarting the workstation. Before changing
+a paused runtime, `scripts/migrate_pod_checkpoint.py` requires STOP, both exclusive
+locks, and a replay qualification matching the new sources and GPU assignments.
+It backs up the checkpoint and scheduling state, then changes runtime identity
+and cache scheduling while preserving every trajectory field and durable HEAD.
+Remove STOP only when explicitly resuming the prepared configuration.
+
+The report and archive tools share the new endpoint. Optional environment
+overrides are `PRIME_EVENT_POD_HOST`, `PRIME_EVENT_POD_PORT`, and
+`PRIME_EVENT_POD_IDENTITY`; the unattended default identity is
+`~/.ssh/id_ed25519_runpod`. Private keys are never transferred to the pod.
