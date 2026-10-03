@@ -1,7 +1,7 @@
 {
   "seed": 9370001,
-  "status": "STOPPED",
-  "reason": "requested",
+  "status": "RUNNING",
+  "reason": null,
   "started_utc": "2026-10-03T00:48:33+00:00",
   "reports": [
     {
@@ -1636,13 +1636,16 @@
     }
   ],
   "launch_or_latest_observation": {
+    "decisions": 7819915000000,
     "fn": 0,
     "fp": 3,
-    "per_second": 200137092.60720593,
-    "reason": "requested",
-    "status": "STOPPED",
+    "restore_mode": "gpu_upload_working_set",
+    "restored_chunks": 2000,
+    "seed": 9370001,
+    "status": "RESTORING",
     "through": 7819915000001,
-    "updated_utc": "2026-10-03T16:28:28Z"
+    "total_chunks": 2914,
+    "updated_utc": "2026-10-03T16:30:04Z"
   },
   "config": {
     "backend": "gpu",

@@ -1,6 +1,6 @@
 # Pod u5 run — reports every 100 billion decisions
 
-Seed **9370001**, started **2026-10-03T00:48:33+00:00** at candidate 2 with empty history. Campaign status at this report: **STOPPED**.
+Seed **9370001**, started **2026-10-03T00:48:33+00:00** at candidate 2 with empty history. Campaign status at this report: **RUNNING**.
 
 This is a separate execution of the same seed as the workstation run, not additional independent seed exposure. The workstation trajectory is unchanged. All feedback is raw: no repair, learner or reference veto. Counts below come from committed checkpoints.
 
@@ -91,4 +91,4 @@ The 1.2T–1.3T interval includes the migration pause. The separate running-thro
 | 7700B | 2026-10-03T16:15:03Z | 3 | 0 | 3 | 173.33 | 138.51 |
 | 7800B | 2026-10-03T16:26:09Z | 3 | 0 | 3 | 150.32 | 138.65 |
 
-Latest sampled progress when this page was published: **7,819,915,000,000 decisions**, FP **3**, FN **0**, observed **2026-10-03T16:28:28Z**. This is a dated sample, not a continuously refreshed counter.
+Latest sampled progress when this page was published: **7,819,915,000,000 decisions**, FP **3**, FN **0**, observed **2026-10-03T16:30:04Z**. This is a dated sample, not a continuously refreshed counter.
