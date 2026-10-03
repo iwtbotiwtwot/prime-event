@@ -1,0 +1,96 @@
+{
+  "status": "PASS",
+  "samples": [
+    {
+      "monotonic": 903031.188018503,
+      "utc": "2026-10-03T08:18:24+00:00",
+      "progress": {
+        "decisions": 1952845000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 283342482.4404977,
+        "seed": 9370001,
+        "session_per_second": 273047332.5935209,
+        "status": "RUNNING",
+        "through": 1952845000001,
+        "updated_utc": "2026-10-03T08:18:24Z"
+      },
+      "memory_bytes": 203539587072,
+      "limit_bytes": 281999998976,
+      "anon_bytes": 154781876224,
+      "file_cache_bytes": 47240794112,
+      "events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=627\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=627\n"
+    },
+    {
+      "monotonic": 903046.188568334,
+      "utc": "2026-10-03T08:18:39+00:00",
+      "progress": {
+        "decisions": 1956945000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 259921879.63913688,
+        "seed": 9370001,
+        "session_per_second": 273060116.1386873,
+        "status": "RUNNING",
+        "through": 1956945000001,
+        "updated_utc": "2026-10-03T08:18:39Z"
+      },
+      "memory_bytes": 204140589056,
+      "limit_bytes": 281999998976,
+      "anon_bytes": 155117232128,
+      "file_cache_bytes": 47506092032,
+      "events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=627\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=627\n"
+    },
+    {
+      "monotonic": 903061.189104955,
+      "utc": "2026-10-03T08:18:54+00:00",
+      "progress": {
+        "decisions": 1960845000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 258610724.66058636,
+        "seed": 9370001,
+        "session_per_second": 272969039.8969392,
+        "status": "RUNNING",
+        "through": 1960845000001,
+        "updated_utc": "2026-10-03T08:18:54Z"
+      },
+      "memory_bytes": 204702392320,
+      "limit_bytes": 281999998976,
+      "anon_bytes": 155425107968,
+      "file_cache_bytes": 47756959744,
+      "events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=627\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=627\n"
+    },
+    {
+      "monotonic": 903076.189956252,
+      "utc": "2026-10-03T08:19:09+00:00",
+      "progress": {
+        "decisions": 1964945000000,
+        "fn": 0,
+        "fp": 0,
+        "recent_per_second": 266005648.27068943,
+        "seed": 9370001,
+        "session_per_second": 272986099.9547895,
+        "status": "RUNNING",
+        "through": 1964945000001,
+        "updated_utc": "2026-10-03T08:19:09Z"
+      },
+      "memory_bytes": 205309833216,
+      "limit_bytes": 281999998976,
+      "anon_bytes": 155763261440,
+      "file_cache_bytes": 48022286336,
+      "events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=627\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=627\n"
+    }
+  ],
+  "elapsed_seconds": 45.00193774898071,
+  "committed_decisions": 12100000000,
+  "committed_m_per_second": 268.87731073922623,
+  "same_worker_alive": true,
+  "guard_pid": 70152,
+  "guard_status": "RUNNING",
+  "guard_reclaims": 0
+}

@@ -1,0 +1,63 @@
+{
+  "action": "container_scoped_file_cache_reclaim",
+  "requested_bytes": 51539607552,
+  "elapsed_seconds": 0.9746655320050195,
+  "error": null,
+  "before": {
+    "utc": "2026-10-03T08:12:02+00:00",
+    "current_bytes": 239788896256,
+    "limit_bytes": 281999998976,
+    "stats": {
+      "anon": 146303119360,
+      "file": 92039532544,
+      "inactive_file": 91806117888,
+      "active_file": 116137984,
+      "file_dirty": 118784,
+      "file_writeback": 0,
+      "slab_reclaimable": 1135302984
+    },
+    "events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=627\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=627\n",
+    "progress": {
+      "decisions": 1849465000000,
+      "fn": 0,
+      "fp": 0,
+      "recent_per_second": 274126551.4177873,
+      "seed": 9370001,
+      "session_per_second": 273495145.0989911,
+      "status": "RUNNING",
+      "through": 1849465000001,
+      "updated_utc": "2026-10-03T08:12:02Z"
+    }
+  },
+  "after": {
+    "utc": "2026-10-03T08:12:03+00:00",
+    "current_bytes": 188274204672,
+    "limit_bytes": 281999998976,
+    "stats": {
+      "anon": 146324328448,
+      "file": 40511623168,
+      "inactive_file": 10658549760,
+      "active_file": 29735792640,
+      "file_dirty": 159744,
+      "file_writeback": 0,
+      "slab_reclaimable": 1130568080
+    },
+    "events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+    "pressure": "some avg10=0.00 avg60=0.00 avg300=0.00 total=627\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=627\n",
+    "progress": {
+      "decisions": 1849765000000,
+      "fn": 0,
+      "fp": 0,
+      "recent_per_second": 269927247.39737433,
+      "seed": 9370001,
+      "session_per_second": 273489803.82475334,
+      "status": "RUNNING",
+      "through": 1849765000001,
+      "updated_utc": "2026-10-03T08:12:03Z"
+    }
+  },
+  "net_freed_bytes": 51514691584,
+  "worker_pid": 59194,
+  "worker_alive": true
+}

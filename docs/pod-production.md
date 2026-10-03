@@ -130,6 +130,60 @@ Ctrl+C stops the viewer while production continues. `--json` emits numeric
 `--watch` for a single sample. These running rates exclude the restoration
 period, which has its own progress display.
 
+On **2026-10-03 at 08:12 UTC**, container memory reached **223.32 GiB**,
+including **85.72 GiB** of file cache and **136.26 GiB** of anonymous application
+memory. A container-scoped `memory.reclaim` request freed **47.98 GiB** in
+**0.975 seconds**, reducing total use to **175.34 GiB** while the same worker
+continued committing with FP=0, FN=0. The receipt is
+`/root/prime-u5-production/MEMORY_RECLAIM_20261003T081203Z.json`.
+The [retained reclaim receipt](../evidence/pod/memory-20261003/MEMORY_RECLAIM_20261003T081203Z.json)
+records memory categories, errors and continued committed progress before/after.
+
+`scripts/pod_memory_guard.py --watch 30` now checks available container headroom.
+Below **32 GiB**, it requests at most **16 GiB** of file-cache reclaim per check,
+aiming for **48 GiB** headroom and budgeting at least **8 GiB** of clean unmapped
+file cache. It uses the container's
+[`memory.reclaim` interface](https://docs.kernel.org/admin-guide/cgroup-v2.html#memory)
+with `swappiness=0`; it does not lower the memory limit or apply `memory.high`
+throttling. Kernel reclaim amounts can differ from the request, and ongoing
+allocations can reduce the headroom observed afterward. The guard retains
+application buffers, decoded history, GPU state and all journal files. It does
+not change pinned numerical sources, and it exits when the campaign ends.
+Status and reclaim receipts are retained in `MEMORY_GUARD.json`; guard events
+appear in `memory-guard.log`. File cache can grow again between checks.
+
+The decoded host-history cache remains capped at **192 GiB** and automatically
+evicts/reloads authenticated records when full. This cap covers decoded payload,
+not all process overhead. Evictions can affect throughput as history grows.
+Flushing file cache does not make the live journal storage footprint bounded.
+
+After guard activation, **08:18:24–08:19:09 UTC**, the same worker committed
+**12.1B decisions in 45.00194 seconds = 268.877M/s**, FP=0, FN=0. End memory
+was **191.21 GiB of 262.63 GiB**, leaving **71.42 GiB** headroom; OOM/limit
+events remained zero and memory-pressure averages were zero. The host history
+payload shortly before this measurement was **135.62 GiB**, with about
+**7.06 GiB** of other anonymous memory. This is a bounded post-reclaim observation,
+not an unlimited-runtime guarantee. At activation the guard correctly requested
+no further reclaim because headroom was adequate.
+[Post-reclaim production measurement](../evidence/pod/memory-20261003/MEMORY_GUARD_THROUGHPUT_20261003.json).
+
+The existing progress command now separates application RAM, file cache and
+headroom. Restart only the viewer to display the added values:
+
+```bash
+python3 /tmp/prime-u5-throughput/scripts/pod_progress.py --watch 2
+```
+
+The separate guard is detached from SSH. Its command is:
+
+```bash
+nohup python3 /tmp/prime-u5-throughput/scripts/pod_memory_guard.py --watch 30 \
+  </dev/null >>/root/prime-u5-production/memory-guard.log 2>&1 &
+```
+
+An exclusive `MEMORY_GUARD.lock` prevents duplicate guards. This is a separate
+operational helper; the production controller command below remains the same.
+
 Current campaign command (do not run a second writer against an active root):
 
 ```bash

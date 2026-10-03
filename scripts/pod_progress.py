@@ -40,6 +40,11 @@ def main():
             try:
                 row['memory_gib']=int(Path('/sys/fs/cgroup/memory.current').read_text())/1024**3
                 row['memory_limit_gib']=int(Path('/sys/fs/cgroup/memory.max').read_text())/1024**3
+                row['memory_headroom_gib']=row['memory_limit_gib']-row['memory_gib']
+                stats=dict((key,int(value)) for key,value in
+                           (line.split() for line in Path('/sys/fs/cgroup/memory.stat').read_text().splitlines()))
+                row['memory_anon_gib']=stats['anon']/1024**3
+                row['memory_file_cache_gib']=stats['file']/1024**3
             except (OSError,ValueError):pass
             if a.json:
                 print(json.dumps(row),flush=True)
@@ -52,6 +57,8 @@ def main():
                 if measured is not None:lines.append(f"Throughput (observed {duration:.1f}s): {measured:,.2f} M decisions/s")
                 if status=='RESTORING':lines.append(f"History restored: {progress.get('restored_chunks',0):,} / {progress.get('total_chunks',0):,} chunks")
                 if 'memory_limit_gib' in row:lines.append(f"Container memory: {row['memory_gib']:.1f} / {row['memory_limit_gib']:.1f} GiB (includes file cache)")
+                if 'memory_file_cache_gib' in row:
+                    lines.append(f"Application RAM: {row['memory_anon_gib']:.1f} GiB    File cache: {row['memory_file_cache_gib']:.1f} GiB    Headroom: {row['memory_headroom_gib']:.1f} GiB")
                 print('\n'.join(lines)+'\n',flush=True)
             if a.watch is None:break
             time.sleep(a.watch)
