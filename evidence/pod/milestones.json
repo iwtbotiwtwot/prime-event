@@ -22,18 +22,37 @@
       "seed": 9370001,
       "through": 100000000001,
       "unix": 1790991143.8373368
+    },
+    {
+      "checkpoint_sha256": "ad4ad922ca64431c7f740d78ba68327e0faaa3f4c20e516b883c63e8578ebc59",
+      "cumulative_per_second": 36702095.693300776,
+      "cumulative_seconds": 5449.280108451843,
+      "decisions": 200000000000,
+      "errors": 0,
+      "feedback": "raw; no repair or correction",
+      "fn": 0,
+      "fp": 0,
+      "interval_fn": 0,
+      "interval_fp": 0,
+      "interval_per_second": 35473682.83337329,
+      "interval_seconds": 2818.9912073612213,
+      "milestone": 2,
+      "observed_utc": "2026-10-03T02:19:22+00:00",
+      "seed": 9370001,
+      "through": 200000000001,
+      "unix": 1790993962.8285441
     }
   ],
   "launch_or_latest_observation": {
-    "decisions": 124560000000,
+    "decisions": 201660000000,
     "fn": 0,
     "fp": 0,
-    "recent_per_second": 98249209.09539333,
+    "recent_per_second": 47882787.77653008,
     "seed": 9370001,
-    "session_per_second": 51511443.85570823,
+    "session_per_second": 43588361.28069259,
     "status": "RUNNING",
-    "through": 124560000001,
-    "updated_utc": "2026-10-03T02:05:48Z"
+    "through": 201660000001,
+    "updated_utc": "2026-10-03T02:20:03Z"
   },
   "config": {
     "backend": "gpu",
@@ -46,7 +65,7 @@
   "backup": {
     "status": "ARCHIVE_ROTATION",
     "threshold_bytes": 107374182400,
-    "updated_utc": "2026-10-03T01:32:23+00:00",
+    "updated_utc": "2026-10-03T02:19:22+00:00",
     "working_history_retained": true
   },
   "t500_backup": {
@@ -90,7 +109,7 @@
   },
   "archive_rotation": {
     "status": "WAITING",
-    "unarchived_journal_bytes": 5836023092,
+    "unarchived_journal_bytes": 8239420381,
     "threshold_bytes": 107374182400,
     "next_chunk": 0,
     "source_root": "/root/prime-u5-production",
