@@ -3,17 +3,37 @@
   "status": "RUNNING",
   "reason": null,
   "started_utc": "2026-10-03T00:48:33+00:00",
-  "reports": [],
+  "reports": [
+    {
+      "checkpoint_sha256": "599e079d997a1403e9d1583bf2fbee5cbc5561265b1b08685b98b4898df1667f",
+      "cumulative_per_second": 38018637.40463492,
+      "cumulative_seconds": 2630.288901090622,
+      "decisions": 100000000000,
+      "errors": 0,
+      "feedback": "raw; no repair or correction",
+      "fn": 0,
+      "fp": 0,
+      "interval_fn": 0,
+      "interval_fp": 0,
+      "interval_per_second": 38018637.40463492,
+      "interval_seconds": 2630.288901090622,
+      "milestone": 1,
+      "observed_utc": "2026-10-03T01:32:23+00:00",
+      "seed": 9370001,
+      "through": 100000000001,
+      "unix": 1790991143.8373368
+    }
+  ],
   "launch_or_latest_observation": {
-    "decisions": 13100000000,
+    "decisions": 120255000000,
     "fn": 0,
     "fp": 0,
-    "recent_per_second": 71160138.88385822,
+    "recent_per_second": 95183713.687365,
     "seed": 9370001,
-    "session_per_second": 82911866.06816393,
+    "session_per_second": 40589073.79183897,
     "status": "RUNNING",
-    "through": 13100000001,
-    "updated_utc": "2026-10-03T00:51:14Z"
+    "through": 120255000001,
+    "updated_utc": "2026-10-03T02:05:02Z"
   },
   "config": {
     "backend": "gpu",
@@ -23,10 +43,15 @@
     "threads": 8,
     "workers": 8
   },
-  "backup": null,
+  "backup": {
+    "status": "ARCHIVE_ROTATION",
+    "threshold_bytes": 107374182400,
+    "updated_utc": "2026-10-03T01:32:23+00:00",
+    "working_history_retained": true
+  },
   "t500_backup": {
     "status": "VERIFIED",
-    "verified_utc": "2026-10-03T00:50:31+00:00",
+    "verified_utc": "2026-10-03T01:10:54+00:00",
     "seed": 9370001,
     "config": {
       "accelerator": {
@@ -53,14 +78,22 @@
       "numpy": "1.26.4",
       "seed": 9370001
     },
-    "chunks": 1616,
-    "decisions": 8080000000,
+    "chunks": 12655,
+    "decisions": 63275000000,
     "fp": 0,
     "fn": 0,
-    "checkpoint_sha256": "e8ac18e6fc935e91c6b486b44a782f2b800cfafdeca44707beae579b2f74fbb1",
+    "checkpoint_sha256": "787cbbe757cd46becbc1cba6a98f9f3ec74b8b868be7678a50e8f698147593d7",
     "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003",
     "source_root": "/root/prime-u5-production",
-    "new_chunks_verified": 980,
+    "new_chunks_verified": 2135,
     "restore_note": "Restore source and journal files to the original pod root before resuming; checkpoint paths are absolute."
+  },
+  "archive_rotation": {
+    "status": "WAITING",
+    "unarchived_journal_bytes": 5337041337,
+    "threshold_bytes": 107374182400,
+    "next_chunk": 0,
+    "source_root": "/root/prime-u5-production",
+    "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives"
   }
 }
