@@ -1,0 +1,8 @@
+{
+  "status": "VERIFIED",
+  "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/cleanup-20261003/completed-experiments.tar.zst",
+  "bytes": 8125889859,
+  "sha256": "fc60a5a49a68031e2e3ab931bee86520d02085ef262d07d4f2349eeaa5f50b4f",
+  "verified_utc": "2026-10-03T09:23:29.035830+00:00",
+  "source_archive_compared_to_originals": true
+}

@@ -1,0 +1,29 @@
+{
+  "status": "SOURCE_ARCHIVE_VERIFIED",
+  "bytes": 8125889859,
+  "sha256": "fc60a5a49a68031e2e3ab931bee86520d02085ef262d07d4f2349eeaa5f50b4f",
+  "path": "/root/prime-u5-cleanup-20261003/completed-experiments.tar.zst",
+  "original_paths": [
+    "/root/prime-u5-qualification-v1",
+    "/root/prime-u5-qualification-v2",
+    "/root/prime-u5-qualification-v3",
+    "/root/prime-u5-redesign-controller-mirror",
+    "/root/prime-u5-redesign-controller",
+    "/root/prime-u5-redesign-recovery",
+    "/root/u5-container-backup-qualification",
+    "/root/u5-next-checks-20261003",
+    "/root/prime-u5-transfer-20261003",
+    "/root/prime-u5-scaling-20261003",
+    "/root/prime-u5-gpu-roles-20261003",
+    "/root/prime-u5-integrated-qualification-20261003",
+    "/tmp/prime-u5-redesign",
+    "/tmp/prime-u5-throughput-next-20261003",
+    "/tmp/prime-u5-throughput-next-v3-20261003",
+    "/tmp/prime-u5-throughput-v1",
+    "/tmp/u5-bank-alternatives-20261003",
+    "/tmp/u5-campaign-qualification",
+    "/tmp/prime-u5-throughput-gpu-roles-20261003",
+    "/tmp/prime-u5-throughput/runs"
+  ],
+  "comparison": "GNU tar compares all archived contents and metadata to originals"
+}

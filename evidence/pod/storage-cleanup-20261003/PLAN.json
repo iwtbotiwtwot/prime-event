@@ -1,0 +1,35 @@
+{
+  "created_utc": "2026-10-03T09:17:01.108717+00:00",
+  "paths": [
+    "/root/prime-u5-qualification-v1",
+    "/root/prime-u5-qualification-v2",
+    "/root/prime-u5-qualification-v3",
+    "/root/prime-u5-redesign-controller-mirror",
+    "/root/prime-u5-redesign-controller",
+    "/root/prime-u5-redesign-recovery",
+    "/root/u5-container-backup-qualification",
+    "/root/u5-next-checks-20261003",
+    "/root/prime-u5-transfer-20261003",
+    "/root/prime-u5-scaling-20261003",
+    "/root/prime-u5-gpu-roles-20261003",
+    "/root/prime-u5-integrated-qualification-20261003",
+    "/tmp/prime-u5-redesign",
+    "/tmp/prime-u5-throughput-next-20261003",
+    "/tmp/prime-u5-throughput-next-v3-20261003",
+    "/tmp/prime-u5-throughput-v1",
+    "/tmp/u5-bank-alternatives-20261003",
+    "/tmp/u5-campaign-qualification",
+    "/tmp/prime-u5-throughput-gpu-roles-20261003",
+    "/tmp/prime-u5-throughput/runs"
+  ],
+  "excluded_active_roots": [
+    "/root/prime-u5-production",
+    "/root/prime-u5-backup",
+    "/root/prime-u5-memory-qualification-20261003",
+    "/tmp/prime-u5-throughput/source",
+    "/tmp/prime-u5-venv",
+    "/workspace"
+  ],
+  "active_process_references": [],
+  "required_before_deletion": "Verified complete-experiment archive on T500, plus recheck no active process references"
+}

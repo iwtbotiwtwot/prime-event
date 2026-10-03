@@ -1,0 +1,160 @@
+{
+  "samples": [
+    {
+      "monotonic": 907873.519426312,
+      "utc": "2026-10-03T09:39:07.022854+00:00",
+      "progress": {
+        "decisions": 3012105000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 252806587.30903283,
+        "seed": 9370001,
+        "session_per_second": 238303589.76971096,
+        "status": "RUNNING",
+        "through": 3012105000001,
+        "updated_utc": "2026-10-03T09:39:06Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 135823728640,
+        "free": 401047183360
+      },
+      "memory_bytes": 59313287168,
+      "anon_bytes": 30425350144,
+      "file_bytes": 27075063808,
+      "kernel_bytes": 1808457728,
+      "guard_status": "RUNNING",
+      "guard_reclaims": 28,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "campaign_pid": 81841,
+      "worker_pid": 81843
+    },
+    {
+      "monotonic": 907888.520467503,
+      "utc": "2026-10-03T09:39:22.023898+00:00",
+      "progress": {
+        "decisions": 3015705000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 271752659.7007048,
+        "seed": 9370001,
+        "session_per_second": 238314895.70431012,
+        "status": "RUNNING",
+        "through": 3015705000001,
+        "updated_utc": "2026-10-03T09:39:21Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 135977275392,
+        "free": 400893636608
+      },
+      "memory_bytes": 59877273600,
+      "anon_bytes": 30426095616,
+      "file_bytes": 27635793920,
+      "kernel_bytes": 1810419712,
+      "guard_status": "RUNNING",
+      "guard_reclaims": 28,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "campaign_pid": 81841,
+      "worker_pid": 81843
+    },
+    {
+      "monotonic": 907903.521409909,
+      "utc": "2026-10-03T09:39:37.024839+00:00",
+      "progress": {
+        "decisions": 3019605000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 269306938.3018499,
+        "seed": 9370001,
+        "session_per_second": 238415464.75051782,
+        "status": "RUNNING",
+        "through": 3019605000001,
+        "updated_utc": "2026-10-03T09:39:36Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 136143392768,
+        "free": 400727519232
+      },
+      "memory_bytes": 60485959680,
+      "anon_bytes": 30426775552,
+      "file_bytes": 28243197952,
+      "kernel_bytes": 1812566016,
+      "guard_status": "RUNNING",
+      "guard_reclaims": 28,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "campaign_pid": 81841,
+      "worker_pid": 81843
+    },
+    {
+      "monotonic": 907918.522050779,
+      "utc": "2026-10-03T09:39:52.025479+00:00",
+      "progress": {
+        "decisions": 3023205000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 265519757.9813303,
+        "seed": 9370001,
+        "session_per_second": 238414849.94088122,
+        "status": "RUNNING",
+        "through": 3023205000001,
+        "updated_utc": "2026-10-03T09:39:51Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 136296939520,
+        "free": 400573972480
+      },
+      "memory_bytes": 61049577472,
+      "anon_bytes": 30427324416,
+      "file_bytes": 28798738432,
+      "kernel_bytes": 1814487040,
+      "guard_status": "RUNNING",
+      "guard_reclaims": 28,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "campaign_pid": 81841,
+      "worker_pid": 81843
+    },
+    {
+      "monotonic": 907933.523303323,
+      "utc": "2026-10-03T09:40:07.026734+00:00",
+      "progress": {
+        "decisions": 3026805000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 214274197.535411,
+        "seed": 9370001,
+        "session_per_second": 238455000.48772413,
+        "status": "RUNNING",
+        "through": 3026805000001,
+        "updated_utc": "2026-10-03T09:40:06Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 136450482176,
+        "free": 400420429824
+      },
+      "memory_bytes": 62263517184,
+      "anon_bytes": 31048241152,
+      "file_bytes": 29392064512,
+      "kernel_bytes": 1818181632,
+      "guard_status": "RUNNING",
+      "guard_reclaims": 28,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n",
+      "campaign_pid": 81841,
+      "worker_pid": 81843
+    }
+  ],
+  "wall_seconds": 60.003877011011355,
+  "decisions": 14700000000,
+  "container_resize_submitted": false,
+  "active_history_retained": true,
+  "m_per_second": 244.98416989459517,
+  "interval_m_per_second": [
+    239.98334209950264,
+    259.9836659886811,
+    239.989746518788,
+    239.97996096938041
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "status": "CLEANED_AFTER_VERIFIED_EXTERNAL_ARCHIVE",
+  "utc": "2026-10-03T09:26:27.256796+00:00",
+  "retained_external_archive": {
+    "status": "VERIFIED",
+    "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/cleanup-20261003/completed-experiments.tar.zst",
+    "bytes": 8125889859,
+    "sha256": "fc60a5a49a68031e2e3ab931bee86520d02085ef262d07d4f2349eeaa5f50b4f",
+    "verified_utc": "2026-10-03T09:23:29.035830+00:00",
+    "source_archive_compared_to_originals": true
+  },
+  "removed_paths": [
+    "/root/prime-u5-qualification-v1",
+    "/root/prime-u5-qualification-v2",
+    "/root/prime-u5-qualification-v3",
+    "/root/prime-u5-redesign-controller-mirror",
+    "/root/prime-u5-redesign-controller",
+    "/root/prime-u5-redesign-recovery",
+    "/root/u5-container-backup-qualification",
+    "/root/u5-next-checks-20261003",
+    "/root/prime-u5-transfer-20261003",
+    "/root/prime-u5-scaling-20261003",
+    "/root/prime-u5-gpu-roles-20261003",
+    "/root/prime-u5-integrated-qualification-20261003",
+    "/tmp/prime-u5-redesign",
+    "/tmp/prime-u5-throughput-next-20261003",
+    "/tmp/prime-u5-throughput-next-v3-20261003",
+    "/tmp/prime-u5-throughput-v1",
+    "/tmp/u5-bank-alternatives-20261003",
+    "/tmp/u5-campaign-qualification",
+    "/tmp/prime-u5-throughput-gpu-roles-20261003",
+    "/tmp/prime-u5-throughput/runs"
+  ],
+  "eligible_unique_file_blocks_bytes": 10371129344,
+  "externally_linked_files_retained": 0,
+  "removed_local_staging_archive_bytes": 8125889859,
+  "disk_before": {
+    "total": 536870912000,
+    "used": 253092982784,
+    "free": 283777929216
+  },
+  "disk_after": {
+    "total": 536870912000,
+    "used": 242732130304,
+    "free": 294138781696
+  },
+  "net_freed_bytes": 10360852480,
+  "progress_before": {
+    "decisions": 2828005000000,
+    "fn": 0,
+    "fp": 3,
+    "recent_per_second": 262807457.53884026,
+    "seed": 9370001,
+    "session_per_second": 236942535.98866338,
+    "status": "RUNNING",
+    "through": 2828005000001,
+    "updated_utc": "2026-10-03T09:26:26Z"
+  },
+  "progress_after": {
+    "decisions": 2828305000000,
+    "fn": 0,
+    "fp": 3,
+    "recent_per_second": 241465260.6785394,
+    "seed": 9370001,
+    "session_per_second": 236952366.84617817,
+    "status": "RUNNING",
+    "through": 2828305000001,
+    "updated_utc": "2026-10-03T09:26:27Z"
+  },
+  "active_history_retained": true,
+  "active_code_and_environment_retained": true,
+  "container_resize_submitted": false
+}

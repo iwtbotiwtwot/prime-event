@@ -98,6 +98,50 @@ Transfer failures never authorize cleanup and retry on the next timer invocation
 The workstation and T500 network mount must be online. Earlier verified loose
 T500 snapshots are retained; their files are not automatically removed.
 
+### Storage cleanup on October 3
+
+The requested 4 TB container resize was held while inspecting redundant data.
+Runpod's [storage documentation](https://docs.runpod.io/pods/storage/types)
+states that editing a running pod resets its container and erases files outside
+`/workspace`. Only read-only API queries were made; no disk update, pod reset or
+stop was submitted. The temporary API credential file was removed after those
+queries. Production and its journals remain on the original container disk.
+
+Twenty completed qualification, pilot and build directories contained **9.66 GiB
+of unique file blocks**. A complete archive was compared against all original
+contents and metadata, copied to the T500, and checked by SHA-256 before the
+directories and their temporary container archive were removed. The active
+controller, environment, materialized source, live journals and the current
+memory/error qualification directory were retained. The archive is at
+`POD_BACKUPS/prime-event/u5_seed9370001_20261003/cleanup-20261003/completed-experiments.tar.zst`
+on the T500 and retains the original directory paths.
+[Completed-experiment cleanup receipt](../evidence/pod/storage-cleanup-20261003/CLEANUP_RECEIPT.json).
+
+Production batch 1 occupied **99.53 GiB** of container staging space. Its T500
+copy passed the archive SHA-256, manifest SHA-256, sizes and checksums of all
+**504,646 members**, complete member-set validation and decompressor exit check.
+The unmodified repository verifier ran directly on lilhelper to avoid reading
+the archive twice through SSHFS. The copy and verification receipt were made
+durable before the existing pod archive acknowledgement removed the container
+archive. The **504,621 live event journals** covered by this batch remain on the
+pod; cleanup removed zero active journals. The backup timer was restored.
+[Production archive verification and cleanup](../evidence/pod/storage-cleanup-20261003/PRODUCTION_ARCHIVE_CLEANUP.json).
+
+At **09:39:06 UTC**, container storage used **126.50 GiB of 500 GiB**, leaving
+**373.50 GiB free**. The same production controller and worker remained running,
+at **3,012,105,000,000 decisions**, FP=3/FN=0. Cleanup reduces redundant storage;
+the live journal still grows and remains subject to the 20 GiB free-space reserve
+and the 100 GiB backup staging policy. No existing T500 backups were deleted and
+no automatic Drive upload was added.
+
+The **09:39:07–09:40:07 UTC** check committed **14.7B decisions in 60.00388
+seconds = 244.984M/s**. Each 15-second interval stayed between **239.98 and
+259.98M/s**. It ended at **3,026,805,000,000 decisions**, FP=3/FN=0,
+**372.92 GiB free disk**, and **57.99 GiB total container RAM** (**28.92 GiB
+anonymous**, **27.37 GiB file cache**). All memory-limit/OOM events remained zero
+and controller/worker PIDs were unchanged throughout.
+[Post-cleanup production measurement](../evidence/pod/storage-cleanup-20261003/POST_CLEANUP_PRODUCTION.json).
+
 Clean stop on the pod:
 
 ```bash
@@ -235,6 +279,12 @@ second retains the preceding error and ends FP=2/FN=0. These checks found no
 decision change attributable to GPU execution, rolling cache or restart.
 [First CPU replay](../evidence/pod/rolling-cache-20261003/CPU_OBSERVED_ERROR_QUALIFICATION.json)
 and [second CPU replay](../evidence/pod/rolling-cache-20261003/SECOND_CPU_OBSERVED_ERROR_QUALIFICATION.json).
+
+The third false event, **2,687,315,963,345**, also reproduces in a 1B independent
+CPU replay with all **2,600 metadata comparisons** matching. This replay retains
+the preceding two errors and ends FP=3/FN=0. It is an odd composite, unlike the
+first two; the even-readout diagnostic below concerns those first two events.
+[Third CPU replay](../evidence/pod/rolling-cache-20261003/THIRD_CPU_OBSERVED_ERROR_QUALIFICATION.json).
 
 A floating matrix evaluation of the unchanged frozen CDF assigns a positive
 probability, approximately **7.5–8.1e-13**, to three even readouts for the
