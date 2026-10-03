@@ -44,7 +44,17 @@ def prepare(root,mirror,threshold):
                 sha256=file_sha(candidate),manifest_sha256=sha(saved_manifest.read_bytes()),
                 first_chunk=old['first_chunk'],end_chunk=old['end_chunk'],journal_bytes=old['journal_bytes'],through_decisions=old['through_decisions'])
             index['batches'].append(batch);atomic(indexpath,index);return batch
-    cpraw=(root/'data/CHECKPOINT.json').read_bytes();cp=json.loads(cpraw)
+    if (root/'data/HEAD.json').exists():
+        import importlib.util
+        spec=importlib.util.spec_from_file_location('pod_commit_journal',root/'source/journal.py')
+        module=importlib.util.module_from_spec(spec);spec.loader.exec_module(module)
+        cp=module.load(root/'data')
+        # Archives contain a standalone full snapshot, not a dependency on the
+        # running append-only log. Restore starts a new journal at this snapshot.
+        cp.pop('_journal',None)
+        cpraw=json.dumps(cp,sort_keys=True).encode()+b'\n'
+    else:
+        cpraw=(root/'data/CHECKPOINT.json').read_bytes();cp=json.loads(cpraw)
     first=index['next_chunk'];records=cp['records'][first:]
     sources=[];total=0
     for i,rec in enumerate(records,first):

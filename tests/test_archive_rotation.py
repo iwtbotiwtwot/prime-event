@@ -55,5 +55,23 @@ class ArchiveTests(unittest.TestCase):
             self.assertEqual(file.read_bytes(),raw)
             self.assertEqual(a.acknowledge(root,mirror,receipt)['status'],'CLEANED')
             self.assertEqual(a.prepare(root,mirror,1)['status'],'WAITING')
+            # A live incremental commit can be newer than CHECKPOINT.json.
+            # Archive preparation must materialize HEAD as a standalone snapshot.
+            journal_source=SCRIPTS.parent/'experiments/u5-throughput/journal.py'
+            shutil.copyfile(journal_source,root/'source/journal.py')
+            import importlib.util
+            spec=importlib.util.spec_from_file_location('archive_test_journal',journal_source)
+            journal=importlib.util.module_from_spec(spec);spec.loader.exec_module(journal)
+            cp=journal.load(root/'data');writer=journal.Writer(root/'data',cp)
+            second=root/'data/chunk_00001.npz'
+            writer.add(dict(path=str(second),sha256=a.sha(raw)),raw,dict(next_n=10000002))
+            self.assertEqual(json.loads((root/'data/CHECKPOINT.json').read_text())['next_n'],5000002)
+            batch2=a.prepare(root,mirror,1);self.assertEqual(batch2['through_decisions'],10000000)
+            verify(Path(batch2['path']),batch2)
+            decoded=subprocess.check_output(['zstd','-q','-d','-c',batch2['path']])
+            with tarfile.open(fileobj=io.BytesIO(decoded)) as tar:
+                archived=json.load(tar.extractfile('snapshot/CHECKPOINT.json'))
+            self.assertEqual(archived['next_n'],10000002)
+            self.assertNotIn('_journal',archived)
 
 if __name__=='__main__':unittest.main()

@@ -14,6 +14,12 @@ committed-progress observer, and milestone/backup controller were requalified
 against the frozen 100M reference before launch; the test exercised two 50M
 milestones, restart between them, and authenticated persistent-volume copies.
 
+The [incremental checkpoint/native history redesign](pod-throughput-redesign.md)
+continues this trajectory from 112.875B. Live durable state is now resolved from
+`CHECKPOINT.json` plus `COMMITS.jsonl` through `HEAD.json`; the full checkpoint
+alone can lag between snapshots. RAM restoration is visible as `RESTORING`
+before resumed decisions advance. Milestone and archive tools use durable state.
+
 ## Reports
 
 [100B milestone report](pod-run.md) · [Machine-readable records](../evidence/pod/milestones.json)

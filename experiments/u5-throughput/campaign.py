@@ -58,7 +58,7 @@ def main():
     statepath=root/'CAMPAIGN.json'
     state=json.loads(statepath.read_text()) if statepath.exists() else dict(config=identity,started_utc=utc(),started_unix=time.time(),reports=[])
     assert state['config']==identity
-    state.update(status='RUNNING',pid=os.getpid());atomic(statepath,state)
+    state.update(status='RUNNING',pid=os.getpid());state.pop('reason',None);atomic(statepath,state)
     atomic(root/'REPORTS.json',state['reports'])
     pool=ThreadPoolExecutor(max_workers=1);backup=None
     try:

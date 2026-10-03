@@ -1,0 +1,309 @@
+{
+  "status": "PASS",
+  "migration_decisions": 112875000000,
+  "scientific_seed": 9370001,
+  "mature_replay": {
+    "decisions": 500000000,
+    "metadata_comparisons": 1300,
+    "status": "PASS"
+  },
+  "arbitrary_history": {
+    "windows": 4,
+    "mask_bytes": 20000000,
+    "status": "PASS"
+  },
+  "trials": {
+    "prime-u5-qualification-v1": {
+      "status": "PASS",
+      "stop_reason": "target",
+      "mode": "pipeline",
+      "start_step": 22575,
+      "end_step": 22675,
+      "new_decisions": 500000000,
+      "seconds": 25.673545446246862,
+      "per_second": 19475300.01443932,
+      "through": 113375000001,
+      "fp": 0,
+      "fn": 0,
+      "events": 4644778334,
+      "orphan_quarantined": 0,
+      "cache": {
+        "hits": 29741,
+        "misses": 732,
+        "evictions": 0,
+        "read_bytes": 188405546,
+        "cache_bytes": 1503107840,
+        "peak_bytes": 1503107840
+      },
+      "peak_rss_kib": 1969172,
+      "accelerator": {
+        "backend": "gpu",
+        "files": {
+          "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+          "accelerator.cu": "d63aac2998ef933eef33dc72418fca5f04e4b58fac80bb56c305c1b383d54145",
+          "accelerated.py": "4ae35073d42f4e87d3c18a8f6698c87ce05513e5c24e421575b3b808735b5c61",
+          "pilot.py": "d70f2cf4bf2ef08e4fe18c5557edf035bd5a9f2d30464adddab3369fed422e90",
+          "pipeline.py": "2b060f0d845fd0b1d01033b444b77b067025680fd131fb648cb7b6cfdc44a73f"
+        },
+        "threads": 8,
+        "workers": 8,
+        "fallback_readings": 5207,
+        "changed_banks": 0,
+        "timings": []
+      },
+      "window_summaries": [
+        {
+          "skip_chunks": 0,
+          "decisions": 500000000,
+          "loop_seconds": 25.34180104918778,
+          "mean_ms": {
+            "seconds": 253.4180104918778,
+            "banks": 227.12614623829722,
+            "rng": 29.86237272620201,
+            "proposal": 26.245942916721106,
+            "consume": 49.14614966139197,
+            "grade": 22.004905324429274,
+            "compression": 33.67643654346466,
+            "durable_write": 58.56741750612855
+          }
+        },
+        {
+          "skip_chunks": 20,
+          "decisions": 400000000,
+          "loop_seconds": 18.38680275529623,
+          "mean_ms": {
+            "seconds": 229.83503444120288,
+            "banks": 203.52193908765912,
+            "rng": 29.537694668397307,
+            "proposal": 27.224640687927604,
+            "consume": 49.527323897928,
+            "grade": 22.051997878588736,
+            "compression": 33.39425951708108,
+            "durable_write": 58.82842924911529
+          }
+        },
+        {
+          "skip_chunks": 50,
+          "decisions": 250000000,
+          "loop_seconds": 11.520804760977626,
+          "mean_ms": {
+            "seconds": 230.41609521955252,
+            "banks": 206.937013566494,
+            "rng": 28.29178724437952,
+            "proposal": 24.819686859846115,
+            "consume": 48.5948496684432,
+            "grade": 21.6731595993042,
+            "compression": 33.388111405074596,
+            "durable_write": 58.28753687441349
+          }
+        }
+      ]
+    },
+    "prime-u5-qualification-v2": {
+      "status": "PASS",
+      "stop_reason": "target",
+      "mode": "pipeline",
+      "start_step": 22575,
+      "end_step": 22675,
+      "new_decisions": 500000000,
+      "seconds": 18.081735629588366,
+      "per_second": 27652212.721317317,
+      "through": 113375000001,
+      "fp": 0,
+      "fn": 0,
+      "events": 4644778334,
+      "orphan_quarantined": 0,
+      "cache": {
+        "hits": 29641,
+        "misses": 732,
+        "evictions": 0,
+        "read_bytes": 188405546,
+        "cache_bytes": 1503107840,
+        "peak_bytes": 1503107840
+      },
+      "peak_rss_kib": 2037484,
+      "accelerator": {
+        "backend": "gpu",
+        "files": {
+          "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+          "accelerator.cu": "d63aac2998ef933eef33dc72418fca5f04e4b58fac80bb56c305c1b383d54145",
+          "accelerated.py": "4ae35073d42f4e87d3c18a8f6698c87ce05513e5c24e421575b3b808735b5c61",
+          "pilot.py": "3567cd51af9d2152626cdccabece719db32b56fcfb9528e3ce471bc7ecfcb1cf",
+          "pipeline.py": "55a375ffdd58635b8358f46f124217d0f68699674d82e97ef64e324493abf2f8",
+          "native_history.cpp": "3b77d682d67a9543816fbebf46c37f605d397d149cc0fbba343de2db0abd205d",
+          "native_history.py": "fdc3012290d75bc0acc03ec078a9cd409d5d3098f4c7cd670768b80bfe330c22",
+          "journal.py": "514ab6821d4ba2845b89006da546370680d229e4d3d0b26c2473f0f9ab71812f"
+        },
+        "threads": 8,
+        "workers": 8,
+        "fallback_readings": 5207,
+        "changed_banks": 0,
+        "timings": []
+      },
+      "window_summaries": [
+        {
+          "skip_chunks": 0,
+          "decisions": 500000000,
+          "loop_seconds": 17.81540576554835,
+          "mean_ms": {
+            "seconds": 178.15405765548348,
+            "banks": 157.57430266588926,
+            "rng": 21.85584368184209,
+            "proposal": 19.802331812679768,
+            "consume": 23.83013615384698,
+            "grade": 10.624777060002089,
+            "compression": 35.22293545305729,
+            "durable_write": 1.8754516541957855
+          }
+        },
+        {
+          "skip_chunks": 20,
+          "decisions": 400000000,
+          "loop_seconds": 12.616387490183115,
+          "mean_ms": {
+            "seconds": 157.70484362728894,
+            "banks": 137.29189452715218,
+            "rng": 21.667739865370095,
+            "proposal": 19.884526706300676,
+            "consume": 23.84982956573367,
+            "grade": 10.757372924126685,
+            "compression": 35.42240841779858,
+            "durable_write": 1.9344512606039643
+          }
+        },
+        {
+          "skip_chunks": 50,
+          "decisions": 250000000,
+          "loop_seconds": 7.974934523925185,
+          "mean_ms": {
+            "seconds": 159.4986904785037,
+            "banks": 139.1699928790331,
+            "rng": 21.894987002015114,
+            "proposal": 19.664476290345192,
+            "consume": 26.468559093773365,
+            "grade": 11.847582794725895,
+            "compression": 35.85461724549532,
+            "durable_write": 2.101042941212654
+          }
+        }
+      ]
+    },
+    "prime-u5-qualification-v3": {
+      "status": "PASS",
+      "stop_reason": "target",
+      "mode": "pipeline",
+      "start_step": 22575,
+      "end_step": 22975,
+      "new_decisions": 2000000000,
+      "seconds": 120.61665596812963,
+      "per_second": 16581457.875340676,
+      "through": 114875000001,
+      "fp": 0,
+      "fn": 0,
+      "events": 4703698185,
+      "orphan_quarantined": 0,
+      "cache": {
+        "hits": 121957,
+        "misses": 22575,
+        "evictions": 0,
+        "read_bytes": 5337041337,
+        "cache_bytes": 37626442672,
+        "peak_bytes": 37626442672
+      },
+      "history_restore_seconds": 99.17918287403882,
+      "peak_rss_kib": 37493792,
+      "accelerator": {
+        "backend": "gpu",
+        "files": {
+          "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+          "accelerator.cu": "d63aac2998ef933eef33dc72418fca5f04e4b58fac80bb56c305c1b383d54145",
+          "accelerated.py": "4ae35073d42f4e87d3c18a8f6698c87ce05513e5c24e421575b3b808735b5c61",
+          "pilot.py": "3567cd51af9d2152626cdccabece719db32b56fcfb9528e3ce471bc7ecfcb1cf",
+          "pipeline.py": "341dc117bd2f29993c8f9d9b50936f321e5c9052d7f3e5e08b094e93fa87b02e",
+          "native_history.cpp": "1484a57b5674afbcdf247752506afb47f57ab0044f13f7e03479cef205c303b2",
+          "native_history.py": "fdc3012290d75bc0acc03ec078a9cd409d5d3098f4c7cd670768b80bfe330c22",
+          "journal.py": "514ab6821d4ba2845b89006da546370680d229e4d3d0b26c2473f0f9ab71812f"
+        },
+        "threads": 8,
+        "workers": 8,
+        "fallback_readings": 20401,
+        "changed_banks": 0,
+        "timings": []
+      },
+      "window_summaries": [
+        {
+          "skip_chunks": 0,
+          "decisions": 2000000000,
+          "loop_seconds": 21.103584801778197,
+          "mean_ms": {
+            "seconds": 52.75896200444549,
+            "banks": 34.40287304576486,
+            "rng": 22.675153287127614,
+            "proposal": 17.85587755497545,
+            "consume": 21.264610262587667,
+            "grade": 8.446658290922642,
+            "compression": 31.4619628014043,
+            "durable_write": 1.4036704739555717
+          }
+        },
+        {
+          "skip_chunks": 20,
+          "decisions": 1900000000,
+          "loop_seconds": 19.923540636897087,
+          "mean_ms": {
+            "seconds": 52.4303700970976,
+            "banks": 34.23503035385358,
+            "rng": 22.584104518357076,
+            "proposal": 17.758874850053534,
+            "consume": 21.18144281894753,
+            "grade": 8.421386734239364,
+            "compression": 31.502435297558183,
+            "durable_write": 1.4187137792377096
+          }
+        },
+        {
+          "skip_chunks": 200,
+          "decisions": 1000000000,
+          "loop_seconds": 10.391483200713992,
+          "mean_ms": {
+            "seconds": 51.95741600356996,
+            "banks": 33.79373055882752,
+            "rng": 22.674249140545726,
+            "proposal": 17.727765133604407,
+            "consume": 20.684263994917274,
+            "grade": 8.422970892861485,
+            "compression": 31.73651123419404,
+            "durable_write": 1.4656120259314775
+          }
+        }
+      ]
+    }
+  },
+  "recovery": {
+    "status": "PASS",
+    "durable_chunks_at_kill": 83,
+    "orphan_quarantined": 1,
+    "comparison": {
+      "status": "PASS",
+      "seed": 9369001,
+      "chunks": 200,
+      "decisions": 1000000000,
+      "metadata_comparisons": 2600
+    }
+  },
+  "exploratory_failures": [
+    "Python/native library basename collision prevented import; fixed before numerical execution.",
+    "An isolated reusable-buffer trial crashed because OpenMP workers accessed their own empty thread-local vectors. Fixed by passing the owning thread buffer pointer into the parallel region; final arbitrary-history, mature replay and kill/restart tests passed."
+  ],
+  "local_tests": {
+    "status": "PASS",
+    "tests": 6,
+    "includes": [
+      "authenticated incremental journal and incomplete tails",
+      "durability publication order",
+      "T500 verification and deletion gates",
+      "archive snapshot materialization from a newer HEAD",
+      "existing replay checks"
+    ]
+  }
+}

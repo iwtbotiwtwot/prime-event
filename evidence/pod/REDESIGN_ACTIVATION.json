@@ -1,0 +1,65 @@
+{
+  "controller": {
+    "config": {
+      "backend": "gpu",
+      "cache_mib": 4096,
+      "milestone": 250000000,
+      "seed": 9369001,
+      "threads": 8,
+      "workers": 8
+    },
+    "pid": 43201,
+    "reason": "test_milestone_limit",
+    "reports": [
+      {
+        "checkpoint_sha256": "fa96e33f4fab10bd373c2f72d0adbfdf1e97abdbbce085f0fc5ca4f283b5f477",
+        "cumulative_per_second": 38158877.53707666,
+        "cumulative_seconds": 6.551555395126343,
+        "decisions": 250000000,
+        "errors": 0,
+        "feedback": "raw; no repair or correction",
+        "fn": 0,
+        "fp": 0,
+        "interval_fn": 0,
+        "interval_fp": 0,
+        "interval_per_second": 38158877.53707666,
+        "interval_seconds": 6.551555395126343,
+        "milestone": 1,
+        "observed_utc": "2026-10-03T02:00:19+00:00",
+        "seed": 9369001,
+        "through": 250000001,
+        "unix": 1790992819.405713
+      },
+      {
+        "checkpoint_sha256": "3a97932bfb3878097383a366f0abf218db5f701db2310d464769e8c977d20e46",
+        "cumulative_per_second": 40518915.987151355,
+        "cumulative_seconds": 12.33991551399231,
+        "decisions": 500000000,
+        "errors": 0,
+        "feedback": "raw; no repair or correction",
+        "fn": 0,
+        "fp": 0,
+        "interval_fn": 0,
+        "interval_fp": 0,
+        "interval_per_second": 43190125.50466177,
+        "interval_seconds": 5.788360118865967,
+        "milestone": 2,
+        "observed_utc": "2026-10-03T02:00:25+00:00",
+        "seed": 9369001,
+        "through": 500000001,
+        "unix": 1790992825.1940732
+      }
+    ],
+    "started_unix": 1790992812.8541577,
+    "started_utc": "2026-10-03T02:00:12+00:00",
+    "status": "STOPPED"
+  },
+  "activation": {
+    "status": "VERIFIED_CONTINUATION",
+    "decisions": 112875000000,
+    "seed": 9370001,
+    "fp": 0,
+    "fn": 0,
+    "activated_utc": "2026-10-03T02:01:59Z"
+  }
+}

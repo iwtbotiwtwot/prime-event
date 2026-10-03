@@ -5,6 +5,7 @@ window ending below 2p. The early durability fence and the step>=4 inequality
 below enforce this bound for pending writes; no prime oracle is involved.
 """
 from concurrent.futures import ThreadPoolExecutor
+from collections import deque
 import copy
 import fcntl
 import json
@@ -17,6 +18,8 @@ import signal
 import time
 import numpy as np
 from random_buffers import RandomBuffers
+from journal import Writer, load
+from native_history import bind
 
 def run(r,acc,root,until,workers,seconds,cache_mib=4096):
     root.mkdir(parents=True,exist_ok=True)
@@ -27,7 +30,7 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
         initial=bootstrap['rows']
         if bootstrap['stop_reason']!='target' or until<=2:return bootstrap
     lock=(root/'WRITER.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
-    cp=json.loads(cp_path.read_text());config=cp['config']
+    cp=load(root);config=cp['config']
     assert config['accelerator']==json.loads(os.environ['PRIME_ACCELERATOR'])
     assert config['seed']==int(os.environ['PRIME_SEED'])
     assert config['cache_mib']==cache_mib
@@ -49,7 +52,33 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
             os.replace(path,q/path.name);orphan_count+=1
     base=np.random.default_rng();extra=np.random.default_rng()
     base.bit_generator.state=cp['base_rng'];extra.bit_generator.state=cp['extra_rng']
-    history=r.History(records,cache_mib*1024**2,acc)
+    history=bind(r.History,r.P,acc.threads)(records,cache_mib*1024**2,acc)
+    restore_start=time.perf_counter()
+    # Use otherwise idle RAM to avoid serial decompression misses after restart.
+    # A bounded queue limits in-flight decode buffers; authenticate every file.
+    if sum(rec['count']*8 for rec in records)<=history.limit*0.8:
+        def decode(j):
+            rec=records[j];raw=Path(rec['path']).read_bytes()
+            if r.sha(raw)!=rec['sha256']:raise ValueError('History digest mismatch')
+            meta,events=r.unpack(raw)
+            if len(events)!=rec['count'] or meta['first']!=rec['first']:raise ValueError('History record mismatch')
+            return j,events,len(raw)
+        def restore_progress(done):
+            r.atomic(root/'PROGRESS.json',dict(status='RESTORING',seed=config['seed'],
+                decisions=first-2,through=first-1,fp=fp,fn=fn,restored_chunks=done,
+                total_chunks=len(records),updated_utc=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())))
+        restore_progress(0)
+        with ThreadPoolExecutor(max_workers=workers) as loader:
+            jobs=deque();next_job=0
+            while next_job<len(records) or jobs:
+                while next_job<len(records) and len(jobs)<2*workers:
+                    jobs.append(loader.submit(decode,next_job));next_job+=1
+                j,events,nbytes=jobs.popleft().result()
+                history.cache[j]=events;history.bytes+=events.nbytes;history.read_bytes+=nbytes;history.misses+=1
+                if (j+1)%1000==0:restore_progress(j+1)
+        history.peak=history.bytes
+    restore_seconds=time.perf_counter()-restore_start
+    durable=Writer(root,{**cp,'records':list(records)},getattr(r,'report_commit',None))
     recent_events=queue.SimpleQueue()
     buffers=[RandomBuffers(workers),RandomBuffers(workers)]
     proposal_buffers=[np.empty(r.W,np.uint32),np.empty(r.W,np.uint32)]
@@ -77,11 +106,11 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
         else:acc.lib.propose(first,r.W,*[x.ctypes.data for x in [acc.row,acc.low,acc.high,acc.lut,u,v,banks,out]],acc.threads)
         pt=time.perf_counter()-t;truth,st=truth_future.result()
         return banks,u,v,out,truth,br,er,dict(banks=bt,rng=rt,proposal=pt,sieve=st)
-    def commit(step,meta,events,snapshot,record,bank_hash,emission_hash):
+    def commit(step,meta,events,snapshot,record,previous_hash,bank_hash,emission_hash):
         t=time.perf_counter();meta.update(period_sha256=r.digest(events),bank_sha256=r.digest(bank_hash),
-            emission_sha256=r.digest(emission_hash),previous_sha256=snapshot['records'][-2]['sha256'] if step else None)
+            emission_sha256=r.digest(emission_hash),previous_sha256=previous_hash)
         blob=r.pack(meta,events);record['sha256']=r.sha(blob);compression=time.perf_counter()-t
-        t=time.perf_counter();r.atomic(Path(record['path']),blob);r.atomic(cp_path,snapshot)
+        t=time.perf_counter();durable.add(record,blob,snapshot)
         return dict(compression=compression,durable_write=time.perf_counter()-t)
     rows=list(initial);reason='target';future_write=None
     with ThreadPoolExecutor(max_workers=1) as prep,ThreadPoolExecutor(max_workers=1) as writer:
@@ -120,19 +149,22 @@ def run(r,acc,root,until,workers,seconds,cache_mib=4096):
             record=dict(first=first,count=len(events),rank=int(status[1])-len(events),path=str(root/f'chunk_{step:05d}.npz'))
             records.append(record);first+=r.W
             recent_events.put((step,events.copy()))
-            snapshot=dict(config=config,records=list(records),status=status.tolist(),base_rng=br,extra_rng=er,next_n=first,fp=fp,fn=fn)
-            future_write=writer.submit(commit,step,meta,events,snapshot,record,banks,np.packbits(emit,bitorder='little'))
+            snapshot=dict(status=status.tolist(),base_rng=br,extra_rng=er,next_n=first,fp=fp,fn=fn)
+            previous_hash=records[-2]['sha256'] if step else None
+            future_write=writer.submit(commit,step,meta,events,snapshot,record,previous_hash,banks,np.packbits(emit,bitorder='little'))
             timing.update(step=step,first=first-r.W,seconds=time.perf_counter()-tick,fp=fpi,fn=fni)
             rows.append(timing);slot=1-slot
         if future_write is not None:
             rows[-1].update(future_write.result())
             with (root/'TIMINGS.jsonl').open('a') as f:f.write(json.dumps(rows[-1])+'\n')
+    durable.snapshot()
     for b in buffers:b.close()
     side.shutdown()
     elapsed=time.perf_counter()-started;decisions=(len(records)-start_step)*r.W
     result=dict(status='PASS',stop_reason=reason,mode='pipeline',start_step=start_step,end_step=len(records),
         new_decisions=decisions,seconds=elapsed,per_second=decisions/elapsed,through=first-1,fp=fp,fn=fn,
         events=int(status[1]),orphan_quarantined=orphan_count,rows=rows,cache=history.counters(),
+        history_restore_seconds=restore_seconds,
         peak_rss_kib=resource.getrusage(resource.RUSAGE_SELF).ru_maxrss)
     r.atomic(root/f'RUN_{start_step:05d}_{len(records):05d}.json',result)
     r.atomic(root/'PROGRESS.json',dict(status='STOPPED',reason=reason,through=first-1,fp=fp,fn=fn,

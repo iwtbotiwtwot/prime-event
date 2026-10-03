@@ -1,0 +1,63 @@
+{
+  "seconds": 10.230270011350513,
+  "cpu_stat_delta": {
+    "usage_usec": 28769781,
+    "user_usec": 27686016,
+    "system_usec": 1083764,
+    "core_sched.force_idle_usec": 0,
+    "nr_periods": 102,
+    "nr_throttled": 0,
+    "throttled_usec": 0,
+    "nr_bursts": 0,
+    "burst_usec": 0
+  },
+  "average_cpu_cores": 2.812221081953834,
+  "cpu_quota": "3113000 100000\n",
+  "memory_current": 34935955456,
+  "memory_limit": 124999999488,
+  "memory_events": {
+    "low": 0,
+    "high": 0,
+    "max": 0,
+    "oom": 0,
+    "oom_kill": 0,
+    "oom_group_kill": 0
+  },
+  "pressures": {
+    "cpu": "some avg10=0.00 avg60=0.00 avg300=0.00 total=14053707\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=2970639\n",
+    "memory": "some avg10=0.00 avg60=0.00 avg300=0.00 total=0\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+    "io": "some avg10=0.00 avg60=0.00 avg300=0.00 total=2672975\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=2602028\n"
+  },
+  "gpu": [
+    {
+      "utc": "01:29:35",
+      "rows": [
+        "| 37%   48C    P2            117W /  350W |     412MiB /  24576MiB |      7%      Default |"
+      ]
+    },
+    {
+      "utc": "01:29:37",
+      "rows": [
+        "| 37%   48C    P2            117W /  350W |     412MiB /  24576MiB |      0%      Default |"
+      ]
+    },
+    {
+      "utc": "01:29:39",
+      "rows": [
+        "| 37%   48C    P2            117W /  350W |     412MiB /  24576MiB |      7%      Default |"
+      ]
+    },
+    {
+      "utc": "01:29:41",
+      "rows": [
+        "| 37%   48C    P2            116W /  350W |     412MiB /  24576MiB |      7%      Default |"
+      ]
+    },
+    {
+      "utc": "01:29:43",
+      "rows": [
+        "| 37%   48C    P2            117W /  350W |     412MiB /  24576MiB |      3%      Default |"
+      ]
+    }
+  ]
+}

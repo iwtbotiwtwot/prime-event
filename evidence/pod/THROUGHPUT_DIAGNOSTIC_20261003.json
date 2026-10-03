@@ -1,0 +1,686 @@
+{
+  "observed_utc": "2026-10-03T01:29:08Z",
+  "checkpoint_sha256": "9cd60c77bf2e66169c1517814842127c3c5498f4ed682ed59eae00c726c5951c",
+  "decisions": 95055000000,
+  "fp": 0,
+  "fn": 0,
+  "checkpoint_bytes": 3739384,
+  "records": 19011,
+  "source_identity": {
+    "backend": "gpu",
+    "files": {
+      "accelerated.py": "4ae35073d42f4e87d3c18a8f6698c87ce05513e5c24e421575b3b808735b5c61",
+      "accelerator.cpp": "c58fbcdd1928483931b60dddab5827ac4cb7dbc8f55dde86a170cdae649883c1",
+      "accelerator.cu": "d63aac2998ef933eef33dc72418fca5f04e4b58fac80bb56c305c1b383d54145",
+      "pilot.py": "d70f2cf4bf2ef08e4fe18c5557edf035bd5a9f2d30464adddab3369fed422e90",
+      "pipeline.py": "2b060f0d845fd0b1d01033b444b77b067025680fd131fb648cb7b6cfdc44a73f"
+    },
+    "pipeline": true
+  },
+  "windows": [
+    {
+      "billions": [
+        1,
+        2
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 49.10591531544924,
+        "banks": 30.70182766765356,
+        "rng": 24.4115848839283,
+        "proposal": 17.929618656635284,
+        "sieve": 3.8838148675858974,
+        "consume": 22.223659260198474,
+        "grade": 9.29443129338324,
+        "compression": 26.37941027060151,
+        "durable_write": 4.8513957764953375
+      },
+      "loop_million_per_second": 101.82072705255017
+    },
+    {
+      "billions": [
+        5,
+        6
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 59.461348820477724,
+        "banks": 41.17709497921169,
+        "rng": 26.42458152025938,
+        "proposal": 17.94207445345819,
+        "sieve": 4.817777955904603,
+        "consume": 25.753111466765404,
+        "grade": 9.228734755888581,
+        "compression": 28.764770636335015,
+        "durable_write": 9.374739583581686
+      },
+      "loop_million_per_second": 84.08823713528113
+    },
+    {
+      "billions": [
+        10,
+        11
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 64.66990455053747,
+        "banks": 46.481137331575155,
+        "rng": 28.468736857175827,
+        "proposal": 17.639421727508307,
+        "sieve": 6.0341262724250555,
+        "consume": 28.960448382422328,
+        "grade": 10.310254488140345,
+        "compression": 28.410286707803607,
+        "durable_write": 13.541176216676831
+      },
+      "loop_million_per_second": 77.3157164024057
+    },
+    {
+      "billions": [
+        20,
+        21
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 83.90033063478768,
+        "banks": 64.22331276349723,
+        "rng": 38.00495667383075,
+        "proposal": 19.11531314253807,
+        "sieve": 8.069896046072245,
+        "consume": 37.19888742081821,
+        "grade": 13.382039489224553,
+        "compression": 32.31183939613402,
+        "durable_write": 27.187402276322246
+      },
+      "loop_million_per_second": 59.594520810229625
+    },
+    {
+      "billions": [
+        40,
+        41
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 116.38107777573168,
+        "banks": 89.90224739536643,
+        "rng": 47.70932788960636,
+        "proposal": 25.538495630025864,
+        "sieve": 12.897895351052284,
+        "consume": 47.302425326779485,
+        "grade": 17.482434073463082,
+        "compression": 34.494544779881835,
+        "durable_write": 42.978890808299184
+      },
+      "loop_million_per_second": 42.962310502357475
+    },
+    {
+      "billions": [
+        60,
+        61
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 143.433477319777,
+        "banks": 101.94660742767155,
+        "rng": 37.02383401803672,
+        "proposal": 40.347567312419415,
+        "sieve": 7.8558452147990465,
+        "consume": 49.867440769448876,
+        "grade": 19.10529733635485,
+        "compression": 33.124184450134635,
+        "durable_write": 46.46163363941014
+      },
+      "loop_million_per_second": 34.85936542452203
+    },
+    {
+      "billions": [
+        80,
+        81
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 178.62708172760904,
+        "banks": 149.70333909615874,
+        "rng": 28.36752743460238,
+        "proposal": 28.22821163572371,
+        "sieve": 9.079872127622366,
+        "consume": 50.732779148966074,
+        "grade": 21.879251962527633,
+        "compression": 34.7670210711658,
+        "durable_write": 51.55504493974149
+      },
+      "loop_million_per_second": 27.991276303917736
+    },
+    {
+      "billions": [
+        90,
+        91
+      ],
+      "chunks": 200,
+      "mean_ms": {
+        "seconds": 190.5950345657766,
+        "banks": 155.5073989648372,
+        "rng": 27.495711222290993,
+        "proposal": 31.15246869623661,
+        "sieve": 7.970892619341611,
+        "consume": 50.727626057341695,
+        "grade": 22.51658977009356,
+        "compression": 33.94750331528485,
+        "durable_write": 65.65163002349436
+      },
+      "loop_million_per_second": 26.233632011407103
+    }
+  ],
+  "history": [
+    {
+      "first": 1000000002,
+      "measurements": [
+        {
+          "total_ms": 16.460388898849487,
+          "mark_ms": 10.688446462154388,
+          "index_ms": 4.192296415567398,
+          "python_and_dispatch_ms": 1.5796460211277008,
+          "calls": {
+            "mark": 1,
+            "index": 32
+          }
+        },
+        {
+          "total_ms": 21.383345127105713,
+          "mark_ms": 13.909665867686272,
+          "index_ms": 4.3451059609651566,
+          "python_and_dispatch_ms": 3.1285732984542847,
+          "calls": {
+            "mark": 1,
+            "index": 32
+          }
+        },
+        {
+          "total_ms": 19.66080814599991,
+          "mark_ms": 14.238974079489708,
+          "index_ms": 4.0256064385175705,
+          "python_and_dispatch_ms": 1.39622762799263,
+          "calls": {
+            "mark": 1,
+            "index": 32
+          }
+        },
+        {
+          "total_ms": 16.44952967762947,
+          "mark_ms": 9.680643677711487,
+          "index_ms": 4.811113700270653,
+          "python_and_dispatch_ms": 1.9577722996473312,
+          "calls": {
+            "mark": 1,
+            "index": 32
+          }
+        },
+        {
+          "total_ms": 18.70284229516983,
+          "mark_ms": 11.731170117855072,
+          "index_ms": 5.344107747077942,
+          "python_and_dispatch_ms": 1.6275644302368164,
+          "calls": {
+            "mark": 1,
+            "index": 32
+          }
+        }
+      ],
+      "cache": {
+        "hits": 199,
+        "misses": 32,
+        "evictions": 0,
+        "read_bytes": 9402367,
+        "cache_bytes": 71115936,
+        "peak_bytes": 71115936
+      },
+      "bank_sha256": "d6eb35d82bbf2324cdcfb3119abe6e0f590779284089170a18576f3308e1a62f",
+      "profile": [
+        {
+          "function": "/root/prime-u5-production/source/accelerated.py:29:<lambda>",
+          "calls": 1,
+          "self_ms": 12.997952,
+          "total_ms": 12.999052
+        },
+        {
+          "function": "<stdin>:51:call",
+          "calls": 33,
+          "self_ms": 4.9176779999999995,
+          "total_ms": 17.938488000000003
+        },
+        {
+          "function": "/root/prime-u5-production/source/pilot_runner.py:42:banks",
+          "calls": 1,
+          "self_ms": 0.6717660000000001,
+          "total_ms": 20.061235
+        },
+        {
+          "function": "<method 'searchsorted' of 'numpy.ndarray' objects>",
+          "calls": 1,
+          "self_ms": 0.5105959999999999,
+          "total_ms": 0.5105959999999999
+        },
+        {
+          "function": "<built-in method numpy.zeros>",
+          "calls": 1,
+          "self_ms": 0.357458,
+          "total_ms": 0.357458
+        },
+        {
+          "function": "<built-in method numpy.array>",
+          "calls": 32,
+          "self_ms": 0.15080900000000003,
+          "total_ms": 0.15080900000000003
+        },
+        {
+          "function": "<built-in method builtins.min>",
+          "calls": 411,
+          "self_ms": 0.101,
+          "total_ms": 0.101
+        },
+        {
+          "function": "<built-in method builtins.max>",
+          "calls": 409,
+          "self_ms": 0.100939,
+          "total_ms": 0.100939
+        },
+        {
+          "function": "/tmp/prime-u5-venv/lib/python3.12/site-packages/numpy/core/_internal.py:250:__init__",
+          "calls": 98,
+          "self_ms": 0.058389,
+          "total_ms": 0.058389
+        },
+        {
+          "function": "<stdin>:58:index",
+          "calls": 32,
+          "self_ms": 0.03597,
+          "total_ms": 4.958256
+        },
+        {
+          "function": "<method 'append' of 'list' objects>",
+          "calls": 210,
+          "self_ms": 0.03578,
+          "total_ms": 0.03578
+        },
+        {
+          "function": "/root/prime-u5-production/source/pilot_runner.py:35:get",
+          "calls": 33,
+          "self_ms": 0.030390000000000004,
+          "total_ms": 0.04287
+        }
+      ]
+    },
+    {
+      "first": 20000000002,
+      "measurements": [
+        {
+          "total_ms": 34.4073660671711,
+          "mark_ms": 15.651373192667961,
+          "index_ms": 9.685119614005089,
+          "python_and_dispatch_ms": 9.070873260498047,
+          "calls": {
+            "mark": 1,
+            "index": 136
+          }
+        },
+        {
+          "total_ms": 33.81134197115898,
+          "mark_ms": 15.643224120140076,
+          "index_ms": 9.462086483836174,
+          "python_and_dispatch_ms": 8.706031367182732,
+          "calls": {
+            "mark": 1,
+            "index": 136
+          }
+        },
+        {
+          "total_ms": 34.7415953874588,
+          "mark_ms": 15.868891030550003,
+          "index_ms": 9.838594123721123,
+          "python_and_dispatch_ms": 9.034110233187675,
+          "calls": {
+            "mark": 1,
+            "index": 136
+          }
+        },
+        {
+          "total_ms": 34.203168004751205,
+          "mark_ms": 15.6099833548069,
+          "index_ms": 9.813519194722176,
+          "python_and_dispatch_ms": 8.77966545522213,
+          "calls": {
+            "mark": 1,
+            "index": 136
+          }
+        },
+        {
+          "total_ms": 33.76572206616402,
+          "mark_ms": 15.601962804794312,
+          "index_ms": 9.3830656260252,
+          "python_and_dispatch_ms": 8.780693635344505,
+          "calls": {
+            "mark": 1,
+            "index": 136
+          }
+        }
+      ],
+      "cache": {
+        "hits": 823,
+        "misses": 136,
+        "evictions": 0,
+        "read_bytes": 37743021,
+        "cache_bytes": 278296960,
+        "peak_bytes": 278296960
+      },
+      "bank_sha256": "517365e946d9a6534825c45af10c8f620c7b4dd5234dfbedb5c209e4cd4846b2",
+      "profile": [
+        {
+          "function": "/root/prime-u5-production/source/accelerated.py:29:<lambda>",
+          "calls": 1,
+          "self_ms": 15.915602000000002,
+          "total_ms": 15.916172
+        },
+        {
+          "function": "<stdin>:51:call",
+          "calls": 137,
+          "self_ms": 9.653985,
+          "total_ms": 25.638027
+        },
+        {
+          "function": "/root/prime-u5-production/source/pilot_runner.py:42:banks",
+          "calls": 1,
+          "self_ms": 7.051825,
+          "total_ms": 39.998648
+        },
+        {
+          "function": "<built-in method builtins.max>",
+          "calls": 8021,
+          "self_ms": 2.0511510000000004,
+          "total_ms": 2.0511510000000004
+        },
+        {
+          "function": "<built-in method builtins.min>",
+          "calls": 8023,
+          "self_ms": 1.9454840000000002,
+          "total_ms": 1.9454840000000002
+        },
+        {
+          "function": "<built-in method numpy.array>",
+          "calls": 136,
+          "self_ms": 1.48839,
+          "total_ms": 1.48839
+        },
+        {
+          "function": "<method 'append' of 'list' objects>",
+          "calls": 4022,
+          "self_ms": 0.580138,
+          "total_ms": 0.580138
+        },
+        {
+          "function": "<method 'searchsorted' of 'numpy.ndarray' objects>",
+          "calls": 1,
+          "self_ms": 0.35637800000000003,
+          "total_ms": 0.35637800000000003
+        },
+        {
+          "function": "<built-in method numpy.zeros>",
+          "calls": 1,
+          "self_ms": 0.315468,
+          "total_ms": 0.315468
+        },
+        {
+          "function": "/tmp/prime-u5-venv/lib/python3.12/site-packages/numpy/core/_internal.py:250:__init__",
+          "calls": 410,
+          "self_ms": 0.193058,
+          "total_ms": 0.193058
+        },
+        {
+          "function": "<stdin>:58:index",
+          "calls": 136,
+          "self_ms": 0.11394000000000001,
+          "total_ms": 9.825985000000001
+        },
+        {
+          "function": "/root/prime-u5-production/source/pilot_runner.py:35:get",
+          "calls": 137,
+          "self_ms": 0.090319,
+          "total_ms": 0.13064900000000002
+        }
+      ]
+    },
+    {
+      "first": 90000000002,
+      "measurements": [
+        {
+          "total_ms": 94.23482045531273,
+          "mark_ms": 19.402189180254936,
+          "index_ms": 39.68246839940548,
+          "python_and_dispatch_ms": 35.15016287565231,
+          "calls": {
+            "mark": 1,
+            "index": 296
+          }
+        },
+        {
+          "total_ms": 67.42553226649761,
+          "mark_ms": 17.389701679348946,
+          "index_ms": 15.127383172512054,
+          "python_and_dispatch_ms": 34.90844741463661,
+          "calls": {
+            "mark": 1,
+            "index": 296
+          }
+        },
+        {
+          "total_ms": 67.31568276882172,
+          "mark_ms": 18.11213605105877,
+          "index_ms": 15.603024512529373,
+          "python_and_dispatch_ms": 33.600522205233574,
+          "calls": {
+            "mark": 1,
+            "index": 296
+          }
+        },
+        {
+          "total_ms": 66.78597815334797,
+          "mark_ms": 17.942598089575768,
+          "index_ms": 15.33748209476471,
+          "python_and_dispatch_ms": 33.50589796900749,
+          "calls": {
+            "mark": 1,
+            "index": 296
+          }
+        },
+        {
+          "total_ms": 68.10164824128151,
+          "mark_ms": 19.258860498666763,
+          "index_ms": 15.67525789141655,
+          "python_and_dispatch_ms": 33.167529851198196,
+          "calls": {
+            "mark": 1,
+            "index": 296
+          }
+        }
+      ],
+      "cache": {
+        "hits": 1783,
+        "misses": 296,
+        "evictions": 0,
+        "read_bytes": 79795131,
+        "cache_bytes": 581442728,
+        "peak_bytes": 581442728
+      },
+      "bank_sha256": "0c6c7a854f0c8fde485a3632376555bb71c318661feb702729559151eb0a5ba6",
+      "profile": [
+        {
+          "function": "/root/prime-u5-production/source/pilot_runner.py:42:banks",
+          "calls": 1,
+          "self_ms": 27.826349,
+          "total_ms": 90.564136
+        },
+        {
+          "function": "/root/prime-u5-production/source/accelerated.py:29:<lambda>",
+          "calls": 1,
+          "self_ms": 19.275479,
+          "total_ms": 19.276069
+        },
+        {
+          "function": "<stdin>:51:call",
+          "calls": 297,
+          "self_ms": 15.668112,
+          "total_ms": 35.080960000000005
+        },
+        {
+          "function": "<built-in method builtins.max>",
+          "calls": 36057,
+          "self_ms": 8.804599,
+          "total_ms": 8.804599
+        },
+        {
+          "function": "<built-in method builtins.min>",
+          "calls": 36059,
+          "self_ms": 8.411755,
+          "total_ms": 8.411755
+        },
+        {
+          "function": "<built-in method numpy.array>",
+          "calls": 296,
+          "self_ms": 6.092499,
+          "total_ms": 6.092499
+        },
+        {
+          "function": "<method 'append' of 'list' objects>",
+          "calls": 18058,
+          "self_ms": 2.4980500000000005,
+          "total_ms": 2.4980500000000005
+        },
+        {
+          "function": "/tmp/prime-u5-venv/lib/python3.12/site-packages/numpy/core/_internal.py:250:__init__",
+          "calls": 890,
+          "self_ms": 0.39750800000000003,
+          "total_ms": 0.39750800000000003
+        },
+        {
+          "function": "<method 'searchsorted' of 'numpy.ndarray' objects>",
+          "calls": 1,
+          "self_ms": 0.35454700000000006,
+          "total_ms": 0.35454700000000006
+        },
+        {
+          "function": "<built-in method numpy.zeros>",
+          "calls": 1,
+          "self_ms": 0.345848,
+          "total_ms": 0.345848
+        },
+        {
+          "function": "<stdin>:58:index",
+          "calls": 296,
+          "self_ms": 0.220837,
+          "total_ms": 16.017278
+        },
+        {
+          "function": "/root/prime-u5-production/source/pilot_runner.py:35:get",
+          "calls": 297,
+          "self_ms": 0.184205,
+          "total_ms": 0.272824
+        }
+      ]
+    }
+  ],
+  "checkpoint": [
+    {
+      "records": 200,
+      "bytes": 39986,
+      "measurements": [
+        {
+          "encode_ms": 0.3570001572370529,
+          "encode_cpu_ms": 0.35322999999998217,
+          "write_fsync_ms": 1.6837995499372482
+        },
+        {
+          "encode_ms": 0.31250715255737305,
+          "encode_cpu_ms": 0.31273100000017706,
+          "write_fsync_ms": 0.8099935948848724
+        },
+        {
+          "encode_ms": 0.3052372485399246,
+          "encode_cpu_ms": 0.30514000000003705,
+          "write_fsync_ms": 0.8627139031887054
+        },
+        {
+          "encode_ms": 0.29446929693222046,
+          "encode_cpu_ms": 0.2944600000001074,
+          "write_fsync_ms": 0.7611140608787537
+        },
+        {
+          "encode_ms": 0.29283948242664337,
+          "encode_cpu_ms": 0.2927799999996594,
+          "write_fsync_ms": 0.7376149296760559
+        }
+      ]
+    },
+    {
+      "records": 4000,
+      "bytes": 782778,
+      "measurements": [
+        {
+          "encode_ms": 5.801331251859665,
+          "encode_cpu_ms": 5.633691999999968,
+          "write_fsync_ms": 1.3494621962308884
+        },
+        {
+          "encode_ms": 5.7976096868515015,
+          "encode_cpu_ms": 5.734342000000225,
+          "write_fsync_ms": 1.1258423328399658
+        },
+        {
+          "encode_ms": 5.418123677372932,
+          "encode_cpu_ms": 5.339951999999926,
+          "write_fsync_ms": 1.3804621994495392
+        },
+        {
+          "encode_ms": 5.484990775585175,
+          "encode_cpu_ms": 5.430711999999893,
+          "write_fsync_ms": 1.0365229099988937
+        },
+        {
+          "encode_ms": 5.509130656719208,
+          "encode_cpu_ms": 5.457301999999942,
+          "write_fsync_ms": 1.0702218860387802
+        }
+      ]
+    },
+    {
+      "records": 19011,
+      "bytes": 3739384,
+      "measurements": [
+        {
+          "encode_ms": 26.737729087471962,
+          "encode_cpu_ms": 26.687841000000212,
+          "write_fsync_ms": 2.517521381378174
+        },
+        {
+          "encode_ms": 27.036787942051888,
+          "encode_cpu_ms": 26.970399999999728,
+          "write_fsync_ms": 2.9169097542762756
+        },
+        {
+          "encode_ms": 25.567656382918358,
+          "encode_cpu_ms": 25.501039999999975,
+          "write_fsync_ms": 2.5868136435747147
+        },
+        {
+          "encode_ms": 25.908274576067924,
+          "encode_cpu_ms": 25.840600000000435,
+          "write_fsync_ms": 2.8894301503896713
+        },
+        {
+          "encode_ms": 25.774896144866943,
+          "encode_cpu_ms": 25.707619999999487,
+          "write_fsync_ms": 2.5560539215803146
+        }
+      ]
+    }
+  ],
+  "finished_utc": "2026-10-03T01:29:13Z"
+}
