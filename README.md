@@ -15,6 +15,9 @@ candidate 2 with empty history; every emitted event feeds back unchanged.
 [GPU/CPU throughput pilot: methodology, predictions and measured results](docs/throughput-pilot.md).
 The accelerator is qualified separately against the frozen u5 trajectory; these
 bounded pod pilots do not replace or migrate the active workstation run.
+The subsequent authorized **[pod run reports every 100B decisions](docs/pod-run.md)**;
+[production controls and retention](docs/pod-production.md) describe its separate
+seed-9370001 execution.
 
 The live page is a dated observation, not a completed-run total. The latest
 source uses **128 states, u=5, Gamma=512 and three readings**. It is separate

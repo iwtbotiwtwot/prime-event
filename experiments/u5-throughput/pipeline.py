@@ -18,18 +18,19 @@ import time
 import numpy as np
 from random_buffers import RandomBuffers
 
-def run(r,acc,root,until,workers,seconds):
+def run(r,acc,root,until,workers,seconds,cache_mib=4096):
     root.mkdir(parents=True,exist_ok=True)
     started=time.perf_counter();initial=[]
     cp_path=root/'CHECKPOINT.json'
     if not cp_path.exists() or len(json.loads(cp_path.read_text())['records'])<2:
-        bootstrap=r.run(root,min(2,until),'indexed',4096)
+        bootstrap=r.run(root,min(2,until),'indexed',cache_mib)
         initial=bootstrap['rows']
         if bootstrap['stop_reason']!='target' or until<=2:return bootstrap
     lock=(root/'WRITER.lock').open('a');fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     cp=json.loads(cp_path.read_text());config=cp['config']
     assert config['accelerator']==json.loads(os.environ['PRIME_ACCELERATOR'])
     assert config['seed']==int(os.environ['PRIME_SEED'])
+    assert config['cache_mib']==cache_mib
     assert config['cdf_sha256']==r.sha((r.P/'u5_cdf.npy').read_bytes())
     assert config['initial_sha256']==r.sha((r.P/'u5_initial.npy').read_bytes())
     records=cp['records'];status=np.array(cp['status'],np.uint64)
@@ -48,7 +49,7 @@ def run(r,acc,root,until,workers,seconds):
             os.replace(path,q/path.name);orphan_count+=1
     base=np.random.default_rng();extra=np.random.default_rng()
     base.bit_generator.state=cp['base_rng'];extra.bit_generator.state=cp['extra_rng']
-    history=r.History(records,4096*1024**2,acc)
+    history=r.History(records,cache_mib*1024**2,acc)
     recent_events=queue.SimpleQueue()
     buffers=[RandomBuffers(workers),RandomBuffers(workers)]
     proposal_buffers=[np.empty(r.W,np.uint32),np.empty(r.W,np.uint32)]

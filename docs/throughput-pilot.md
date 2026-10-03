@@ -52,15 +52,19 @@ The repository's existing three tests and 288-trajectory evidence check passed.
 [Summary and trial records](../evidence/u5-throughput/SUMMARY.json) ·
 [Machine and timing scope](../evidence/u5-throughput/ENVIRONMENT.json) ·
 [Raw archive custody and SHA-256](../evidence/u5-throughput/CUSTODY.json).
-The trial manifests pin every implementation file used. A module docstring was
+The trial manifests pin every implementation file used. At benchmark release
+`7364f9e`, a module docstring was
 clarified afterward; [source equivalence](../evidence/u5-throughput/SOURCE_EQUIVALENCE.json)
 checks that all executable AST nodes remain identical and retains the exact
-benchmarked file. Other implementation files match their trial hashes.
+benchmarked file. The full custody archive retains the exact other benchmark
+files. Subsequent [production controls](pod-production.md) add configurable RAM,
+progress observation and milestone reporting, separately checked before launch.
 The original `production/u5` files and source hashes remain unchanged.
 
-**Decision:** keep this configuration for review rather than continue tuning.
+**Pilot decision:** keep this configuration for review rather than continue tuning.
 The accepted prefix throughput is demonstrated; a sustained rate at the live
-hundreds-of-billions endpoint remains unmeasured. No full pod run was started.
+hundreds-of-billions endpoint remained unmeasured. No full pod run was started
+during the pilot; the user subsequently authorized the separate production run.
 
 ## Prospective method and predictions
 
@@ -201,5 +205,5 @@ does not establish a 100M/s rate at that endpoint. CPU affinity is fixed to
 Accelerator checkpoints deliberately have their own implementation identity.
 Migrating the moving workstation checkpoint requires a separately verified
 snapshot, all referenced actual-event journals, and explicit migration tooling;
-simply pointing this pilot at the live checkpoint is unsupported. No new full
-production run or live checkpoint migration has been started by this work.
+simply pointing this pilot at the live checkpoint is unsupported. The subsequent
+authorized pod run starts at candidate 2; it does not migrate the live checkpoint.
