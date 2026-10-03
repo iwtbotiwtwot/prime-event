@@ -25,15 +25,15 @@
     }
   ],
   "launch_or_latest_observation": {
-    "decisions": 120255000000,
+    "decisions": 124560000000,
     "fn": 0,
     "fp": 0,
-    "recent_per_second": 95183713.687365,
+    "recent_per_second": 98249209.09539333,
     "seed": 9370001,
-    "session_per_second": 40589073.79183897,
+    "session_per_second": 51511443.85570823,
     "status": "RUNNING",
-    "through": 120255000001,
-    "updated_utc": "2026-10-03T02:05:02Z"
+    "through": 124560000001,
+    "updated_utc": "2026-10-03T02:05:48Z"
   },
   "config": {
     "backend": "gpu",
@@ -90,7 +90,7 @@
   },
   "archive_rotation": {
     "status": "WAITING",
-    "unarchived_journal_bytes": 5337041337,
+    "unarchived_journal_bytes": 5836023092,
     "threshold_bytes": 107374182400,
     "next_chunk": 0,
     "source_root": "/root/prime-u5-production",

@@ -12,4 +12,4 @@ Reports are generated at exactly 100B, 200B, 300B, and onward. Interval throughp
 |---:|---|---:|---:|---:|---:|---:|
 | 100B | 2026-10-03T01:32:23+00:00 | 0 | 0 | 0 | 38.02 | 38.02 |
 
-Latest sampled progress when this page was published: **120,255,000,000 decisions**, FP **0**, FN **0**, observed **2026-10-03T02:05:02Z**. This is a dated sample, not a continuously refreshed counter.
+Latest sampled progress when this page was published: **124,560,000,000 decisions**, FP **0**, FN **0**, observed **2026-10-03T02:05:48Z**. This is a dated sample, not a continuously refreshed counter.
