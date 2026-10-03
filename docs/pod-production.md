@@ -49,12 +49,23 @@ execution; failures are not silently retried. No old scientific data is deleted.
 
 Checkpoint writes use the pod's fast container disk with a 20 GiB free-space
 reserve. At each milestone a background copier mirrors immutable journal chunks
-to `/workspace/prime-u5-production`, verifies SHA-256 on new copies, and writes
+to **`/root/prime-u5-backup` on the container disk**, verifies SHA-256 on new copies, and writes
 the matching checkpoint last. At most one backup runs at once. `BACKUP.json`
 tracks completion. A mirror checkpoint retains original absolute paths: restore
 it and the journals to their original root before resuming. A stopped/replaced
 pod may need explicit environment reconstruction and verified recovery; no
-unqualified fresh-seed restart is automatic.
+unqualified fresh-seed restart is automatic. **This production run does not use
+`/workspace` for backups.**
+
+The external backup destination is the **T500**, at
+`/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003`.
+`prime-event-t500-backup.timer` pulls committed snapshots every five minutes.
+Each new compressed journal is verified against its recorded SHA-256 before
+the matching checkpoint and `VERIFIED.json` receipt are published. The script
+requires the T500 mount and a 20 GiB reserve; it refuses to silently fall back
+to workstation storage if the drive is unavailable. Transfer failures retry on
+the next timer invocation. The workstation and T500 network mount must be online;
+the container retains the running journals and pod-side copy during an outage.
 
 Clean stop on the pod:
 
@@ -80,6 +91,6 @@ Fresh campaign command (do not run a second writer against an active root):
 ```bash
 taskset -c 64-95 /tmp/prime-u5-venv/bin/python \
   /tmp/prime-u5-throughput/experiments/u5-throughput/campaign.py \
-  --root /root/prime-u5-production --mirror /workspace/prime-u5-production \
+  --root /root/prime-u5-production --mirror /root/prime-u5-backup \
   --seed 9370001 --cache-mib 65536
 ```

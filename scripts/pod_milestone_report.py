@@ -34,13 +34,16 @@ def main():
         subprocess.run(['git','-C',str(ROOT),'pull','--ff-only','origin','main'],check=True)
     record=dict(seed=9370001,status=campaign['status'],reason=campaign.get('reason'),started_utc=campaign['started_utc'],
         reports=reports,launch_or_latest_observation=progress,config=campaign['config'],backup=observed['BACKUP.json'])
+    receipt=state_dir/'t500-backup.json'
+    backup=json.loads(receipt.read_text()) if receipt.exists() else None
+    record['t500_backup']=backup if backup and backup['seed']==9370001 and backup['source_root']=='/root/prime-u5-production' else None
     target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(record,indent=2)+'\n')
     columns=['observed_utc','decisions','fp','fn','errors','interval_fp','interval_fn','interval_per_second','cumulative_per_second','interval_seconds']
     out=io.StringIO();writer=csv.DictWriter(out,fieldnames=columns,extrasaction='ignore',lineterminator='\n');writer.writeheader();writer.writerows(reports);(ROOT/FILES[1]).write_text(out.getvalue())
     lines=['# Pod u5 run — reports every 100 billion decisions','',f"Seed **9370001**, started **{campaign['started_utc']}** at candidate 2 with empty history. Campaign status at this report: **{campaign['status']}**.",'',
         'This is a separate execution of the same seed as the workstation run, not additional independent seed exposure. The workstation trajectory is unchanged. All feedback is raw: no repair, learner or reference veto. Counts below come from committed checkpoints.', '',
         'Reports are generated at exactly 100B, 200B, 300B, and onward. Interval throughput divides the latest 100B committed decisions by elapsed wall time; cumulative throughput includes setup, restarts and pauses since launch. A workstation timer publishes newly retained pod reports every minute when connectivity is available. Delayed publication does not change the recorded milestone time.', '',
-        '[Methodology and pilot predictions](throughput-pilot.md) · [Production controls](pod-production.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)', '',
+        '[Methodology and pilot predictions](throughput-pilot.md) · [Production controls and T500 backups](pod-production.md) · [JSON](../evidence/pod/milestones.json) · [CSV](../evidence/pod/milestones.csv)', '',
         '| Milestone | Observed UTC | False events | Missed primes | Total errors | Interval M/s | Cumulative M/s |',
         '|---:|---|---:|---:|---:|---:|---:|']
     for r in reports:lines.append(f"| {r['decisions']//1000000000}B | {r['observed_utc']} | {r['fp']} | {r['fn']} | {r['errors']} | {r['interval_per_second']/1e6:.2f} | {r['cumulative_per_second']/1e6:.2f} |")

@@ -32,6 +32,8 @@ def mirror(root,dest,checkpoint,milestone):
     for record in checkpoint['records']:
         source=Path(record['path']);target=dest/'data'/source.name
         if target.exists() and target.stat().st_size==source.stat().st_size:continue
+        if shutil.disk_usage(dest).free<20*1024**3+source.stat().st_size:
+            raise RuntimeError('Container backup reached the 20 GiB free-space reserve')
         temporary=target.with_suffix('.partial');shutil.copyfile(source,temporary)
         with temporary.open('rb') as f:assert hashlib.file_digest(f,'sha256').hexdigest()==record['sha256']
         os.replace(temporary,target)

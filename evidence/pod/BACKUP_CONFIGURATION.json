@@ -1,0 +1,9 @@
+{
+  "primary": "T500",
+  "primary_path": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003",
+  "pod_copy": "/root/prime-u5-backup",
+  "workspace_backups": false,
+  "container_copy_comparisons": 260,
+  "t500_qualification": "T500_QUALIFICATION.json",
+  "controller_sha256": "3040a4c3ccd3078ef019e38be77aa5c2aeae40b252ee994ccb73e6867bb2615a"
+}
