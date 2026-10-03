@@ -1,0 +1,28 @@
+{
+  "seed": 9370001,
+  "status": "RUNNING",
+  "reason": null,
+  "started_utc": "2026-10-03T00:48:33+00:00",
+  "reports": [],
+  "launch_or_latest_observation": {
+    "decisions": 2900000000,
+    "fn": 0,
+    "fp": 0,
+    "recent_per_second": 89975295.92649761,
+    "seed": 9370001,
+    "session_per_second": 98213144.27361093,
+    "status": "RUNNING",
+    "through": 2900000001,
+    "updated_utc": "2026-10-03T00:49:05Z"
+  },
+  "config": {
+    "backend": "gpu",
+    "cache_mib": 65536,
+    "milestone": 100000000000,
+    "seed": 9370001,
+    "threads": 8,
+    "workers": 8
+  },
+  "backup": null,
+  "t500_backup": null
+}
