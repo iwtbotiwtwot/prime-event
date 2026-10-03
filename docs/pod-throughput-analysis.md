@@ -1,5 +1,7 @@
 # Production throughput diagnosis — 2026-10-03 UTC
 
+Subsequently implemented and qualified: [redesign and resumed production results](pod-throughput-redesign.md).
+
 The decline is principally a software scaling problem: history-bank preparation
 grows with the candidate index, and every 5M decisions the writer serializes the
 entire growing checkpoint record list. Python scheduling/GIL contention compounds

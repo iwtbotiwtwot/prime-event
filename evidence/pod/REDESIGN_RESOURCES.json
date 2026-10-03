@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-10-03T02:07:53Z",
+  "seconds": 10.000760508701205,
+  "average_cpu_cores": 7.88136891503627,
+  "throttled_periods": 0,
+  "memory_bytes": 55023923200,
+  "gpu": [
+    "| 35%   46C    P2            117W /  350W |     412MiB /  24576MiB |     10%      Default |"
+  ]
+}

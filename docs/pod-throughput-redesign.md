@@ -123,6 +123,27 @@ before the final qualification and are recorded in the evidence file.
 
 Production resumed at **2026-10-03T02:01:59Z** from the preserved 112.875B boundary.
 
+## Resumed production result
+
+From **02:05:10Z to 02:07:10Z**, production durably committed **11.44 billion
+decisions in 120.009 seconds: 95.326 million decisions/s**. The measured boundary
+advanced from 120.945B to 132.385B; cumulative FP=0, FN=0. This uses differences
+between published HEAD sequences and a monotonic wall clock, including group
+flushes and checkpoint snapshots during the window. It excludes the earlier RAM
+restoration and migration pause; campaign milestone averages still include them.
+
+The accepted 95M/s floor was exceeded in this two-minute mature production
+measurement. Sustained 100M/s and constant speed at indefinitely larger histories
+are not established. The original short-prefix pilot is no longer the sole
+performance evidence.
+
+[Production samples](../evidence/pod/REDESIGN_THROUGHPUT.json) ·
+[Post-redesign resources](../evidence/pod/REDESIGN_RESOURCES.json).
+Both report and T500 timers were confirmed active. The updated archive worker
+successfully resolved live durable state and reported approximately 5.84GB of
+unarchived journals, below the 100GiB threshold; no full production archive had
+yet been triggered at that check.
+
 The target remains 95M decisions/s or better, measured on committed progress.
 Short-prefix throughput, GPU-only rates, cache-restoration time and warm running
 rates must be identified separately. Qualification replay repeats existing
