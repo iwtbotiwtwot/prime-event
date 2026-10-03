@@ -92,6 +92,10 @@ def main():
             atomic(statepath,state);atomic(root/'REPORTS.json',state['reports'])
             a.mirror.mkdir(parents=True,exist_ok=True);atomic(a.mirror/'REPORTS.json',state['reports']);atomic(a.mirror/'CAMPAIGN.json',state)
             print(json.dumps(report),flush=True)
+            # The archive worker replaces duplicate per-milestone journal copies.
+            if (root/'ARCHIVE_POLICY.json').exists():
+                atomic(root/'BACKUP.json',dict(status='ARCHIVE_ROTATION',threshold_bytes=100*1024**3,
+                    working_history_retained=True,updated_utc=utc()));continue
             # At most one backup is in flight; no unbounded queue or deletion.
             if backup is not None:backup.result()
             atomic(root/'BACKUP.json',dict(status='COPYING',milestone=target,updated_utc=utc()))

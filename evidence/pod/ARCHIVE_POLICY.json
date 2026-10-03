@@ -1,0 +1,20 @@
+{
+  "threshold_bytes": 107374182400,
+  "threshold_scope": "Committed compressed NPZ journal bytes before outer zstd compression",
+  "check_interval_seconds": 300,
+  "active_history_retained": true,
+  "container_staging": "/root/prime-u5-backup/archives",
+  "t500_destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives",
+  "workspace": false,
+  "drive_upload": "manual by user",
+  "t500_archive_deletion": "manual by user after Drive verification",
+  "tests": [
+    "archive transport and all-member checksums",
+    "corrupt inner member despite recomputed outer hash rejected",
+    "forged receipt rejected",
+    "backup symlink to active history rejected",
+    "completed archive indexing recovery",
+    "cleanup acknowledgement idempotent",
+    "100M archive qualification then 150M exact continuation (390 comparisons)"
+  ]
+}

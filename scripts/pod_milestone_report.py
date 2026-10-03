@@ -37,6 +37,9 @@ def main():
     receipt=state_dir/'t500-backup.json'
     backup=json.loads(receipt.read_text()) if receipt.exists() else None
     record['t500_backup']=backup if backup and backup['seed']==9370001 and backup['source_root']=='/root/prime-u5-production' else None
+    archive_status=state_dir/'archive-status.json'
+    archive=json.loads(archive_status.read_text()) if archive_status.exists() else None
+    record['archive_rotation']=archive if archive and archive.get('source_root')=='/root/prime-u5-production' else None
     target.parent.mkdir(parents=True,exist_ok=True);target.write_text(json.dumps(record,indent=2)+'\n')
     columns=['observed_utc','decisions','fp','fn','errors','interval_fp','interval_fn','interval_per_second','cumulative_per_second','interval_seconds']
     out=io.StringIO();writer=csv.DictWriter(out,fieldnames=columns,extrasaction='ignore',lineterminator='\n');writer.writeheader();writer.writerows(reports);(ROOT/FILES[1]).write_text(out.getvalue())

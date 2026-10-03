@@ -1,0 +1,17 @@
+{
+  "batch_id": 1,
+  "bytes": 9730980,
+  "end_chunk": 20,
+  "first_chunk": 0,
+  "journal_bytes": 6024069,
+  "manifest_sha256": "c67423adf7bebcaad33d6c2dac0223380c4eb3fd1b1b9893dcde4753aca7b945",
+  "path": "/root/u5-container-backup-qualification/archives/u5_seed9369001_batch_000001.tar.zst",
+  "sha256": "6f0b4c755ab83b6d8a8f319ca430983302c5b7ecbe1c5c72d84452e7fb7be3b2",
+  "status": "CLEANED",
+  "through_decisions": 100000000,
+  "verified_utc": "2026-10-03T01:06:36+00:00",
+  "destination": "/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/archive-qualification-20261003/archives/u5_seed9369001_batch_000001.tar.zst",
+  "removed_redundant_chunks": 20,
+  "active_history_retained": true,
+  "cleaned_utc": "2026-10-03T01:06:38+00:00"
+}

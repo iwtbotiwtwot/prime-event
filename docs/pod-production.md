@@ -45,27 +45,36 @@ Controller: `experiments/u5-throughput/campaign.py` in
 continues across 100B boundaries and clean daily time-budget exits, retaining
 the same checkpoint, seed, source identity and random streams. The detached
 process survives SSH disconnection. STOP, low storage, or a failed child ends
-execution; failures are not silently retried. No old scientific data is deleted.
+execution; failures are not silently retried. No active feedback history is deleted.
 
 Checkpoint writes use the pod's fast container disk with a 20 GiB free-space
-reserve. At each milestone a background copier mirrors immutable journal chunks
-to **`/root/prime-u5-backup` on the container disk**, verifies SHA-256 on new copies, and writes
-the matching checkpoint last. At most one backup runs at once. `BACKUP.json`
-tracks completion. A mirror checkpoint retains original absolute paths: restore
-it and the journals to their original root before resuming. A stopped/replaced
-pod may need explicit environment reconstruction and verified recovery; no
-unqualified fresh-seed restart is automatic. **This production run does not use
-`/workspace` for backups.**
+reserve. The later requested [100 GiB archive policy](pod-archives.md) replaces
+per-milestone duplicate journal copies and the old five-minute individual-file
+transfers. The timer now checks the archive threshold every five minutes.
 
-The external backup destination is the **T500**, at
-`/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003`.
-`prime-event-t500-backup.timer` pulls committed snapshots every five minutes.
-Each new compressed journal is verified against its recorded SHA-256 before
-the matching checkpoint and `VERIFIED.json` receipt are published. The script
-requires the T500 mount and a 20 GiB reserve; it refuses to silently fall back
-to workstation storage if the drive is unavailable. Transfer failures retry on
-the next timer invocation. The workstation and T500 network mount must be online;
-the container retains the running journals and pod-side copy during an outage.
+At least **100 GiB = 107,374,182,400 bytes** of newly committed NPZ journals
+triggers a compressed archive on **container disk**, under
+`/root/prime-u5-backup/archives`. It is downloaded to the **T500**, under
+`/home/sam/mnt/lilhelper-t500/POD_BACKUPS/prime-event/u5_seed9370001_20261003/archives`.
+The archive checksum and every member checksum must verify, and a durable receipt
+must be written, before the container archive and covered redundant backup copies
+are removed. The user uploads to Drive, verifies, then manually removes the T500
+archive. No automatic Drive upload or T500 deletion is configured.
+
+**Active event-history journals remain on the container.** They are required for
+exact feedback and restart; a checkpoint or finite RAM cache does not replace
+them. This policy rotates backup/export copies, not the live scientific working
+set. It therefore does not make container storage consumption bounded forever.
+The archive activation used a clean checkpoint-preserving controller restart;
+the seed, source, state and RNG streams were retained.
+
+**This production run does not use `/workspace` for backups.** Archives contain
+incremental journals, numerical sources, a manifest and a checkpoint. Restore all
+preceding batches and original absolute paths before resuming. The T500 mount and
+a 20 GiB reserve are required; there is no silent workstation-disk fallback.
+Transfer failures never authorize cleanup and retry on the next timer invocation.
+The workstation and T500 network mount must be online. Earlier verified loose
+T500 snapshots are retained; their files are not automatically removed.
 
 Clean stop on the pod:
 
