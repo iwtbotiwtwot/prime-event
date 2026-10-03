@@ -1,0 +1,87 @@
+{
+  "samples": [
+    {
+      "monotonic": 919172.123744456,
+      "utc": "2026-10-03T12:47:25.627172+00:00",
+      "progress": {
+        "decisions": 5425530000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 183200627.75616953,
+        "seed": 9370001,
+        "session_per_second": 218549171.6115355,
+        "status": "RUNNING",
+        "through": 5425530000001,
+        "updated_utc": "2026-10-03T12:47:25Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 242076483584,
+        "free": 294794428416
+      },
+      "campaign_pid": 81841,
+      "worker_pid": 81843,
+      "memory_bytes": 49357418496,
+      "anon_bytes": 32205283328,
+      "file_bytes": 14023245824,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+    },
+    {
+      "monotonic": 919187.124490961,
+      "utc": "2026-10-03T12:47:40.627921+00:00",
+      "progress": {
+        "decisions": 5428730000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 217100766.45079988,
+        "seed": 9370001,
+        "session_per_second": 218543180.9037867,
+        "status": "RUNNING",
+        "through": 5428730000001,
+        "updated_utc": "2026-10-03T12:47:40Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 242210201600,
+        "free": 294660710400
+      },
+      "campaign_pid": 81841,
+      "worker_pid": 81843,
+      "memory_bytes": 50045628416,
+      "anon_bytes": 32150675456,
+      "file_bytes": 14765961216,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+    },
+    {
+      "monotonic": 919202.1251663,
+      "utc": "2026-10-03T12:47:55.628595+00:00",
+      "progress": {
+        "decisions": 5431735000000,
+        "fn": 0,
+        "fp": 3,
+        "recent_per_second": 201405969.12925822,
+        "seed": 9370001,
+        "session_per_second": 218518041.11003813,
+        "status": "RUNNING",
+        "through": 5431735000001,
+        "updated_utc": "2026-10-03T12:47:55Z"
+      },
+      "disk": {
+        "total": 536870912000,
+        "used": 242335977472,
+        "free": 294534934528
+      },
+      "campaign_pid": 81841,
+      "worker_pid": 81843,
+      "memory_bytes": 50715570176,
+      "anon_bytes": 32151105536,
+      "file_bytes": 15433740288,
+      "memory_events": "low 0\nhigh 0\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\n"
+    }
+  ],
+  "wall_seconds": 30.001421844004653,
+  "new_decisions": 6205000000,
+  "active_history_retained": true,
+  "container_resize_submitted": false,
+  "m_per_second": 206.82353097341547
+}
